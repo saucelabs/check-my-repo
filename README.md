@@ -15,7 +15,7 @@ We expect every public repository in our GitHub organization to contain:
 - [] SemVer
 - [] Codeowners file with a “Maintain” role
 
-This tool also proveides: 
+This tool also provides: 
 
 - [] Check if is there a new public repository unapproved by OSPO
 - [] Check for passwords and tokens in the code base
@@ -30,17 +30,9 @@ This tool also proveides:
 4. Ensure you are in compliance with Sauce Labs [rules of play](https://opensource.saucelabs.com/docs/releasing/)
 5. If in doubt, get in touch with [opensource@saucelabs](mailto:opensource@saucelabs.com)
 
-## Readme template
+## Readme
 
-Below you can find a complete readme template for a project. It is the single most important documentation of your project, so make sure you spend time on giving a great first impression to new users and provide the needed information to interested contributors.
-
----- 
-
-```
-Readme.md template below, when setup is complete, delete all content above this.
-```
-
-# _projectname_
+# Automated OSS Quality Checks
 
 _description_
 
