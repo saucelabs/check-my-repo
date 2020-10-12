@@ -1,6 +1,26 @@
-# Project Boilerplate
+# Automated OSS Quality Check
 
-This project contains a template to use when creating a new project. It comes with all the standard files which there is expected to be in an open source project on Github. 
+This is a tool to automatically check our repositories health and quality and report when something is missing.  
+We expect every public repository in our GitHub organization to contain:
+
+- [] License file with copyright attributed to Sauce Labs
+- [] Code of conduct
+- [] Contribution guidelines
+- [] Readme
+- [] Changelog
+- [] Support file
+- [] Security file
+- [] Tests
+- [] CI integration
+- [] SemVer
+- [] Codeowners file with a “Maintain” role
+
+This tool also proveides: 
+
+- [] Check if is there a new public repository unapproved by OSPO
+- [] Check for passwords and tokens in the code base
+- [] Check if there are references to internal Sauce infrastructure
+
 
 ## How to use
 
