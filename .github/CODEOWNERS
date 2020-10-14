@@ -1,10 +1,12 @@
-# These owners will be the default owners for everything in
-# the repo. 
-*       _codeowners_
+# default owners the repo
+* @discombobulateme
+* @christian-bromann
+* @diemol
 
 
 
 # Samples for assigning codeowners below:
+
 # Order is important; the last matching pattern takes the most
 # precedence. When someone opens a pull request that only
 # modifies JS files, only @js-owner and not the global
