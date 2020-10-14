@@ -1,0 +1,28 @@
+{
+  "name": "automated-oss-quality-check",
+  "version": "1.0.0",
+  "description": "tool to automatically check our repositories health and quality",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saucelabs/automated-oss-quality-check.git"
+  },
+  "keywords": [
+    "repolinter",
+    "automated",
+    "check",
+    "quality"
+  ],
+  "author": "Paloma Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saucelabs/automated-oss-quality-check/issues"
+  },
+  "homepage": "https://github.com/saucelabs/automated-oss-quality-check#readme",
+  "dependencies": {
+    "@saucelabs/repolinter": "^1.0.0-alpha.1"
+  }
+}
