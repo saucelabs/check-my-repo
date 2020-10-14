@@ -1,6 +1,6 @@
 # Getting help with _projectname_
 
-Thanks for using _projectname_. Before filing an issue, there are a few places
+Thanks for using Automated OSS Quality Check. Before filing an issue, there are a few places
 to explore and pieces to put together to make the process as smooth as possible.
 
 First, let's figure out where to ask:
