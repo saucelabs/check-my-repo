@@ -23,5 +23,6 @@
   },
   "homepage": "https://github.com/saucelabs/automated-oss-quality-check#readme",
   "dependencies": {
+    "@octokit/rest": "^18.0.6"
   }
 }
