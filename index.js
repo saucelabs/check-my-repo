@@ -11,7 +11,9 @@ async function main () {
       type: "public",
     })
     .then(({ data }) => {
-      const urls = data.map(function (obj) { return obj.git_url; });
+      const urls = data.map(function (obj) {
+        return obj.git_url
+      })
       console.log(urls)
     });
 
