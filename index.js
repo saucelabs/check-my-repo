@@ -1,21 +1,21 @@
 // Copyright 2020 Sauce Labs. All rights reserved
 // Licensed under the MIT License
 
-const { Octokit } = require("@octokit/rest");
-const octokit = new Octokit();
+const { Octokit } = require('@octokit/rest')
+const octokit = new Octokit()
 
-async function main () {
+async function main() {
   return octokit.repos
     .listForOrg({
-      org: "saucelabs",
-      type: "public",
+      org: 'saucelabs',
+      type: 'public',
     })
     .then(({ data }) => {
       const urls = data.map(function (obj) {
         return obj.git_url
       })
       console.log(urls)
-    });
+    })
 
   /**
    * list of things
@@ -32,7 +32,7 @@ async function main () {
 if (module.children) {
   main().then(
     () => console.log('Validation successful!'),
-    (err) => console.log('Validation failed:', err.stack)
+    err => console.log('Validation failed:', err.stack)
   )
 }
 
