@@ -8,17 +8,15 @@ const octokit = new Octokit()
 const repolinter = require('repolinter')
 
 async function main() {
-  return octokit.repos
-    .listForOrg({
-      org: 'saucelabs',
-      type: 'public',
-    })
-    .then(({ data }) => {
-      const urls = data.map(function (obj) {
-        return obj.git_url
-      })
-      console.log(urls)
-    })
+  // list public repository urls
+  const { data } = await octokit.repos.listForOrg({
+    org: 'saucelabs',
+    type: 'public',
+  })
+
+  // loop over the list of repository urls
+  const urls = data.map(obj => obj.clone_url)
+
 
   /**
    * list of things
