@@ -4,6 +4,9 @@
 const { Octokit } = require('@octokit/rest')
 const octokit = new Octokit()
 
+// integrate repolinter
+const repolinter = require('repolinter')
+
 async function main() {
   return octokit.repos
     .listForOrg({
