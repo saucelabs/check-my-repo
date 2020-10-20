@@ -35,7 +35,7 @@ async function main() {
 }
 
 // allows to be executed when not used as an imported file
-if (module.children) {
+if (require.main === module) {
   main().then(
     () => console.log('Validation successful!'),
     err => console.log('Validation failed:', err.stack)
