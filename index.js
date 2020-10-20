@@ -17,6 +17,11 @@ async function main() {
   // loop over the list of repository urls
   const urls = data.map(obj => obj.clone_url)
 
+  // execute repolinter default ruleset
+  for (const url of urls.slice(0, 1)) {
+    const lintResult = await repolinter.lint(url)
+    console.log(lintResult.results)
+  }
 
   /**
    * list of things
