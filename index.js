@@ -20,10 +20,10 @@ async function main() {
 
   /**
    * list of things
-   * - list of repository urls
-   * - integrate repolinter (import)
-   * - loop over the list of repository urls
-   *     - execute repolinter with default ruleset
+   * - return with an error if validation fails for all results
+   * - create report
+   *     - print repository name and status of the linting
+   *     - if fails: list failures
    * - ...
    * - also allow access to private repos
    */
