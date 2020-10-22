@@ -28,6 +28,8 @@ async function main() {
     const results = lintResult.results.filter(r => r.lintResult && !r.lintResult.passed).map(r => r.lintResult.message)
     console.log(`In the repo ${url} there are a few missing things: ${results}\n`)
 
+    //     const results = lintResult.results.filter(r => r.ruleInfo.level === 'error').map(r => r.ruleInfo.name)
+    //     console.log(`In the repo ${url} there are a few missing things: ${results}\n`)
   }
 
   /**
