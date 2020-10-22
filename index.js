@@ -19,7 +19,7 @@ async function main() {
   const urls = data.map(obj => obj.clone_url)
 
   // execute repolinter default ruleset
-  for (const url of urls.slice(0, 1)) {
+  for (const url of urls) {
     const lintResult = await repolinter.lint(url)
     console.log(lintResult.results)
   }
