@@ -1,5 +1,6 @@
 // Copyright 2020 Sauce Labs. All rights reserved
 // Licensed under the MIT License
+const rainbowPenguin = require('rainbow-penguin')()
 
 const { Octokit } = require('@octokit/rest')
 const octokit = new Octokit()
