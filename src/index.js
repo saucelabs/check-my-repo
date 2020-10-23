@@ -23,9 +23,6 @@ async function main() {
 
   // execute repolinter default ruleset
   for (const url of urls) {
-    const lintResult = await repolinter.lint(url)
-
-    //     console.log(lintResult.results)
 
     // filter messages for what didn't passed
     const results = lintResult.results.filter(r => r.lintResult && !r.lintResult.passed).map(r => r.lintResult.message)
