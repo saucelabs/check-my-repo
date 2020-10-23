@@ -1,11 +1,12 @@
 // Copyright 2020 Sauce Labs. All rights reserved
 // Licensed under the MIT License
-const rainbowPenguin = require('rainbow-penguin')()
 
+// lib for self.care while developing - delete when finish
+const rainbowPenguin = require('rainbow-penguin')()
+// lib to help with GitHub API usage
 const { Octokit } = require('@octokit/rest')
 const octokit = new Octokit()
-
-// integrate repolinter
+// integrate repolinter dependency
 const repolinter = require('repolinter')
 
 async function main() {
