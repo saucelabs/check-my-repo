@@ -28,7 +28,9 @@ async function main() {
     // console.log(repolinterConnect.results)
 
     // filter messages for what didn't passed
-    const results = lintResult.results.filter(r => r.lintResult && !r.lintResult.passed).map(r => r.lintResult.message)
+    const results = repolinterConnect.results
+      .filter(r => r.lintResult && !r.lintResult.passed)
+      .map(r => r.lintResult.message)
     console.log(`In the repo ${url} there are a few missing things: ${results}\n`)
 
     //     const results = lintResult.results.filter(r => r.ruleInfo.level === 'error').map(r => r.ruleInfo.name)
