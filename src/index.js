@@ -8,6 +8,8 @@ const { Octokit } = require('@octokit/rest')
 const octokit = new Octokit()
 // integrate repolinter dependency
 const repolinter = require('repolinter')
+// import utils to connect w/ repolinter temp git clone function not build in
+const { tempGitClone } = require('../lib/utils')
 
 async function main() {
   // list public repository urls
