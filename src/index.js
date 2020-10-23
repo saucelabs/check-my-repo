@@ -24,6 +24,8 @@ async function main() {
   // execute repolinter default ruleset
   for (const url of urls) {
     let urlToLint = await tempGitClone(url)
+    const repolinterConnect = await repolinter.lint(urlToLint)
+    // console.log(repolinterConnect.results)
 
     // filter messages for what didn't passed
     const results = lintResult.results.filter(r => r.lintResult && !r.lintResult.passed).map(r => r.lintResult.message)
