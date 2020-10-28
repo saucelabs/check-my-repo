@@ -19,6 +19,8 @@ async function main() {
   const urls = data.map(obj => obj.clone_url)
 
   for (const url of urls.slice(0, 1)) {
+    // convert url in local repo
+    await git.clone(url, './tmp')
 
     // filter messages for what didn't passed
     const results = repolinterConnect.results
