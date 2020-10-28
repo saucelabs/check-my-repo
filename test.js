@@ -1,8 +1,3 @@
-// Copyright 2020 Sauce Labs. All rights reserved
-// Licensed under the MIT License
-
-const rainbowPenguin = require('rainbow-penguin')() /*lib for self.care while developing - delete when finish */
-
 const { Octokit } = require('@octokit/rest') /* */
 const octokit = new Octokit() /*lib for GitHub API */
 const repolinter = require('repolinter') /*project which this is build upon */
@@ -35,22 +30,4 @@ async function main() {
   }
 }
 
-/**
- * list of things
- * - return with an error if validation fails for all results
- * - create report
- *     - print repository name and status of the linting
- *     - if fails: list failures
- * - ...
- * - also allow access to private repos
- */
-
-// allows to be executed when not used as an imported file
-if (require.main === module) {
-  main().then(
-    () => console.log('Validation successful!'),
-    err => console.log('Validation failed:', err.stack)
-  )
-}
-
-module.exports = main
+main()
