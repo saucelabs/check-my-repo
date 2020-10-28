@@ -30,21 +30,20 @@ async function main() {
       .filter(r => r.lintResult && !r.lintResult.passed)
       .map(r => r.lintResult.message)
     console.log(`In the repo ${url} there are a few missing things: ${results}\n`)
-
     //     const results = lintResult.results.filter(r => r.ruleInfo.level === 'error').map(r => r.ruleInfo.name)
     //     console.log(`In the repo ${url} there are a few missing things: ${results}\n`)
   }
-
-  /**
-   * list of things
-   * - return with an error if validation fails for all results
-   * - create report
-   *     - print repository name and status of the linting
-   *     - if fails: list failures
-   * - ...
-   * - also allow access to private repos
-   */
 }
+
+/**
+ * list of things
+ * - return with an error if validation fails for all results
+ * - create report
+ *     - print repository name and status of the linting
+ *     - if fails: list failures
+ * - ...
+ * - also allow access to private repos
+ */
 
 // allows to be executed when not used as an imported file
 if (require.main === module) {
