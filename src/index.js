@@ -21,6 +21,9 @@ async function main() {
   for (const url of urls.slice(0, 1)) {
     // convert url in local repo
     await git.clone(url, './tmp')
+    // execute repolinter default ruleset
+    const repolinterConnect = await repolinter.lint('./tmp')
+    console.log(repolinterConnect.results)
 
     // filter messages for what didn't passed
     const results = repolinterConnect.results
