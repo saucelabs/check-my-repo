@@ -18,11 +18,7 @@ async function main() {
   // loop over the list of repository urls
   const urls = data.map(obj => obj.clone_url)
 
-  // execute repolinter default ruleset
-  for (const url of urls) {
-    let urlToLint = await tempGitClone(url)
-    const repolinterConnect = await repolinter.lint(urlToLint)
-    // console.log(repolinterConnect.results)
+  for (const url of urls.slice(0, 1)) {
 
     // filter messages for what didn't passed
     const results = repolinterConnect.results
