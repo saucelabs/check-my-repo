@@ -1,15 +1,12 @@
 // Copyright 2020 Sauce Labs. All rights reserved
 // Licensed under the MIT License
 
-// lib for self.care while developing - delete when finish
-const rainbowPenguin = require('rainbow-penguin')()
-// lib to help with GitHub API usage
-const { Octokit } = require('@octokit/rest')
-const octokit = new Octokit()
-// integrate repolinter dependency
-const repolinter = require('repolinter')
-// import utils to connect w/ repolinter temp git clone function not build in
-const { tempGitClone } = require('../lib/utils')
+const rainbowPenguin = require('rainbow-penguin')() /*lib for self.care while developing - delete when finish */
+
+const { Octokit } = require('@octokit/rest') /* */
+const octokit = new Octokit() /*lib for GitHub API */
+const repolinter = require('repolinter') /*project which this is build upon */
+const git = require('simple-git/promise')() /*lib for GitHub API */
 
 async function main() {
   // list public repository urls
