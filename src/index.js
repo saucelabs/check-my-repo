@@ -24,8 +24,8 @@ async function main() {
 
   for (const url of urls) {
     // convert url in local repo
-    let tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'autochecker-'))
-    console.log(tmpDir)
+    // let tmpDir = tmpDirCloner
+    let tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `${Date.now()}-${name}-`))
     // console.log(tmpDir)
     await git.clone(url, tmpDir)
     // execute repolinter default ruleset
