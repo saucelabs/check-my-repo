@@ -26,16 +26,17 @@ async function main() {
     // convert url in local repo
     let tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'autochecker-'))
     console.log(tmpDir)
+    // console.log(tmpDir)
     await git.clone(url, tmpDir)
     // execute repolinter default ruleset
     const repolinterConnect = await repolinter.lint(tmpDir)
-    console.log(repolinterConnect.results)
+    // console.log(repolinterConnect.results)
 
     // filter messages for what didn't passed
     const results = repolinterConnect.results
       .filter(r => r.lintResult && !r.lintResult.passed)
       .map(r => r.lintResult.message)
-    console.log(`In the repo ${url} there are a few missing things: ${results}\n`)
+    // console.log(`In the repo ${url} there are a few missing things: ${results}\n`)
   }
 }
 
