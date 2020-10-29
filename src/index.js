@@ -20,6 +20,7 @@ async function main() {
   })
 
   const urls = data.map(obj => obj.clone_url) /*loop over the list of repository urls*/
+  const names = data.map(obj => obj.name) /*get repos names*/
 
   for (const url of urls) {
     // convert url in local repo
