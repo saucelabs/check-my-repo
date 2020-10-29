@@ -21,7 +21,7 @@ async function main() {
   // loop over the list of repository urls
   const urls = data.map(obj => obj.clone_url)
 
-  for (const url of urls.slice(0, 1)) {
+  for (const url of urls) {
     // convert url in local repo
     await git.clone(url, './tmp')
     // execute repolinter default ruleset
