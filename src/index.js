@@ -24,9 +24,10 @@ async function main() {
   for (const url of urls) {
     // convert url in local repo
     let tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'autochecker-'))
-    await git.clone(url, './tmp')
+    console.log(tmpDir)
+    await git.clone(url, tmpDir)
     // execute repolinter default ruleset
-    const repolinterConnect = await repolinter.lint('./tmp')
+    const repolinterConnect = await repolinter.lint(tmpDir)
     console.log(repolinterConnect.results)
 
     // filter messages for what didn't passed
