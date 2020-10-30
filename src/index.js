@@ -19,6 +19,7 @@ async function main() {
   })
 
   for (const d of data) {
+    let tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `${Date.now()}-${d.name}`))
     // console.log(tmpDir)
     await git.clone(url, tmpDir)
     // execute repolinter default ruleset
