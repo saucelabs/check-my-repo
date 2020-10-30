@@ -21,10 +21,8 @@ async function main() {
   for (const d of data) {
     let tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `${Date.now()}-${d.name}`))
     // console.log(tmpDir)
-    await git.clone(url, tmpDir)
-    // execute repolinter default ruleset
-    const repolinterConnect = await repolinter.lint(tmpDir)
-    // console.log(repolinterConnect.results)
+    await git.clone(d.clone_url, tmpDir)
+    const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
 
     // filter messages for what didn't passed
     const results = repolinterConnect.results
