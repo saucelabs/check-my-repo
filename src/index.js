@@ -28,7 +28,12 @@ async function main() {
     const results = repolinterConnect.results
       .filter(r => r.lintResult && !r.lintResult.passed)
       .map(r => r.lintResult.message)
-    // console.log(`In the repo ${url} there are a few missing things: ${results}\n`)
+    console.log(
+      `Repository: ${d.name}\n
+      Url: ${d.clone_url}\n
+      Temporary directory: ${tmpDir}\n
+      Default message: ${results}\n`
+    )
   }
 }
 
