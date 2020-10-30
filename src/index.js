@@ -19,13 +19,7 @@ async function main() {
     type: 'public',
   })
 
-  const urls = data.map(obj => obj.clone_url) /*loop over the list of repository urls*/
-  const names = data.map(obj => obj.name) /*get repos names*/
-
-  for (const url of urls) {
-    // convert url in local repo
-    // let tmpDir = tmpDirCloner
-    let tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `${Date.now()}-${name}-`))
+  for (const d of data) {
     // console.log(tmpDir)
     await git.clone(url, tmpDir)
     // execute repolinter default ruleset
