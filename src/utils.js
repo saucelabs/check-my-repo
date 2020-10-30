@@ -9,8 +9,8 @@ const git = require('simple-git/promise')() /*lib for GitHub API */
 const fs = require('fs')
 const os = require('os')
 
-const tmpDirCloner = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'test-'))
-console.log(tmpDirCloner)
+const tmpDirCloner = fs.promises.mkdtemp(path.join(os.tmpdir(), 'test-'))
+
 /*
 // temporarily clone a git repo to lint
 exports.tempGitClone = async function () {
