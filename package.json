@@ -24,6 +24,7 @@
   "homepage": "https://github.com/saucelabs/automated-oss-quality-check#readme",
   "dependencies": {
     "@octokit/rest": "^18.0.6",
+    "chalk": "^4.1.0",
     "linguist": "^0.1.7",
     "rainbow-penguin": "^1.0.3",
     "repolinter": "^0.9.0",

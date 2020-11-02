@@ -3,6 +3,9 @@
 
 const rainbowPenguin = require('rainbow-penguin')() /*lib for self.care while developing - delete when finish */
 
+const chalk = require('chalk')
+const log = console.log
+
 const { Octokit } = require('@octokit/rest') /* */
 const octokit = new Octokit() /*lib for GitHub API */
 const repolinter = require('repolinter') /*project which this is build upon */
@@ -28,12 +31,15 @@ async function main() {
     const results = repolinterConnect.results
       .filter(r => r.lintResult && !r.lintResult.passed)
       .map(r => r.lintResult.message)
-    console.log(
-      `Repository: ${d.name}\n
-      Url: ${d.clone_url}\n
-      Temporary directory: ${tmpDir}\n
-      Default message: ${results}\n`
-    )
+
+    log(chalk`{greenBright Repository: ${d.name}}\n
+      {blue Url: ${d.clone_url}}\n
+      {blackBright Temporary directory: ${tmpDir}}\n
+      Default message: ${results}\n`)
+
+    // console.log(`
+    //   License: ${results.license}
+    // `)
   }
 }
 
