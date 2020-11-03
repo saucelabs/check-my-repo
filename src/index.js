@@ -34,14 +34,10 @@ async function main() {
       .filter(r => r.lintResult && !r.lintResult.passed)
       .map(r => r.lintResult.message)
 
-    log(chalk`{greenBright Repository: ${d.name}}\n
-      {blue Url: ${d.clone_url}}\n
-      {blackBright Temporary directory: ${tmpDir}}\n
-      Default message: ${results}\n`)
-
-    // console.log(`
-    //   License: ${results.license}
-    // `)
+    // log(chalk`{greenBright Repository: ${d.name}}\n
+    //   {blue Url: ${d.clone_url}}\n
+    //   {blackBright Temporary directory: ${tmpDir}}\n
+    //   Default message: ${results}\n`)
   }
 }
 
