@@ -27,6 +27,7 @@ async function main() {
     await git.clone(d.clone_url, tmpDir)
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
     const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect)
+    fs.writeFileSync(path.resolve('./reports', `${Date()}-${d.name}`), JSON.stringify(print))
 
     // filter messages for what didn't passed
     const results = repolinterConnect.results
