@@ -23,11 +23,10 @@ async function main() {
 
   for (const d of data) {
     let tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'repolinter-'))
-    // console.log(tmpDir)
     await git.clone(d.clone_url, tmpDir)
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
-    const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect)
-    fs.writeFileSync(path.resolve('./reports', `${Date()}-${d.name}`), JSON.stringify(print))
+    const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
+    fs.writeFileSync(path.resolve('./reports', `${Date()}-${d.name}`), print) /*creates json file*/
 
     // filter messages for what didn't passed
     const results = repolinterConnect.results
