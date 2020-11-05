@@ -14,6 +14,7 @@ const fs = require('fs')
 const os = require('os')
 const path = require('path')
 
+let date = new Date().toISOString().substring(0, 16) /*transforms Date() into shorter string*/
 let organization = 'saucelabs'
 let access = 'public'
 
