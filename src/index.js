@@ -14,11 +14,14 @@ const fs = require('fs')
 const os = require('os')
 const path = require('path')
 
+let organization = 'saucelabs'
+let access = 'public'
+
 async function main() {
   // list public repository urls
   const { data } = await octokit.repos.listForOrg({
-    org: 'saucelabs',
-    type: 'public',
+    org: `${organization}`,
+    type: `${access}`,
   })
 
   for (const d of data) {
