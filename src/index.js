@@ -41,6 +41,7 @@ async function main() {
     })
 
     fs.writeFileSync(
+      path.resolve(`./${organization}`, `${date}-${d.name}`),
   }
 }
 
