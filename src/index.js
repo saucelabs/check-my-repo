@@ -32,6 +32,14 @@ async function main() {
     const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
 
     // fs.writeFileSync(path.resolve('./reports', `${date}-${d.name}`), print) /*creates json file*/
+    let directory = fs.mkdir(`./${organization}`, function (err) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(`New directory: ${organization} created!`)
+      }
+    })
+
   }
 }
 
