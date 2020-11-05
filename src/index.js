@@ -31,6 +31,7 @@ async function main() {
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
     const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
 
+    // fs.writeFileSync(path.resolve('./reports', `${date}-${d.name}`), print) /*creates json file*/
   }
 }
 
