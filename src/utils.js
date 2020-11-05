@@ -4,10 +4,14 @@
 
 const path = require('path')
 const rimraf = require('rimraf')
-const git = require('simple-git/promise')()
+const git = require('simple-git/promise')() /*lib for GitHub API */
 /** @type {any} */
 const fs = require('fs')
 const os = require('os')
+
+const tmpDirCloner = fs.promises.mkdtemp(path.join(os.tmpdir(), 'test-'))
+
+/*
 // temporarily clone a git repo to lint
 exports.tempGitClone = async function () {
   if (argv.git) {
@@ -21,3 +25,5 @@ exports.tempGitClone = async function () {
     }
   }
 }
+*/
+module.export = { tmpDirCloner }
