@@ -40,6 +40,7 @@ async function main() {
       }
     })
 
+    fs.writeFileSync(
   }
 }
 
