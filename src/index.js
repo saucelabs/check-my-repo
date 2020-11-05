@@ -30,7 +30,7 @@ async function main() {
     await git.clone(d.clone_url, tmpDir)
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
     const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
-    fs.writeFileSync(path.resolve('./reports', `${Date()}-${d.name}`), print) /*creates json file*/
+
   }
 }
 
