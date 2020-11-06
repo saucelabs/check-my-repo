@@ -8,6 +8,8 @@ const fs = require('fs')
 const os = require('os')
 
 let createTempDirectory = project => {
+  return fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${project}-`))
+}
 
 /*
 // temporarily clone a git repo to lint
