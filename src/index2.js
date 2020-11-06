@@ -26,7 +26,7 @@ async function main() {
   })
 
   for (const d of data) {
-    let tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'repolinter-'))
+    const tmpDir = await createTempDirectory(d.name)
     await git.clone(d.clone_url, tmpDir)
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
     const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
