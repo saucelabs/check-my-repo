@@ -26,4 +26,4 @@ exports.tempGitClone = async function () {
   }
 }
 */
-module.export = { tmpDirCloner }
+module.exports = { createTempDirectory }
