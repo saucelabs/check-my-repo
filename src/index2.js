@@ -13,6 +13,8 @@ const git = require('simple-git/promise')() /*lib for GitHub API */
 const fs = require('fs')
 const path = require('path')
 
+const { createTempDirectory } = require('./utils')
+
 async function main() {
   // list public repository urls
   const { data } = await octokit.repos.listForOrg({
