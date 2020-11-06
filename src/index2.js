@@ -15,6 +15,7 @@ const path = require('path')
 
 const { createTempDirectory } = require('./utils')
 
+let date = new Date().toISOString().substring(0, 16) /*transforms Date() into shorter string*/
 let organization = 'saucelabs'
 let access = 'public'
 
