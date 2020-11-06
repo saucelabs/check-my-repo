@@ -35,9 +35,8 @@ async function main() {
       await fs.promises.mkdir(`./${organization}`)
     }
 
-    // fs.writeFileSync(path.resolve('./reports', `${date}-${d.name}`), print) /*creates json file*/
-    fs.writeFileSync(
-      path.resolve(`./${organization}`, `${date}-${d.name}`),
+    await fs.promises.writeFile(
+      path.resolve(`./${organization}`, `${date}-${d.name}.json`),
       JSON.stringify(JSON.parse(print), null, 2)
     ) /*creates json file*/
   }
