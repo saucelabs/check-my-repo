@@ -15,11 +15,13 @@ const path = require('path')
 
 const { createTempDirectory } = require('./utils')
 
+let organization = 'saucelabs'
+let access = 'public'
+
 async function main() {
-  // list public repository urls
   const { data } = await octokit.repos.listForOrg({
-    org: 'saucelabs',
-    type: 'public',
+    org: organization,
+    type: access,
   })
 
   for (const d of data) {
