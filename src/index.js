@@ -11,7 +11,6 @@ const octokit = new Octokit() /*lib for GitHub API */
 const repolinter = require('repolinter') /*project which this is build upon */
 const git = require('simple-git/promise')() /*lib for GitHub API */
 const fs = require('fs')
-const os = require('os')
 const path = require('path')
 
 let date = new Date().toISOString().substring(0, 16) /*transforms Date() into shorter string*/
