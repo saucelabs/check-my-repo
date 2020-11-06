@@ -20,7 +20,6 @@ let organization = 'saucelabs'
 let access = 'public'
 
 async function main() {
-  // list public repository urls
   const { data } = await octokit.repos.listForOrg({
     org: organization,
     type: access,
