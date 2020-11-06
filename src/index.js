@@ -36,14 +36,6 @@ async function main() {
     }
 
     // fs.writeFileSync(path.resolve('./reports', `${date}-${d.name}`), print) /*creates json file*/
-    let directory = fs.mkdir(`./${organization}`, function (err) {
-      if (err) {
-        console.log(err)
-      } else {
-        console.log(`New directory: ${organization} created!`)
-      }
-    })
-
     fs.writeFileSync(
       path.resolve(`./${organization}`, `${date}-${d.name}`),
       JSON.stringify(JSON.parse(print), null, 2)
