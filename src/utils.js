@@ -7,7 +7,7 @@ const path = require('path')
 const fs = require('fs')
 const os = require('os')
 
-const tmpDirCloner = fs.promises.mkdtemp(path.join(os.tmpdir(), 'test-'))
+let createTempDirectory = project => {
 
 /*
 // temporarily clone a git repo to lint
