@@ -33,7 +33,7 @@ async function main() {
 
     const negResults = repolinterConnect.results /* filter messages for what didn't passed */
       .filter(r => r.lintResult && !r.lintResult.passed)
-      .map(r => r.lintResult.targets)
+      .map(r => r.lintResult.targets.map(p => p.pattern))
 
     const posResults = repolinterConnect.results.every(r => r.lintResult && r.lintResult.passed)
 
