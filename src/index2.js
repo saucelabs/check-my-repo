@@ -35,6 +35,8 @@ async function main() {
       .filter(r => r.lintResult && !r.lintResult.passed)
       .map(r => r.lintResult.targets.map(p => p.pattern))
 
+    const negFiltered = JSON.stringify(negResults, null, 2)
+
     const posResults = repolinterConnect.results.every(r => r.lintResult && r.lintResult.passed)
 
     log(chalk`{blue Repository: ${d.name}}\n
