@@ -1,6 +1,8 @@
 // Copyright 2020 Sauce Labs. All rights reserved
 // Licensed under the MIT License
 
+/* This file returns output in terminal */
+
 const rainbowPenguin = require('rainbow-penguin')() /*lib for self.care while developing - delete when finish */
 
 const chalk = require('chalk')
