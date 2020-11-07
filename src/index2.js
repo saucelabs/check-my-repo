@@ -32,9 +32,10 @@ async function main() {
     if (repolinterConnect.results.every(r => r.lintResult && r.lintResult.passed)) {
       log(chalk`{blue Repository: ${d.name}}\n
       greenBright Passed all checks 🥳`)
-    const negResults = repolinterConnect.results /* filter messages for what didn't passed */
-      .filter(r => r.lintResult && !r.lintResult.passed)
-      .map(r => r.lintResult.targets.map(p => p.pattern))
+    } else {
+      const negResults = repolinterConnect.results /* filter messages for what didn't passed */
+        .filter(r => r.lintResult && !r.lintResult.passed)
+        .map(r => r.lintResult.targets.map(p => p.pattern))
 
       const posResults = repolinterConnect.results /* filter messages for what didn't passed */
         .filter(r => r.lintResult && r.lintResult.passed)
