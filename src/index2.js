@@ -43,11 +43,7 @@ async function main() {
 
     log(chalk`{blue Repository: ${d.name}}\n
       {greenBright Passed: ${posResults}}\n
-      {red Failled: ${negResults}\n}`)
-
-    // log(chalk`{greenBright Repository: ${d.name}}\n
-    //   {blue Url: ${d.clone_url}}\n
-    //   Default message: ${results}\n`)
+      {red Failled: ${negFiltered}\n}`)
   }
 }
 
