@@ -15,7 +15,6 @@ const git = require('simple-git/promise')() /*lib for GitHub API */
 
 const { createTempDirectory } = require('./utils')
 
-let date = new Date().toISOString().substring(0, 16) /*transforms Date() into shorter string*/
 let organization = 'saucelabs'
 let access = 'public'
 
@@ -29,7 +28,6 @@ async function main() {
     const tmpDir = await createTempDirectory(d.name)
     await git.clone(d.clone_url, tmpDir)
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
-    const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
 
     const negResults = repolinterConnect.results /* filter messages for what didn't passed */
       .filter(r => r.lintResult && !r.lintResult.passed)
