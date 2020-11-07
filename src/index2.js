@@ -31,8 +31,7 @@ async function main() {
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
     const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
 
-    // filter messages for what didn't passed
-    const negResults = repolinterConnect.results
+    const negResults = repolinterConnect.results /* filter messages for what didn't passed */
       .filter(r => r.lintResult && !r.lintResult.passed)
       .map(r => r.lintResult.targets)
 
