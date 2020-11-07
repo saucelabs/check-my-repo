@@ -41,9 +41,10 @@ async function main() {
         .filter(r => r.lintResult && r.lintResult.passed)
         .map(r => r.lintResult.targets.map(p => p.pattern)) /* global messages if all  passed */
 
-    log(chalk`{blue Repository: ${d.name}}\n
-      {greenBright Passed: ${posResults}}\n
-      {red Failled: ${negFiltered}\n}`)
+      log(chalk`{blue Repository: ${d.name}}\n
+        {greenBright Passed: ${posResults}}\n
+        {red Failled: ${negResults}\n}`)
+    }
   }
 }
 
