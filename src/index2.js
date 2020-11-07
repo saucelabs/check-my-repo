@@ -48,17 +48,6 @@ async function main() {
   }
 }
 
-/**
- * list of things
- * - return with an error if validation fails for all results
- * - create report
- *     - print repository name and status of the linting
- *     - Format: linterResults/saucelabs/monocle/20201029-111510/analysis.json
-                YYYYMMDD-HHmmSS
- *     - if fails: list failures
- * - also allow access to private repos
- */
-
 // allows to be executed when not used as an imported file
 if (require.main === module) {
   main().then(
