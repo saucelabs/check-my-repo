@@ -24,13 +24,6 @@ async function main() {
     type: access,
   })
 
-  // const { data } = await octokit.paginate(
-  //   octokit.repos.listForOrg({
-  //     org: organization,
-  //     type: access,
-  //   })
-  // )
-
   for (const d of data) {
     const tmpDir = await createTempDirectory(d.name)
     await git.clone(d.clone_url, tmpDir)
