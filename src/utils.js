@@ -1,15 +1,15 @@
 // based on repolinter source code https://github.com/todogroup/repolinter/blob/master/bin/repolinter.js
-// const simpleGit = require('simple-git')
-// const git = simpleGit()
 
 const path = require('path')
-const rimraf = require('rimraf')
-const git = require('simple-git/promise')() /*lib for GitHub API */
+// const rimraf = require('rimraf')
+// const git = require('simple-git/promise')() /*lib for GitHub API */
 /** @type {any} */
 const fs = require('fs')
 const os = require('os')
 
-const tmpDirCloner = fs.promises.mkdtemp(path.join(os.tmpdir(), 'test-'))
+let createTempDirectory = project => {
+  return fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${project}-`))
+}
 
 /*
 // temporarily clone a git repo to lint
@@ -26,4 +26,4 @@ exports.tempGitClone = async function () {
   }
 }
 */
-module.export = { tmpDirCloner }
+module.exports = { createTempDirectory }
