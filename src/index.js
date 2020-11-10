@@ -25,6 +25,7 @@ async function main() {
   const { data } = await octokit.repos.listForOrg({
     org: organization,
     type: access,
+    per_page: 100,
   })
 
   for (const d of data) {
