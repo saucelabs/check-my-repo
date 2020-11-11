@@ -29,6 +29,19 @@ if "Was your repo found?" then
       -->[no, there are missing files] "AddToReport()"
       --> "Create.gitHubIssue()"
       --> "Exit()"
+
+    if "Check process finished" then
+      -->[yes, all passed] Passed outputs
+      --> console.log("All passed")
+      --> "Create report src/<organizaion>/
+          ddmmyy-hhmm-reponame.json"
+        else
+          -->[no, there are missing files] Failed outputs
+          --> console.log("All fails")
+          --> Create.gitHubIssue()
+          --> "Create report src/<organizaion>/
+              ddmmyy-hhmm-reponame.json"
+      --> Exit()
       -->(*)
   endif
 else
