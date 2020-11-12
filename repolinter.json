@@ -123,8 +123,9 @@
           "text": { "url": "https://github.com/saucelabs/new-project/blob/main/LICENSE" }
         }
       },
-      "policyInfo": "A rpository must contain a permissive or weak copy-left license",
+      "policyInfo": "A repository must contain a permissive or weak copy-left license",
       "policyUrl": "https://opensource.saucelabs.com/docs/license-guide/"
+    },
     }
   }
 }
