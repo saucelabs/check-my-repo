@@ -3,14 +3,13 @@
   "version": 2,
   "axioms": {},
   "rules": {
-    "readme-file-up-to-date": {
+    "readme-file-exists": {
       "level": "error",
       "rule": {
-        "type": "file-hash",
+        "type": "file-existence",
         "options": {
           "globsAny": ["README*"],
-          "algorithm": "sha256",
-          "hash": "..."
+          "nocase": true
         }
       },
       "fix": {
