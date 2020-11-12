@@ -67,6 +67,16 @@
       "policyInfo": "Contribution file improves onboarding and increases the success of the projects",
       "policyUrl": "https://opensource.saucelabs.com/docs/releasing/#prepare-your-repository"
     },
+    "changelog-file-exists": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["CHANGELOG*"],
+          "nocase": true
+        }
+      }
+    },
     "license-file-exists": {
       "level": "error",
       "rule": {
