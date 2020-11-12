@@ -20,7 +20,7 @@
           "text": { "url": "https://github.com/saucelabs/new-project/blob/main/README.md" }
         }
       },
-      "policyInfo": "README should alway be up-to-date",
+      "policyInfo": "README should always be up-to-date",
       "policyUrl": "https://opensource.saucelabs.com/docs/"
     },
     "license-file-exists": {
