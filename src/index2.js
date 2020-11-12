@@ -31,8 +31,9 @@ async function main() {
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
 
     if (repolinterConnect.results.every(r => r.lintResult && r.lintResult.passed)) {
-      log(chalk`{blue Repository: ${d.name}}\n
-      greenBright Passed all checks 🥳`)
+      log(chalk`
+        {blue Repository: ${d.name}}\n
+        greenBright Passed all checks 🥳`)
     } else {
       const negResults = repolinterConnect.results /* filter messages for what didn't passed */
         .filter(r => r.lintResult && !r.lintResult.passed)
