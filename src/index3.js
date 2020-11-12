@@ -17,6 +17,7 @@ const { createTempDirectory } = require('./utils')
 
 async function main() {
   const url = 'https://github.com/saucelabs/new-project.git'
+  // const url = 'https://github.com/discombobulateme/test-automated-check.git'
   const tmpDir = await createTempDirectory('test')
   await git.clone(url, tmpDir)
   const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
