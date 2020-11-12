@@ -21,8 +21,9 @@ if "Was your repo found?" then
     --> Check.securityGuide()
     --> [verify other files] Check.maintainers
     --> Check.license()
-    --> Check.semVer()
+    --> Check.ifThereIsBinaries()
     --> Check.ifThereIsTestEnv()
+    --> Check.semVer()
 
     if "Check process finished" then
       -->[yes, all passed] Passed outputs
