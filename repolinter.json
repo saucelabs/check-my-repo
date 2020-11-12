@@ -135,6 +135,15 @@
         }
       }
     },
+    "test-directory-exists": {
+      "level": "error",
+      "rule": {
+        "type": "directory-existence",
+        "options": {
+          "globsAny": ["**/test*", "**/specs"],
+          "nocase": true
+        }
+      }
     }
   }
 }
