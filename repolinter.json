@@ -77,6 +77,16 @@
         }
       }
     },
+    "support-file-exists": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["{docs/,.github/,}SUPPORT*"],
+          "nocase": true
+        }
+      }
+    },
     "license-file-exists": {
       "level": "error",
       "rule": {
