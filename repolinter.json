@@ -23,6 +23,30 @@
       "policyInfo": "README should always be up-to-date",
       "policyUrl": "https://opensource.saucelabs.com/docs/"
     },
+    "code-of-conduct-file-exists": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": [
+            "{docs/,.github/,}CODEOFCONDUCT*",
+            "{docs/,.github/,}CODE-OF-CONDUCT*",
+            "{docs/,.github/,}CODE_OF_CONDUCT*"
+          ],
+          "nocase": true
+        }
+      },
+      "fix": {
+        "type": "file-create",
+        "options": {
+          "file": "CODE_OF_CONDUCT.md",
+          "replace": true,
+          "text": { "url": "https://github.com/saucelabs/new-project/blob/main/CODE_OF_CONDUCT.md" }
+        }
+      },
+      "policyInfo": "Code of conduct clarifies an organization's mission, values and principles",
+      "policyUrl": "https://opensource.saucelabs.com/docs/releasing/#prepare-your-repository"
+    },
     "license-file-exists": {
       "level": "error",
       "rule": {
