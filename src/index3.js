@@ -37,14 +37,6 @@ async function main() {
         {blue Repository: new-projec repo model}
         {greenBright Passed all checks 🥳}`)
   } else {
-    const negResults = repolinterConnect.results /* filter messages for what didn't passed */
-      .filter(r => r.lintResult && !r.lintResult.passed)
-      .map(r => r.lintResult.targets.map(p => p.pattern))
-
-    const posResults = repolinterConnect.results /* filter messages for what didn't passed */
-      .filter(r => r.lintResult && r.lintResult.passed)
-      .map(r => r.lintResult.targets.map(p => p.pattern)) /* global messages if all  passed */
-
     log(chalk`{blue Repository: new-project model repo}\n
         {greenBright Passed: ${posResults}}\n
         {red Failled: ${negResults}\n}`)
