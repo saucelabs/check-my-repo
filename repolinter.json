@@ -79,7 +79,8 @@
           "globsAny": ["CHANGELOG*"],
           "nocase": true
         }
-      }
+      },
+      "policyInfo": "A log of all notable changes made to a project"
     },
     "Support guidelines": {
       "level": "error",
@@ -89,7 +90,8 @@
           "globsAny": ["{docs/,.github/,}SUPPORT*"],
           "nocase": true
         }
-      }
+      },
+      "policyInfo": "A guideline about ways to get help with your project"
     },
     "Security awareness": {
       "level": "error",
@@ -137,7 +139,8 @@
         "options": {
           "type": ["**/*.exe", "**/*.dll", "!node_modules/**"]
         }
-      }
+      },
+      "policyInfo": "Binaries makes your repo heavy, slown and are hard to remove"
     },
     "Test directory": {
       "level": "error",
@@ -147,7 +150,8 @@
           "globsAny": ["**/test*", "**/specs"],
           "nocase": true
         }
-      }
+      },
+      "policyInfo": "Tests creates a reliable repository"
     }
   }
 }
