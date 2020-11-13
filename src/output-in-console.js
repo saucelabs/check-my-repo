@@ -22,6 +22,7 @@ async function main() {
   const { data } = await octokit.repos.listForOrg({
     org: organization,
     type: access,
+    per_page: 100,
   })
 
   for (const d of data) {
@@ -29,21 +30,29 @@ async function main() {
     await git.clone(d.clone_url, tmpDir)
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
 
+    const posResults = repolinterConnect.results /* filter messages for what didn't passed */
+      .filter(r => r.lintResult && r.lintResult.passed)
+      .map(r => repolinter.runRuleset && r.ruleInfo.name)
+
+    const negResults = repolinterConnect.results /* filter messages for what didn't passed */
+      .filter(r => r.lintResult && !r.lintResult.passed)
+      .map(r => repolinter.runRuleset && r.ruleInfo.name)
+
     if (repolinterConnect.results.every(r => r.lintResult && r.lintResult.passed)) {
-      log(chalk`{blue Repository: ${d.name}}\n
-      greenBright Passed all checks 🥳`)
+      log(chalk`
+        {blue Repository: ${d.name}}
+        {greenBright Passed all checks 🥳}`)
     } else {
-      const negResults = repolinterConnect.results /* filter messages for what didn't passed */
-        .filter(r => r.lintResult && !r.lintResult.passed)
-        .map(r => r.lintResult.targets.map(p => p.pattern))
-
-      const posResults = repolinterConnect.results /* filter messages for what didn't passed */
-        .filter(r => r.lintResult && r.lintResult.passed)
-        .map(r => r.lintResult.targets.map(p => p.pattern)) /* global messages if all  passed */
-
-      log(chalk`{blue Repository: ${d.name}}\n
-        {greenBright Passed: ${posResults}}\n
-        {red Failled: ${negResults}\n}`)
+      log(chalk`{blue Repository: ${d.name}}`)
+      for (var i = 0; i < negResults.length; i++) {
+        log(chalk`
+        {red 🚨 ${negResults[i]}}`)
+      }
+      for (var i = 0; i < posResults.length; i++) {
+        log(chalk`
+        {greenBright ✅ ${posResults[i]}}`)
+      }
+      console.log('\n')
     }
   }
 }

@@ -4,35 +4,42 @@ title Automated OSS quality check
 (*) --> "Choose a repo to lint"
 
 if "Is your repo on GitHub?" then
-  -->[yes] "Request()"
-  --> "Search()"
+  -->[yes] Request(organization, team, repo)
+  --> CloneInTempDir()
+  --> Open Local Repository()
   else
-    -->[no] "Search local directory"
-    --> "Search()"
+    -->[no] Open Local Repository()
 endif
 
 if "Was your repo found?" then
-  -left->[yes] "Start.lint()"
-    --> [verify .md files] "Check.readme()"
-    --> "Check.codeOfConduct()"
-    --> "Check.contributionGuide()"
-    --> "Check.changelog()"
-    --> "Check.supportGuide()"
-    --> "Check.securityGuide()"
-    --> [verify other files] "Check.maintainers"
-    --> "Check.license()"
-    --> "Check.semVer()"
-    --> "Check.ifThereIsTestEnv()"
-    if "All files are checked" then
-      -->[yes, all verified](*)
-      else
-      -->[no, there are missing files] "AddToReport()"
-      --> "Create.gitHubIssue()"
-      --> "Exit()"
+  -left->[yes] Start.lint()
+    --> [verify .md files] Check.readme()
+    --> Check.codeOfConduct()
+    --> Check.contributionGuide()
+    --> Check.changelog()
+    --> Check.supportGuide()
+    --> Check.securityGuide()
+    --> [verify other files] Check.maintainers
+    --> Check.license()
+    --> Check.ifThereIsBinaries()
+    --> Check.ifThereIsTestEnv()
+    --> Check.semVer()
+
+    if "Check process finished" then
+      -->[yes, all passed] Passed outputs
+      --> console.log("All passed")
+      --> "Create report src/<organizaion>/
+          ddmmyy-hhmm-reponame.json"
+        else
+          -->[no, there are missing files] Failed outputs
+          --> console.log("All fails")
+          --> Create.gitHubIssue()
+          --> "Create report src/<organizaion>/
+              ddmmyy-hhmm-reponame.json"
+      --> Exit()
       -->(*)
-  endif
-else
-  -->[no] "Exit()"
-  -->(*)
+    endif
+  else
+    --> [no] Exit()
 endif
 @enduml

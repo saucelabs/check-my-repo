@@ -1,0 +1,176 @@
+{
+  "$schema": "https://raw.githubusercontent.com/todogroup/repolinter/master/rulesets/schema.json",
+  "version": 2,
+  "axioms": {
+    "linguist": "language",
+    "licensee": "license",
+    "packagers": "packager"
+  },
+  "rules": {
+    "README.md file": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["README*"],
+          "nocase": true
+        }
+      },
+      "fix": {
+        "type": "file-create",
+        "options": {
+          "file": "README.md",
+          "replace": true,
+          "text": { "url": "https://github.com/saucelabs/new-project/blob/main/README.md" }
+        }
+      },
+      "policyInfo": "README should always be up-to-date",
+      "policyUrl": "https://opensource.saucelabs.com/docs/"
+    },
+    "Code of Conduct": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": [
+            "{docs/,.github/,}CODEOFCONDUCT*",
+            "{docs/,.github/,}CODE-OF-CONDUCT*",
+            "{docs/,.github/,}CODE_OF_CONDUCT*"
+          ],
+          "nocase": true
+        }
+      },
+      "fix": {
+        "type": "file-create",
+        "options": {
+          "file": "CODE_OF_CONDUCT.md",
+          "replace": true,
+          "text": { "url": "https://github.com/saucelabs/new-project/blob/main/CODE_OF_CONDUCT.md" }
+        }
+      },
+      "policyInfo": "Code of conduct clarifies an organization's mission, values and principles",
+      "policyUrl": "https://opensource.saucelabs.com/docs/releasing/#prepare-your-repository"
+    },
+    "Contribution guidelines": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["{docs/,.github/,}CONTRIB*"],
+          "nocase": true
+        }
+      },
+      "fix": {
+        "type": "file-create",
+        "options": {
+          "file": "CONTRIBUTING.md",
+          "replace": true,
+          "text": { "url": "https://github.com/saucelabs/new-project/blob/main/CONTRIBUTING.md" }
+        }
+      },
+      "policyInfo": "Contribution file improves onboarding and increases the success of the projects",
+      "policyUrl": "https://opensource.saucelabs.com/docs/releasing/#prepare-your-repository"
+    },
+    "Changelog": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["CHANGELOG*"],
+          "nocase": true
+        }
+      },
+      "policyInfo": "A log of all notable changes made to a project"
+    },
+    "Support guidelines": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["{docs/,.github/,}SUPPORT*"],
+          "nocase": true
+        }
+      },
+      "policyInfo": "A guideline about ways to get help with your project"
+    },
+    "Security awareness": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["{docs/,.github/,}SECURITY.md"]
+        }
+      },
+      "fix": {
+        "type": "file-create",
+        "options": {
+          "file": "SECURITY.md",
+          "replace": true,
+          "text": { "url": "https://github.com/saucelabs/new-project/blob/main/SECURITY.md" }
+        }
+      },
+      "policyInfo": "Give people instructions for responsibly reporting security vulnerabilities in your project",
+      "policyUrl": "https://opensource.saucelabs.com/docs/releasing/#prepare-your-repository"
+    },
+    "Maintainers email": {
+      "level": "error",
+      "rule": {
+        "type": "file-contents",
+        "options": {
+          "globsAll": [
+            "MAINTAINERS*",
+            "CODE-OWNERS*",
+            "CODE_OWNERS*",
+            ".github/MAINTAINERS*",
+            ".github/CODEOWNERS*",
+            ".github/CODE_OWNERS*"
+          ],
+          "content": ".+@.+\\..+",
+          "flags": "i",
+          "human-readable-content": "email address"
+        }
+      }
+    },
+    "License": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["LICENSE*", "COPYING*"],
+          "nocase": true
+        }
+      },
+      "fix": {
+        "type": "file-create",
+        "options": {
+          "file": "LICENSE",
+          "replace": true,
+          "text": { "url": "https://github.com/saucelabs/new-project/blob/main/LICENSE" }
+        }
+      },
+      "policyInfo": "A repository must contain a permissive or weak copy-left license",
+      "policyUrl": "https://opensource.saucelabs.com/docs/license-guide/"
+    },
+    "Do not have binaries files": {
+      "level": "error",
+      "rule": {
+        "type": "file-type-exclusion",
+        "options": {
+          "type": ["**/*.exe", "**/*.dll", "!node_modules/**"]
+        }
+      },
+      "policyInfo": "Binaries makes your repo heavy, slown and are hard to remove"
+    },
+    "Test directory": {
+      "level": "error",
+      "rule": {
+        "type": "directory-existence",
+        "options": {
+          "globsAny": ["**/test*", "**/specs"],
+          "nocase": true
+        }
+      },
+      "policyInfo": "Tests creates a reliable repository"
+    }
+  }
+}
