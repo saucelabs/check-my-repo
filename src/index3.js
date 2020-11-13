@@ -24,20 +24,13 @@ async function main() {
   await git.clone(url, tmpDir)
   const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
 
-  // console.log(repolinterConnect.results)
-  // process.exit()
-  const negResults = repolinterConnect.results /* filter messages for what didn't passed */
-    .filter(r => r.lintResult && !r.lintResult.passed)
-    .map(r => r.lintResult.targets.map(p => p.pattern))
-
   const posResults = repolinterConnect.results /* filter messages for what didn't passed */
     .filter(r => r.lintResult && r.lintResult.passed)
-    .map(r => r.lintResult.targets.map(p => p.pattern)) /* global messages if all  passed */
+    .map(r => repolinter.runRuleset && r.ruleInfo.name)
 
-  console.log(negResults)
-  console.log(posResults)
-
-  process.exit()
+  const negResults = repolinterConnect.results /* filter messages for what didn't passed */
+    .filter(r => r.lintResult && !r.lintResult.passed)
+    .map(r => repolinter.runRuleset && r.ruleInfo.name)
 
   if (repolinterConnect.results.every(r => r.lintResult && r.lintResult.passed)) {
     log(chalk`
