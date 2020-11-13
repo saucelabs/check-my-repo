@@ -112,6 +112,25 @@
       "policyInfo": "Give people instructions for responsibly reporting security vulnerabilities in your project",
       "policyUrl": "https://opensource.saucelabs.com/docs/releasing/#prepare-your-repository"
     },
+    "Maintainers email": {
+      "level": "error",
+      "rule": {
+        "type": "file-contents",
+        "options": {
+          "globsAll": [
+            "MAINTAINERS*",
+            "CODE-OWNERS*",
+            "CODE_OWNERS*",
+            ".github/MAINTAINERS*",
+            ".github/CODEOWNERS*",
+            ".github/CODE_OWNERS*"
+          ],
+          "content": ".+@.+\\..+",
+          "flags": "i",
+          "human-readable-content": "email address"
+        }
+      }
+    },
     "License": {
       "level": "error",
       "rule": {
