@@ -37,9 +37,15 @@ async function main() {
         {blue Repository: new-projec repo model}
         {greenBright Passed all checks 🥳}`)
   } else {
-    log(chalk`{blue Repository: new-project model repo}\n
-        {greenBright Passed: ${posResults}}\n
-        {red Failled: ${negResults}\n}`)
+    log(chalk`{blue Repository: new-project model repo}`)
+    for (var i = 0; i < negResults.length; i++) {
+      log(chalk`
+        {red 🚨 ${negResults[i]}}`)
+    }
+    for (var i = 0; i < posResults.length; i++) {
+      log(chalk`
+        {greenBright ✅ ${posResults[i]}}`)
+    }
   }
 }
 
