@@ -7,7 +7,7 @@
     "packagers": "packager"
   },
   "rules": {
-    "readme-file-exists": {
+    "README.md file": {
       "level": "error",
       "rule": {
         "type": "file-existence",
@@ -27,7 +27,7 @@
       "policyInfo": "README should always be up-to-date",
       "policyUrl": "https://opensource.saucelabs.com/docs/"
     },
-    "code-of-conduct-file-exists": {
+    "Code of Conduct": {
       "level": "error",
       "rule": {
         "type": "file-existence",
@@ -51,7 +51,7 @@
       "policyInfo": "Code of conduct clarifies an organization's mission, values and principles",
       "policyUrl": "https://opensource.saucelabs.com/docs/releasing/#prepare-your-repository"
     },
-    "contributing-file-exists": {
+    "Contribution guidelines": {
       "level": "error",
       "rule": {
         "type": "file-existence",
@@ -71,7 +71,7 @@
       "policyInfo": "Contribution file improves onboarding and increases the success of the projects",
       "policyUrl": "https://opensource.saucelabs.com/docs/releasing/#prepare-your-repository"
     },
-    "changelog-file-exists": {
+    "Changelog": {
       "level": "error",
       "rule": {
         "type": "file-existence",
@@ -81,7 +81,7 @@
         }
       }
     },
-    "support-file-exists": {
+    "Support guidelines": {
       "level": "error",
       "rule": {
         "type": "file-existence",
@@ -91,7 +91,7 @@
         }
       }
     },
-    "security-file-exists": {
+    "Security awareness": {
       "level": "error",
       "rule": {
         "type": "file-existence",
@@ -110,7 +110,7 @@
       "policyInfo": "Give people instructions for responsibly reporting security vulnerabilities in your project",
       "policyUrl": "https://opensource.saucelabs.com/docs/releasing/#prepare-your-repository"
     },
-    "license-file-exists": {
+    "License": {
       "level": "error",
       "rule": {
         "type": "file-existence",
@@ -130,7 +130,7 @@
       "policyInfo": "A repository must contain a permissive or weak copy-left license",
       "policyUrl": "https://opensource.saucelabs.com/docs/license-guide/"
     },
-    "binaries-not-present": {
+    "Do not have binaries files": {
       "level": "error",
       "rule": {
         "type": "file-type-exclusion",
@@ -139,7 +139,7 @@
         }
       }
     },
-    "test-directory-exists": {
+    "Test directory": {
       "level": "error",
       "rule": {
         "type": "directory-existence",
