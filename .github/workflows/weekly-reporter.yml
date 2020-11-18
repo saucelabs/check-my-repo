@@ -8,8 +8,8 @@ name: Send report
   with:
     server_address: smtp.gmail.com
     server_port: 465
-    username: ${{secrets.MAIL_USERNAME}}
-    password: ${{secrets.MAIL_PASSWORD}}
+    username: ${{secrets.EMAIL}}
+    password: ${{secrets.EMAIL_PWD}}
     subject: Automated OSS Checker Report of the Week
   # Literal body:
   body: Weekly Sauce Labs Public repositories check
