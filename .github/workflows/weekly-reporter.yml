@@ -14,7 +14,7 @@ name: Send report
   # Literal body:
   body: All repositories from  ${{github.repository}} completed successfully!
   # Read file contents as body:
-    body: file://README.md
+    body: file://18nov2020.txt
       to: opensource@saucelabs.com
       from: OSPO Open Source Program Office # <user@example.com>
       # Optional content type (defaults to text/plain):
