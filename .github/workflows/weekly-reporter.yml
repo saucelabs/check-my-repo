@@ -16,8 +16,6 @@ name: Send report
   # Read file contents as body:
     body: file://18nov2020.txt
       to: opensource@saucelabs.com
-      from: OSPO Open Source Program Office # <user@example.com>
-      # Optional content type (defaults to text/plain):
-      content_type: text/html
-      # Optional attachments:
-      attachments: attachments.zip,git.diff,./src/output-in-console.js
+      from: opensourceprogramoffice@gmail.com
+      contentType: text/html
+      attachments: file://18nov2020.txt
