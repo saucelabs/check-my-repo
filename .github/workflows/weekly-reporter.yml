@@ -12,7 +12,7 @@ name: Send report
     password: ${{secrets.EMAIL_PWD}}
     subject: Weekly Sauce Labs Public repositories check
   # Literal body:
-  body: Weekly Sauce Labs Public repositories check
+  body: 'Hi OSPO Team 👋, this is your weekly 🩺 health report'
   # Read file contents as body:
     body: file://18nov2020.txt
       to: opensource@saucelabs.com
