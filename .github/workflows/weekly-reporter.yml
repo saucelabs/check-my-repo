@@ -1,8 +1,8 @@
 on:
   schedule:
     # UTC time using POSIX cron syntax
-    # *min *hour *day *month *day of the wee
-    - cron:  '* * * * 1'
+    # *min *hour *day *month *day of the week Sunday = 0
+    - cron:  '* * * * 4'
 name: Send report
   uses: dawidd6/action-send-mail@v2
   with:
