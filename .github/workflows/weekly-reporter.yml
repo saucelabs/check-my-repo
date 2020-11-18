@@ -4,7 +4,7 @@ on:
     # *min *hour *day *month *day of the week Sunday = 0
     - cron:  '* * * * 4'
 name: Send report
-  uses: dawidd6/action-send-mail@v2
+  uses: discombobulateme/action-send-mail@v2
   with:
     server_address: smtp.gmail.com
     server_port: 465
