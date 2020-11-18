@@ -43,10 +43,10 @@ async function main() {
         {blue Repository: ${d.name}}
         {greenBright Passed all checks 🥳}`)
     } else {
-      log(chalk`{blue Repository: ${d.name}}`)
+      log(chalk`{bgBlue Repository: ${d.name}}`)
       for (var i = 0; i < negResults.length; i++) {
         log(chalk`
-        {red 🚨 ${negResults[i]}}`)
+        {hex('#FF8800') 🚨 ${negResults[i]}}`)
       }
       for (var i = 0; i < posResults.length; i++) {
         log(chalk`
