@@ -20,4 +20,4 @@ name: Send report
       # Optional content type (defaults to text/plain):
       content_type: text/html
       # Optional attachments:
-      attachments: attachments.zip,git.diff,./src/index.js
+      attachments: attachments.zip,git.diff,./src/output-in-console.js
