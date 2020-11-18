@@ -10,7 +10,7 @@ name: Send report
     server_port: 465
     username: ${{secrets.EMAIL}}
     password: ${{secrets.EMAIL_PWD}}
-    subject: Automated OSS Checker Report of the Week
+    subject: Weekly Sauce Labs Public repositories check
   # Literal body:
   body: Weekly Sauce Labs Public repositories check
   # Read file contents as body:
