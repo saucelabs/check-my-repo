@@ -12,7 +12,7 @@ name: Send report
     password: ${{secrets.MAIL_PASSWORD}}
     subject: Automated OSS Checker Report of the Week
   # Literal body:
-  body: All repositories from  ${{github.repository}} completed successfully!
+  body: Weekly Sauce Labs Public repositories check
   # Read file contents as body:
     body: file://18nov2020.txt
       to: opensource@saucelabs.com
