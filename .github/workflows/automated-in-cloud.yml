@@ -1,0 +1,20 @@
+name: Automate in cloud
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: npm install
+      - name: Setup Node version
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Clone Repository
+        uses: actions/checkout@v2
+      - name: Lint repositories
+        run: src/index.js
+      - name: List created repositories
+        run: ls -l
