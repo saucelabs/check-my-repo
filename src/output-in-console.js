@@ -38,6 +38,22 @@ async function main() {
       .filter(r => r.lintResult && !r.lintResult.passed)
       .map(r => repolinter.runRuleset && r.ruleInfo.name)
 
+    const sumOfArrays = (...posResults) => {
+      var sum = []
+      merged.forEach(x => {
+        sum.push()
+      })
+      //once all items have been added to count, return count
+      console.log(sum)
+    }
+
+    process.exit()
+    console.log(`
+        Passed: ${posResults.length}
+        Failed: ${negResults.length}
+        Total repositories checked: ${data.length}
+      `)
+
     if (repolinterConnect.results.every(r => r.lintResult && r.lintResult.passed)) {
       log(chalk`
         {blue Repository: ${d.name}}
