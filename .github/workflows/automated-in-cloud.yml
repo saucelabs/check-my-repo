@@ -28,3 +28,4 @@ jobs:
         with: Lint reports
           name: reports
             path: reports/
+            retention-days: 7
