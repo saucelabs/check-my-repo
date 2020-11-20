@@ -20,8 +20,9 @@ jobs:
       # Which file to act upon
       - name: Lint repositories
         run: node src/index.js
-      # Save output files in a directory in GitHub Actions
-      - run: mkdir -p reports
+
+        # Save output files in a directory in GitHub Actions
+      # - run: mkdir -p reports
       - name: Create lint reports with JSON
         uses: actions/upload-artifact@v2
         with:
