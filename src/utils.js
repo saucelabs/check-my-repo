@@ -63,13 +63,15 @@ const printResults = function (data, results) {
 
 const createJsonFile = async function (repository, organization, repolinterConnect) {
   const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
+  const directory = path.resolve(__dirname, '..', 'reports', organization)
 
-  if (!fs.existsSync(`./${organization}`)) {
-    await fs.promises.mkdir(`./${organization}`)
+  if (!fs.existsSync(directory)) {
+    // console.log(`A directory is created at ${directory}`)
+    await fs.promises.mkdir(directory)
   }
 
   await fs.promises.writeFile(
-    path.resolve(`./${organization}`, `${date}-${repository}.json`),
+    path.resolve(directory, `${date}-${repository}.json`),
     JSON.stringify(JSON.parse(print), null, 2)
   )
 }
