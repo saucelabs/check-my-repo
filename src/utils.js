@@ -74,3 +74,4 @@ const createJsonFile = async function (repository, organization, repolinterConne
   )
 }
 
+module.exports = { createTempDirectory, printResults, createJsonFile }
