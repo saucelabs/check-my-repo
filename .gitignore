@@ -126,3 +126,6 @@ vendor/
 .bundle
 out
 .vscode/
+
+# ignore created directies
+/reports
