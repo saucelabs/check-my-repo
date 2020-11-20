@@ -23,7 +23,8 @@ jobs:
       # Save output files in a directory in GitHub Actions
       - run: mkdir -p path/to/artifact
       - run: echo hello > path/to/artifact/world.txt
-      - uses: actions/upload-artifact@v2
-          with:
-            name: automated-check-files
-            path: path/to/artifact/
+      - name:
+        uses: actions/upload-artifact@v2
+        with: Lint reports
+          name: reports
+            path: reports/
