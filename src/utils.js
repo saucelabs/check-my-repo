@@ -19,16 +19,17 @@ const createTempDirectory = project => {
 }
 
 /*
-// temporarily clone a git repo to lint
-exports.tempGitClone = async function () {
-  if (argv.git) {
-    tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'repolinter-'))
-    const result = await git.clone(argv.directory, tmpDir)
-    if (result) {
-      console.error(result)
-      process.exitCode = 1
-      rimraf(tmpDir, () => {})
-      return
+const deleteTempDir = function(){
+  exports.tempGitClone = async function () {
+    if (argv.git) {
+      tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'repolinter-'))
+      const result = await git.clone(argv.directory, tmpDir)
+      if (result) {
+        console.error(result)
+        process.exitCode = 1
+        rimraf(tmpDir, () => {})
+        return
+      }
     }
   }
 }
