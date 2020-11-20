@@ -1,23 +1,10 @@
-// Copyright 2020 Sauce Labs. All rights reserved
-// Licensed under the MIT License
-
-/* This file returns output in individual JSON files */
-
-const rainbowPenguin = require('rainbow-penguin')() /*lib for self.care while developing - delete when finish */
-
-const chalk = require('chalk')
-const log = console.log
-
 const { Octokit } = require('@octokit/rest') /* */
 const octokit = new Octokit() /*lib for GitHub API */
 const repolinter = require('repolinter') /*project which this is build upon */
 const git = require('simple-git/promise')() /*lib for GitHub API */
-const fs = require('fs')
-const path = require('path')
 
-const { createTempDirectory } = require('./utils')
+const { createTempDirectory, printResults, createJsonFile } = require('./utils')
 
-let date = new Date().toISOString().substring(0, 16) /*transforms Date() into shorter string*/
 let organization = 'saucelabs'
 let access = 'public'
 
@@ -32,16 +19,10 @@ async function main() {
     const tmpDir = await createTempDirectory(d.name)
     await git.clone(d.clone_url, tmpDir)
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
-    const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
 
-    if (!fs.existsSync(`./${organization}`)) {
-      await fs.promises.mkdir(`./${organization}`)
-    }
+    printResults(d, repolinterConnect.results)
 
-    await fs.promises.writeFile(
-      path.resolve(`./${organization}`, `${date}-${d.name}.json`),
-      JSON.stringify(JSON.parse(print), null, 2)
-    ) /*creates json file*/
+    await createJsonFile(d.name, organization, repolinterConnect)
   }
 }
 

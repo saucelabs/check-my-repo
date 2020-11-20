@@ -1,0 +1,35 @@
+name: Automate in cloud
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      # Add node
+      - name: Setup Node version
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      # Add a project to work on
+      - name: Clone Repository
+        uses: actions/checkout@v2
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Which file to act upon
+      - name: Lint repositories
+        run: node src/index.js
+
+      # Save output files in a directory in GitHub Actions
+      # - run: mkdir -p reports
+      - name: Create lint reports with JSON
+        uses: actions/upload-artifact@v2
+        with:
+          name: create-reports
+            path: reports/
+            retention-days: 7
