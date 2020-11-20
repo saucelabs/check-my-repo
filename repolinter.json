@@ -38,25 +38,6 @@
       },
       "policyInfo": "A log of all notable changes made to a project"
     },
-    "Security awareness": {
-      "level": "error",
-      "rule": {
-        "type": "file-existence",
-        "options": {
-          "globsAny": ["{docs/,.github/,}SECURITY.md"]
-        }
-      },
-      "fix": {
-        "type": "file-create",
-        "options": {
-          "file": "SECURITY.md",
-          "replace": true,
-          "text": { "url": "https://github.com/saucelabs/new-project/blob/main/SECURITY.md" }
-        }
-      },
-      "policyInfo": "Give people instructions for responsibly reporting security vulnerabilities in your project",
-      "policyUrl": "https://opensource.saucelabs.com/docs/releasing/#prepare-your-repository"
-    },
     "Maintainers email": {
       "level": "error",
       "rule": {
