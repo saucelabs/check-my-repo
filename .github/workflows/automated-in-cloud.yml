@@ -2,9 +2,9 @@ name: Automate in cloud
 
 # Minute [0,59] Hour [0,23] Day [1,31] Month [1,12] Week [0,6] 0=Sunday
 on:
-  push
+  push:
   schedule:
-      - cron: '0 0 * * *' # Once per day at midnight
+    - cron: '0 0 * * *'
 
 jobs:
   test:
