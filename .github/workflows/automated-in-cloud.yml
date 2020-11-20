@@ -22,9 +22,9 @@ jobs:
         run: node src/index.js
       # Save output files in a directory in GitHub Actions
       - run: mkdir -p reports
-      - name:
+      - name: Create lint reports with JSON
         uses: actions/upload-artifact@v2
-        with: Lint reports
+        with:
           name: create-reports
             path: reports/
             retention-days: 7
