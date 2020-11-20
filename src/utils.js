@@ -12,7 +12,7 @@ const repolinter = require('repolinter') /*project which this is build upon */
 const chalk = require('chalk')
 const log = console.log
 
-const date = new Date().toISOString().substring(0, 16) /*transforms Date() into shorter string*/
+const date = new Date().toISOString().substring(0, 13) /*transforms Date() into shorter string*/
 
 const createTempDirectory = project => {
   return fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${project}-`))
