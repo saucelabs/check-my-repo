@@ -77,4 +77,37 @@ const createJsonFile = async function (repository, organization, repolinterConne
   )
 }
 
+const filterDashboard = function () {
+  // filter all resuls by r.ruleInfo.name
+  // sum all filtered by type
+  // const filtered = posResults.forEach(obj => {
+  //   function sumRules(type) {
+  //     switch (type) {
+  //       case 'README':
+  //         let readmes = 0
+  //         for (let i = 0; i < posResults.length; i++) {
+  //           sum += posResults[i]
+  //         }
+  //         // case '':
+  //         // case 's':
+  //         // case 'e':
+  //         break
+  //       default:
+  //         throw 'Cannot find this rule 🤷🏻‍♀️ '
+  //     }
+  //   }
+  //   console.log(filtered)
+  //   process.exit()
+  // if (posResults.match(/^[README]$/) {
+  //   let readmes = 0
+  //   readmes++
+  // }
+  // })
+  // console.log(`
+  // Passed: ${posResults.length}
+  // Failed: ${negResults.length}
+  // Total repositories checked: ${data.length}
+  // `)
+}
+
 module.exports = { createTempDirectory, printResults, createJsonFile }
