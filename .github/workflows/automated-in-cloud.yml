@@ -1,6 +1,10 @@
 name: Automate in cloud
 
-on: [push]
+on:
+  push |
+  schedule:
+    # Minute [0,59] Hour [0,23] Day [1,31] Month [1,12] Week [0,6] 0=Sunday
+    - cron:  '* * * * 2'
 
 jobs:
   test:
@@ -25,7 +29,6 @@ jobs:
         run: node src/index.js
 
       # Save output files in a directory in GitHub Actions
-      # - run: mkdir -p reports
       - name: Create lint reports with JSON
         uses: actions/upload-artifact@v2
         with:
