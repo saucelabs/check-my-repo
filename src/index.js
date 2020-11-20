@@ -5,8 +5,8 @@ const git = require('simple-git/promise')() /*lib for GitHub API */
 
 const { createTempDirectory, printResults, createJsonFile } = require('./utils')
 
-let organization = 'saucelabs'
-let access = 'public'
+const organization = process.argv[2] || 'saucelabs'
+const access = 'public'
 
 async function main() {
   const { data } = await octokit.repos.listForOrg({
