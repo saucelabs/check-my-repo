@@ -15,6 +15,6 @@ jobs:
       - name: Clone Repository
         uses: actions/checkout@v2
       - name: Lint repositories
-        run: src/index.js
+        run: node src/index.js
       - name: List created repositories
         run: ls -l
