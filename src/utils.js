@@ -67,7 +67,7 @@ const createJsonFile = async function (repository, organization, repolinterConne
 
   if (!fs.existsSync(directory)) {
     console.log(`A directory is created at ${directory}`)
-    await fs.promises.mkdir(directory)
+    await fs.promises.mkdir(directory, { recursive: true })
   }
 
   await fs.promises.writeFile(
