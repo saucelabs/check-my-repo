@@ -61,3 +61,16 @@ const printResults = function (data, results) {
   }
 }
 
+const createJsonFile = async function (repository, organization, repolinterConnect) {
+  const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
+
+  if (!fs.existsSync(`./${organization}`)) {
+    await fs.promises.mkdir(`./${organization}`)
+  }
+
+  await fs.promises.writeFile(
+    path.resolve(`./${organization}`, `${date}-${repository}.json`),
+    JSON.stringify(JSON.parse(print), null, 2)
+  )
+}
+
