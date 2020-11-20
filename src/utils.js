@@ -49,11 +49,11 @@ const printResults = function (data, results) {
         {greenBright Passed all checks 🥳}`)
   } else {
     log(chalk`{bgBlue Repository: ${data.name}}`)
-    for (var i = 0; i < negResults.length; i++) {
+    for (let i = 0; i < negResults.length; i++) {
       log(chalk`
         {hex('#FF8800') 🚨 ${negResults[i]}}`)
     }
-    for (var i = 0; i < posResults.length; i++) {
+    for (let i = 0; i < posResults.length; i++) {
       log(chalk`
         {greenBright ✅ ${posResults[i]}}`)
     }
