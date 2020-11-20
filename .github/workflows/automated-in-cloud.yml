@@ -1,10 +1,10 @@
 name: Automate in cloud
 
 on:
-  push,
+  [push,
   schedule:
     # Minute [0,59] Hour [0,23] Day [1,31] Month [1,12] Week [0,6] 0=Sunday
-    - cron:  '* * * * 2'
+    - cron:  '* * * * 2']
 
 jobs:
   test:
