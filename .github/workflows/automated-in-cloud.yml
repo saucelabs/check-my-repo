@@ -23,5 +23,5 @@ jobs:
       # Save output files in a directory in GitHub Actions
       - uses: actions/upload-artifact@v2
           with:
-            name: my-artifact
-            path: path/to/artifact/
+            name: automated-check-files
+            path: /home/runner/work/automated-oss-quality-check/automated-oss-quality-check/
