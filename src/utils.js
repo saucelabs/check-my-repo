@@ -12,7 +12,7 @@ const repolinter = require('repolinter') /*project which this is build upon */
 const chalk = require('chalk')
 const log = console.log
 
-const date = new Date().toISOString().substring(0, 13) /*transforms Date() into shorter string*/
+const formatedDate = new Date().toISOString().substring(0, 13) /*transforms Date() into shorter string*/
 
 const createTempDirectory = project => {
   return fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${project}-`))
@@ -72,7 +72,7 @@ const createJsonFile = async function (repository, organization, repolinterConne
   }
 
   await fs.promises.writeFile(
-    path.resolve(directory, `${date}-${repository}.json`),
+    path.resolve(directory, `${formatedDate}-${repository}.json`),
     JSON.stringify(JSON.parse(print), null, 2)
   )
 }
@@ -110,4 +110,4 @@ const filterDashboard = function () {
   // `)
 }
 
-module.exports = { createTempDirectory, printResults, createJsonFile, date }
+module.exports = { createTempDirectory, printResults, createJsonFile, formatedDate }
