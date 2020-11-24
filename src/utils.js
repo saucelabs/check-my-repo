@@ -110,4 +110,4 @@ const filterDashboard = function () {
   // `)
 }
 
-module.exports = { createTempDirectory, printResults, createJsonFile }
+module.exports = { createTempDirectory, printResults, createJsonFile, date }
