@@ -1,4 +1,6 @@
 const { createTempDirectory, printResults, formatedDate } = require('../src/utils')
+
+const results = require('../src/__mocks__/results')
 const fs = require('fs')
 jest.mock('fs')
 
@@ -13,11 +15,20 @@ describe('filtering data', () => {
   })
 })
 
-it('should print a result nicely', () => {
-  expect(printResults()).toBe(posResults, negResults)
-})
+describe('utils functions test', () => {
+  it("should create a new directory if one doesn't already exist", () => {
+    // set up existsSync to meet the `if` condition
+    fs.existsSync.mockReturnValue(false)
+    // const mkdtemp = jest.spyOn(createTempDirectory(), 'fs.mkdtemp')
+    // createTempDirectory().then(path => {
+    //   expect(fs.promises.mkdtemp).toHaveBeenCalled()
+    // })
+    createTempDirectory('test-path')
+    expect(fs.promises.mkdtemp).toHaveBeenCalled()
+  })
 
-it('should create new formated date', () => {
-  jest.spyOn(global, 'Date').mockImplementationOnce(() => new Date('2019-05-14T11:01:58.135Z'))
-  expect(formatedDate().toEqual(new Date('2019-05-14T11')))
+  it('should create new formated date', () => {
+    jest.spyOn(global, 'Date').mockImplementationOnce(() => new Date('2019-05-14T11:01:58.135Z'))
+    expect(formatedDate).toEqual('2019-05-14T11')
+  })
 })
