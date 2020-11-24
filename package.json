@@ -4,7 +4,7 @@
   "description": "tool to automatically check our repositories health and quality",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll"
+    "test": "jest --coverage --watchAll"
   },
   "repository": {
     "type": "git",
