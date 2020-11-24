@@ -1,10 +1,38 @@
-const posResults = () => {
-  return Promise.resolve(['Rule1', 'Rule2'])
-}
+const results = [
+  {
+    repository: '1',
+    rules: {
+      rule1: {
+        name: 'Rule1',
+        status: 'passed',
+      },
+      rule2: {
+        name: 'Rule2',
+        status: 'failed',
+      },
+      rule3: {
+        name: 'Rule3',
+        status: 'failed',
+      },
+    },
+  },
+  {
+    repository: '2',
+    rules: {
+      rule4: {
+        name: 'Rule4',
+        status: 'failed',
+      },
+      rule5: {
+        name: 'Rule5',
+        status: 'passed',
+      },
+      rule6: {
+        name: 'Rule6',
+        status: 'passed',
+      },
+    },
+  },
+]
 
-const negResults = () => {
-  return Promise.resolve(['Rule3', 'Rule4'])
-}
-
-exports.posResults = posResults
-exports.negResults = negResults
+exports.results = results
