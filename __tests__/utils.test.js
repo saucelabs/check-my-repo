@@ -15,7 +15,6 @@ describe('filtering data', () => {
     expect(posResults).toEqual(expect.arrayContaining([expect.objectContaining({ status: 'passed' })]))
   })
 
-    expect(posResults).toEqual(['Rule1', 'Rule5', 'Rule6'])
   })
 })
 
