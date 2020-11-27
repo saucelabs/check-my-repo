@@ -1,7 +1,7 @@
 const { createTempDirectory, printResults, formatedDate } = require('../src/utils')
 
-const results = require('../src/__mocks__/results')
 const fs = require('fs')
+const { results, data } = require('../src/__mocks__/results')
 jest.mock('fs')
 
 // using TDD to verify if real function is well written
