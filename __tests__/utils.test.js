@@ -1,10 +1,11 @@
-const { createTempDirectory, printResults, formatedDate } = require('../src/utils')
+const { createTempDirectory, formatedDate, printResults } = require('../src/utils')
 
 const fs = require('fs')
 const { results, data } = require('../src/__mocks__/results')
 jest.mock('fs')
 
-// using TDD to verify if real function is well written
+jest.mock('../src')
+
 describe('filtering data', () => {
   it('should filter positive results', () => {
     const posResults = Object.values(results)
