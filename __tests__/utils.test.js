@@ -32,8 +32,9 @@ describe('creating an org directory when do not exists', () => {
   })
 })
 
-  it('should create new formated date', () => {
-    jest.spyOn(global, 'Date').mockImplementationOnce(() => new Date('2019-05-14T11:01:58.135Z'))
+describe('returning a new Date as a formated string', () => {
+  it('should return a formated date', () => {
+    jest.spyOn(formatedDate, 'Date').mockImplementationOnce(() => new Date('2019-05-14T11:01:58.135Z').valueOf())
     expect(formatedDate).toEqual('2019-05-14T11')
   })
 })
