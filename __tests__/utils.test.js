@@ -7,10 +7,13 @@ jest.mock('fs')
 jest.mock('../src')
 
 describe('filtering data', () => {
-  it('should filter positive results', () => {
-    const posResults = Object.values(results)
-      .filter(r => r.status == 'passed')
-      .map(r => r.rule.name)
+  it('should filter passed results', () => {
+    printResults(data, results)
+    const posResults = results /* filter messages for what didn't passed */
+      .filter(r => r.rules && r.rules.status)
+      .map(r => results.repository && r.repository)
+    expect(posResults).toEqual(expect.arrayContaining([expect.objectContaining({ status: 'passed' })]))
+  })
 
     expect(posResults).toEqual(['Rule1', 'Rule5', 'Rule6'])
   })
