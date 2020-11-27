@@ -15,6 +15,12 @@ describe('filtering data', () => {
     expect(posResults).toEqual(expect.arrayContaining([expect.objectContaining({ status: 'passed' })]))
   })
 
+  it('should filter failed results', () => {
+    printResults(data, results)
+    const negResults = results /* filter messages for what didn't passed */
+      .filter(r => r.rules && r.rules.status.failed)
+      .map(r => results.repository && r.repository.name)
+    expect(negResults).toEqual(expect.arrayContaining([expect.objectContaining({ status: 'failed' })]))
   })
 })
 
