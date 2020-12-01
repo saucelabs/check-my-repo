@@ -58,7 +58,7 @@ const printResults = function (data, results) {
       log(chalk`
         {greenBright ✅ ${posResults[i]}}`)
     }
-    console.log('\n')
+    log('\n')
   }
 }
 
