@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should filter passed results 1`] = `
+Array [
+  Array [
+    "{bgBlue Repository: ,} repository",
+  ],
+  Array [
+    "
+        {hex('#FF8800') 🚨 ,} failing-repo",
+  ],
+  Array [
+    "
+        {greenBright ✅ ,} passed-repo",
+  ],
+  Array [
+    "
+",
+  ],
+]
+`;
