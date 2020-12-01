@@ -18,6 +18,7 @@ async function main() {
   for (const d of data) {
     const tmpDir = await createTempDirectory(d.name)
     await git.clone(d.clone_url, tmpDir)
+    // await git.clone('https://github.com/saucelabs/new-project.git', tmpDir) /* to debug with 1 model repo */
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
 
     printResults(d, repolinterConnect.results)
