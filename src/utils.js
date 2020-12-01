@@ -34,7 +34,7 @@ const deleteTempDir = function(){
 }
 */
 
-const printResults = function (data, results) {
+const printResults = function (data, results, log = console.log) {
   const posResults = results /* filter messages for what didn't passed */
     .filter(r => r.lintResult && r.lintResult.passed)
     .map(r => repolinter.runRuleset && r.ruleInfo.name)
