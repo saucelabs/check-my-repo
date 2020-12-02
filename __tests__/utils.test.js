@@ -20,3 +20,15 @@ test('should return global all passed when there is no fail', () => {
 
   expect(log.mock.calls).toMatchSnapshot()
 })
+
+test('should create organization directory, if it does not exists', () => {
+  const repository = 'repository'
+  const organization = 'organization'
+  const directory = 'test-path'
+  // if file does not exists
+  jest.mock('fs').mockReturnValue(Promise.resolve(directory), false)
+  // call the function to test
+  createJsonFile(repository, organization, results)
+  expect(fs.promises.mkdir).toHaveBeenCalled()
+})
+
