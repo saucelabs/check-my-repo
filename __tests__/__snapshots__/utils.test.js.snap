@@ -19,3 +19,13 @@ Array [
   ],
 ]
 `;
+
+exports[`should return global all passed when there is no fail 1`] = `
+Array [
+  Array [
+    "
+        {blue Repository: ,}
+        {greenBright Passed all checks 🥳} repository",
+  ],
+]
+`;
