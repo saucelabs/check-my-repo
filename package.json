@@ -4,7 +4,8 @@
   "description": "tool to automatically check our repositories health and quality",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --watchAll"
+    "test": "jest --coverage",
+    "test-watch": "jest --coverage --watchAll"
   },
   "jest": {
     "testPathIgnorePatterns": ["__tests__/__fixtures__", "__tests__/__mocks__", "__tests__/__snapshots__"]
