@@ -6,6 +6,9 @@
   "scripts": {
     "test": "jest --coverage --watchAll"
   },
+  "jest": {
+    "testPathIgnorePatterns": ["__tests__/__fixtures__", "__tests__/__mocks__", "__tests__/__snapshots__"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/saucelabs/automated-oss-quality-check.git"
