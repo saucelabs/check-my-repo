@@ -32,3 +32,13 @@ test('should create organization directory, if it does not exists', () => {
   expect(fs.promises.mkdir).toHaveBeenCalled()
 })
 
+test('should not create an organization directory if already exists', () => {
+  const repository = 'repository'
+  const organization = 'organization'
+  const directory = 'test-path'
+  // if file does not exists
+  fs.existsSync.mockReturnValue(true)
+  // call the function to test
+  createJsonFile(repository, organization, results)
+  expect(fs.promises.mkdir).not.toHaveBeenCalled()
+})
