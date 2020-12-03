@@ -30,6 +30,7 @@ test('should create organization directory, if it does not exists', async () => 
   // call the function to test
   await createJsonFile(repository, organization, results)
   expect(fs.promises.mkdir).toHaveBeenCalled()
+  expect(fs.promises.writeFile).toHaveBeenCalledTimes(1)
 })
 
 test('should not create an organization directory if already exists', () => {
