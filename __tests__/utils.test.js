@@ -42,4 +42,9 @@ test('should not create an organization directory if already exists', () => {
   // call the function to test
   createJsonFile(repository, organization, results)
   expect(fs.promises.mkdir).not.toHaveBeenCalled()
+
+// clear the mocks
+afterEach(() => {
+  fs.promises.mkdir.mockClear()
+  fs.promises.writeFile.mockClear()
 })
