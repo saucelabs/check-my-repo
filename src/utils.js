@@ -5,17 +5,12 @@ const path = require('path')
 // const git = require('simple-git/promise')() /*lib for GitHub API */
 /** @type {any} */
 const fs = require('fs')
-const os = require('os')
 
 const repolinter = require('repolinter') /*project which this is build upon */
 
 const chalk = require('chalk')
 
 const formatedDate = new Date().toISOString().substring(0, 13) /*transforms Date() into shorter string*/
-
-const createTempDirectory = project => {
-  return fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${project}-`))
-}
 
 /*
 const deleteTempDir = function(){
@@ -109,4 +104,4 @@ const filterDashboard = function () {
   // `)
 }
 
-module.exports = { createTempDirectory, printResults, createJsonFile, formatedDate }
+module.exports = { printResults, createJsonFile, formatedDate }
