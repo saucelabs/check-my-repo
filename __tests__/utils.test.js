@@ -4,6 +4,7 @@ const resultsPassed = require('./__fixtures__/results-passed')
 
 const fs = require('fs')
 jest.mock('fs')
+fs.promises = { mkdir: jest.fn(), writeFile: jest.fn() }
 
 test('should filter passed results', () => {
   const data = { name: 'repository' }
