@@ -33,14 +33,14 @@ test('should create organization directory, if it does not exists', async () => 
   expect(fs.promises.writeFile).toHaveBeenCalledTimes(1)
 })
 
-test('should not create an organization directory if already exists', () => {
+test('should create organization directory, if it does not exists', async () => {
   const repository = 'repository'
   const organization = 'organization'
   const directory = 'test-path'
   // if file does not exists
   fs.existsSync.mockReturnValue(true)
   // call the function to test
-  createJsonFile(repository, organization, results)
+  await createJsonFile(repository, organization, results)
   expect(fs.promises.mkdir).not.toHaveBeenCalled()
 
 // clear the mocks
