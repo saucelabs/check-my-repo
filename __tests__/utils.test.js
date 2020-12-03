@@ -36,8 +36,7 @@ test('should create organization directory, if it does not exists', async () => 
 test('should create organization directory, if it does not exists', async () => {
   const repository = 'repository'
   const organization = 'organization'
-  const directory = 'test-path'
-  // if file does not exists
+  // if directory exists
   fs.existsSync.mockReturnValue(true)
   // call the function to test
   await createJsonFile(repository, organization, results)
