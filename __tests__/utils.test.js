@@ -25,9 +25,6 @@ test('should return global all passed when there is no fail', () => {
 test('should create organization directory, if it does not exists', async () => {
   const repository = 'repository'
   const organization = 'organization'
-  const directory = 'test-path'
-  // if file does not exists
-  jest.mock('fs').mockReturnValue(Promise.resolve(directory), false)
   // call the function to test
   await createJsonFile(repository, organization, results)
   expect(fs.promises.mkdir).toHaveBeenCalled()
