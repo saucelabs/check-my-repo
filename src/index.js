@@ -25,6 +25,8 @@ async function main() {
     // await git.clone('https://github.com/saucelabs/new-project.git', tmpDir) /* to debug with 1 model repo */
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
 
+    console.log(hasChangeLog)
+
     printResults(d, repolinterConnect.results)
 
     await createJsonFile(d.name, organization, repolinterConnect)
