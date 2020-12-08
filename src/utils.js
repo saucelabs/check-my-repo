@@ -120,4 +120,4 @@ const filterDashboard = function () {
   // `)
 }
 
-module.exports = { printResults, createJsonFile, formatedDate }
+module.exports = { printResults, createJsonFile, formatedDate, validateChangeLog }
