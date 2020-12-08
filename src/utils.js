@@ -31,6 +31,7 @@ const deleteTempDir = function(){
 }
 */
 
+/* Separate negative and positive results and prints nicely in terminal */
 const printResults = function (data, results, log = console.log) {
   const posResults = results /* filter messages for what didn't passed */
     .filter(r => r.lintResult && r.lintResult.passed)
@@ -58,6 +59,7 @@ const printResults = function (data, results, log = console.log) {
   }
 }
 
+/* Creates a JSON file inside a folder with organization name */
 const createJsonFile = async function (repository, organization, repolinterConnect) {
   const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
   const directory = path.resolve(__dirname, '..', 'reports', organization)
@@ -73,6 +75,7 @@ const createJsonFile = async function (repository, organization, repolinterConne
   )
 }
 
+/* Checks if Changelog does not exist, if not, verify if releases exist */
 const filterDashboard = function () {
   // filter all resuls by r.ruleInfo.name
   // sum all filtered by type
