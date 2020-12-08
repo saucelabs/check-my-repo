@@ -35,7 +35,7 @@ async function main() {
   }
 }
 
-// allows to be executed when not used as an imported file
+/* allows to be executed when not used as an imported file */
 if (require.main === module) {
   main().then(
     () => console.log('Validation successful!'),
