@@ -25,6 +25,8 @@ async function main() {
     // await git.clone('https://github.com/saucelabs/new-project.git', tmpDir) /* to debug with 1 model repo */
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
 
+    /* Validates if Changelog rule passed, of not, search for releases */
+    const hasChangeLog = await validateChangeLog(repolinterConnect.results, organization, d.name)
     console.log(hasChangeLog)
 
     printResults(d, repolinterConnect.results)
