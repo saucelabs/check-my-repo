@@ -89,7 +89,7 @@ const validateChangeLog = async function (results, organization, repository) {
     repo: repository,
     per_page: 100,
   })
-
+  /* If releases are found, update repolinter result in Changelog rule, to true*/
   const hasReleases = !(releases.data === undefined || releases.data.length === 0)
   if (hasReleases) {
     /* Objects! */
