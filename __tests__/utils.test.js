@@ -1,6 +1,7 @@
 const { printResults, createJsonFile, validateChangeLog } = require('../src/utils')
 const results = require('./__fixtures__/results')
 const resultsPassed = require('./__fixtures__/results-passed')
+const releases = require('./__fixtures__/releases')
 
 const fs = require('fs')
 jest.mock('fs')
