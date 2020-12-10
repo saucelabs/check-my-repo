@@ -77,6 +77,8 @@ const createJsonFile = async function (repository, organization, repolinterConne
 
 /* Checks if Changelog does not exist, if not, verify if releases exist */
 const validateChangeLog = async function (results, organization, repository) {
+  /* search if the rule exists */
+  const changelogResult = results.find(item => item.ruleInfo.name === 'Changelog')
   }
 }
 
