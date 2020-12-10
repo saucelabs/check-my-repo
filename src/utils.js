@@ -12,8 +12,6 @@ const repolinter = require('repolinter') /*project which this is build upon */
 
 const chalk = require('chalk')
 
-const checkReleases = require('./releases')
-
 const formatedDate = new Date().toISOString().substring(0, 13) /*transforms Date() into shorter string*/
 
 /*
