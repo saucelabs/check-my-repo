@@ -79,6 +79,10 @@ const createJsonFile = async function (repository, organization, repolinterConne
 const validateChangeLog = async function (results, organization, repository) {
   /* search if the rule exists */
   const changelogResult = results.find(item => item.ruleInfo.name === 'Changelog')
+  /* if no Changelog rule exists, continue */
+  if (!changelogResult || changelogResult.lintResult.passed) {
+    return
+  }
   }
 }
 
