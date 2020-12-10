@@ -83,6 +83,14 @@ const validateChangeLog = async function (results, organization, repository) {
   if (!changelogResult || changelogResult.lintResult.passed) {
     return
   }
+  /* if there is a changelog rule which result fails, update changelog results */
+  /* verify if there are releases */
+  const releases = await octokit.repos.listReleases({
+    owner: organization,
+    repo: repository,
+    per_page: 100,
+  })
+
   }
 }
 
