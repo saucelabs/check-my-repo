@@ -77,13 +77,6 @@ const createJsonFile = async function (repository, organization, repolinterConne
 
 /* Checks if Changelog does not exist, if not, verify if releases exist */
 const validateChangeLog = async function (results, organization, repository) {
-  const hasChangelog = results.filter(item => item.ruleInfo.name === 'Changelog')[0].lintResult.passed
-  /* if Changelog exists, stop verification */
-  if (hasChangelog) {
-    return true
-  } else {
-    const hasReleases = await checkReleases(organization, repository)
-    return hasReleases
   }
 }
 
