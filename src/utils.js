@@ -91,6 +91,10 @@ const validateChangeLog = async function (results, organization, repository) {
     per_page: 100,
   })
 
+  const hasReleases = !(releases.data === undefined || releases.data.length === 0)
+  if (hasReleases) {
+    /* Objects! */
+    changelogResult.lintResult.passed = true
   }
 }
 
