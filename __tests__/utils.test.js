@@ -7,6 +7,9 @@ const fs = require('fs')
 jest.mock('fs')
 fs.promises = { mkdir: jest.fn(), writeFile: jest.fn() }
 
+const repository = 'repository'
+const organization = 'organization'
+
 test('should filter passed results', () => {
   const data = { name: 'repository' }
   const log = jest.fn()
@@ -24,8 +27,6 @@ test('should return global all passed when there is no fail', () => {
 })
 
 test('should create organization directory, if it does not exists', async () => {
-  const repository = 'repository'
-  const organization = 'organization'
   // if directory does not exists
   fs.existsSync.mockReturnValue(false)
   // call the function to test
@@ -35,8 +36,6 @@ test('should create organization directory, if it does not exists', async () => 
 })
 
 test('should create organization directory, if it does not exists', async () => {
-  const repository = 'repository'
-  const organization = 'organization'
   // if directory exists
   fs.existsSync.mockReturnValue(true)
   // call the function to test
