@@ -44,6 +44,14 @@ test('should not create organization directory, if it exists', async () => {
   expect(fs.promises.writeFile).toHaveBeenCalledTimes(1)
 })
 
+test('should check if releases exists, when chengelog rule fails', async () => {
+  await validateChangeLog(results, organization, repository)
+  const changelogResult = false
+  const hasReleases = results.ruleInfo === 'failing-repo'
+
+  expect(hasReleases).toBe(true)
+})
+
 // clear the mocks
 afterEach(() => {
   fs.promises.mkdir.mockClear()
