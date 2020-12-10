@@ -42,9 +42,8 @@ const printResults = function (data, results, log = console.log) {
     .map(r => repolinter.runRuleset && r.ruleInfo.name)
 
   if (results.every(r => r.lintResult && r.lintResult.passed)) {
-    log(chalk`
-        {blue Repository: ${data.name}}
-        {greenBright Passed all checks 🥳}`)
+    log(chalk`{bgBlue Repository: ${data.name}\n}
+      {greenBright Passed all checks 🥳 \n}`)
   } else {
     log(chalk`{bgBlue Repository: ${data.name}}`)
     for (let i = 0; i < negResults.length; i++) {
