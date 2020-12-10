@@ -35,7 +35,7 @@ test('should create organization directory, if it does not exists', async () => 
   expect(fs.promises.writeFile).toHaveBeenCalledTimes(1)
 })
 
-test('should create organization directory, if it does not exists', async () => {
+test('should not create organization directory, if it exists', async () => {
   // if directory exists
   fs.existsSync.mockReturnValue(true)
   // call the function to test
