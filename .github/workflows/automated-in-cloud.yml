@@ -13,7 +13,9 @@ jobs:
       - name: Setup Node version
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: '12'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Add a project to work on
       - name: Clone Repository
