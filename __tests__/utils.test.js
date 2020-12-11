@@ -75,6 +75,9 @@ test('should not change changelog rule fails, if releases also do not exists', a
   expect(failedResults).toMatchObject([{ lintResult: { passed: false }, ruleInfo: { name: 'Changelog' } }])
 })
 
+test('should stop if rule does not exists', async () => {
+  await validateChangeLog(results, organization, 'repository without releases')
+  expect(createdInstances[0].repos.listReleases).not.toHaveBeenCalled()
 })
 
 /* Teardown: clear the mocks and results to avoid false results */
