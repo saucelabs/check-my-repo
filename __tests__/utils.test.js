@@ -46,9 +46,8 @@ test('should not create organization directory, if it exists', async () => {
 })
 
 test('should check if releases exists, when chengelog rule fails', async () => {
-  await validateChangeLog(results, organization, repository)
-  const changelogResult = false
-  const hasReleases = results.ruleInfo === 'failing-repo'
+  // const changelogResult = false
+  await validateChangeLog(resultsFailed, organization, repository)
 
   // expect(resultsFailed).toHaveProperty(resultsFailed.lintResults.passed, true)
   expect(resultsFailed).toMatchObject([{ lintResult: { passed: true }, ruleInfo: { name: 'failing-repo' } }])
