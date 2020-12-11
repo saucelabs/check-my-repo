@@ -36,9 +36,9 @@ test('should create organization directory, if it does not exists', async () => 
 })
 
 test('should not create organization directory, if it exists', async () => {
-  // if directory exists
+  /* if directory exists */
   fs.existsSync.mockReturnValue(true)
-  // call the function to test
+  /* call the function to test */
   await createJsonFile(repository, organization, results)
   expect(fs.promises.mkdir).not.toHaveBeenCalled()
   expect(fs.promises.writeFile).toHaveBeenCalledTimes(1)
@@ -52,7 +52,7 @@ test('should check if releases exists, when chengelog rule fails', async () => {
   expect(resultsFailed).toMatchObject([{ lintResult: { passed: true }, ruleInfo: { name: 'failing-repo' } }])
 })
 
-// clear the mocks
+/* Teardown: clear the mocks and results to avoid false results */
 afterEach(() => {
   fs.promises.mkdir.mockClear()
   fs.promises.writeFile.mockClear()
