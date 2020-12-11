@@ -45,6 +45,7 @@ test('should not create organization directory, if it exists', async () => {
 })
 
 test('should check if releases exists, when chengelog rule fails', async () => {
+  /* Instead of creating a fixture, having the result inside the test avoids the results to be changed by other tests */
   const failedResults = [
     {
       lintResult: {
