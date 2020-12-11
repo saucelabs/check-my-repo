@@ -1,6 +1,6 @@
 // based on repolinter source code https://github.com/todogroup/repolinter/blob/master/bin/repolinter.js
 const { Octokit } = require('@octokit/rest') /* */
-const octokit = new Octokit({ auth: process.env.PERSONAL_TOKEN }) /*lib for GitHub API */
+const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN }) /*lib for GitHub API */
 
 const path = require('path')
 // const rimraf = require('rimraf')
