@@ -50,7 +50,8 @@ test('should check if releases exists, when chengelog rule fails', async () => {
   const changelogResult = false
   const hasReleases = results.ruleInfo === 'failing-repo'
 
-  expect(hasReleases).toBe(true)
+  // expect(resultsFailed).toHaveProperty(resultsFailed.lintResults.passed, true)
+  expect(resultsFailed).toMatchObject([{ lintResult: { passed: true }, ruleInfo: { name: 'failing-repo' } }])
 })
 
 // clear the mocks
