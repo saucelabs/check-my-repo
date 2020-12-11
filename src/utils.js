@@ -78,7 +78,7 @@ const createJsonFile = async function (repository, organization, repolinterConne
 const validateChangeLog = async function (results, organization, repository) {
   /* search if the rule exists */
   const changelogResult = results.find(item => item.ruleInfo.name === 'Changelog')
-  /* if no Changelog rule exists, continue */
+  /* if no Changelog rule exists, do not continue */
   if (!changelogResult || changelogResult.lintResult.passed) {
     return
   }
@@ -95,39 +95,6 @@ const validateChangeLog = async function (results, organization, repository) {
     /* Objects! */
     changelogResult.lintResult.passed = true
   }
-}
-
-const filterDashboard = function () {
-  // filter all resuls by r.ruleInfo.name
-  // sum all filtered by type
-  // const filtered = posResults.forEach(obj => {
-  //   function sumRules(type) {
-  //     switch (type) {
-  //       case 'README':
-  //         let readmes = 0
-  //         for (let i = 0; i < posResults.length; i++) {
-  //           sum += posResults[i]
-  //         }
-  //         // case '':
-  //         // case 's':
-  //         // case 'e':
-  //         break
-  //       default:
-  //         throw 'Cannot find this rule 🤷🏻‍♀️ '
-  //     }
-  //   }
-  //   console.log(filtered)
-  //   process.exit()
-  // if (posResults.match(/^[README]$/) {
-  //   let readmes = 0
-  //   readmes++
-  // }
-  // })
-  // console.log(`
-  // Passed: ${posResults.length}
-  // Failed: ${negResults.length}
-  // Total repositories checked: ${data.length}
-  // `)
 }
 
 module.exports = { printResults, createJsonFile, formatedDate, validateChangeLog }
