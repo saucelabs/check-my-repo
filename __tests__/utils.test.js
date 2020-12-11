@@ -60,6 +60,7 @@ test('should check if releases exists, when chengelog rule fails', async () => {
   expect(failedResults).toMatchObject([{ lintResult: { passed: true }, ruleInfo: { name: 'Changelog' } }])
 })
 
+test('should not change changelog rule fails, if releases also do not exists', async () => {
   const failedResults = [
     {
       lintResult: {
