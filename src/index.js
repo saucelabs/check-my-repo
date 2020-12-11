@@ -1,5 +1,5 @@
 const { Octokit } = require('@octokit/rest') /* */
-const octokit = new Octokit({ auth: process.env.PERSONAL_TOKEN }) /*lib for GitHub API */
+const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN }) /*lib for GitHub API */
 const repolinter = require('repolinter') /*project which this is build upon */
 const git = require('simple-git/promise')() /*lib for GitHub API */
 
