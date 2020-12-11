@@ -45,7 +45,6 @@ test('should not create organization directory, if it exists', async () => {
 })
 
 test('should check if releases exists, when chengelog rule fails', async () => {
-  // const changelogResult = false
   const failedResults = [
     {
       lintResult: {
