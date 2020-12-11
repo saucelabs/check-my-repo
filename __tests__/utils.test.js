@@ -57,6 +57,9 @@ test('should check if releases exists, when chengelog rule fails', async () => {
     },
   ]
   await validateChangeLog(failedResults, organization, repository)
+  expect(failedResults).toMatchObject([{ lintResult: { passed: true }, ruleInfo: { name: 'Changelog' } }])
+})
+
   const failedResults = [
     {
       lintResult: {
