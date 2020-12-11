@@ -56,4 +56,5 @@ test('should check if releases exists, when chengelog rule fails', async () => {
 afterEach(() => {
   fs.promises.mkdir.mockClear()
   fs.promises.writeFile.mockClear()
+  createdInstances[0].repos.listReleases.mockClear()
 })
