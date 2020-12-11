@@ -71,9 +71,10 @@ test('should not change changelog rule fails, if releases also do not exists', a
       },
     },
   ]
+  await validateChangeLog(failedResults, organization, 'repository without releases')
+  expect(failedResults).toMatchObject([{ lintResult: { passed: false }, ruleInfo: { name: 'Changelog' } }])
+})
 
-  // expect(resultsFailed).toHaveProperty(resultsFailed.lintResults.passed, true)
-  expect(resultsFailed).toMatchObject([{ lintResult: { passed: true }, ruleInfo: { name: 'failing-repo' } }])
 })
 
 /* Teardown: clear the mocks and results to avoid false results */
