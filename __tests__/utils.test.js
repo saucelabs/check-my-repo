@@ -44,7 +44,7 @@ test('should not create organization directory, if it exists', async () => {
   expect(fs.promises.writeFile).toHaveBeenCalledTimes(1)
 })
 
-test('should check if releases exists, when chengelog rule fails', async () => {
+test('should check if releases exists, when changelog rule fails', async () => {
   /* Instead of creating a fixture, having the result inside the test avoids the results to be changed by other tests */
   const failedResults = [
     {
