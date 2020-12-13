@@ -74,25 +74,24 @@ const createJsonFile = async function (repository, organization, repolinterConne
   )
 }
 
-/* Checks if Changelog does not exist, if not, verify if releases exist */
+/* Check if Changelog rule exists, if not, verify if releases exist */
 const validateChangeLog = async function (results, organization, repository) {
   /* search if the rule exists */
   const changelogResult = results.find(item => item.ruleInfo.name === 'Changelog')
-  /* if no Changelog rule exists, do not continue */
+  /* if Changelog rule do not exists, or the result has already passed, do not continue */
   if (!changelogResult || changelogResult.lintResult.passed) {
     return
   }
-  /* if there is a changelog rule which result fails, update changelog results */
   /* verify if there are releases */
   const releases = await octokit.repos.listReleases({
     owner: organization,
     repo: repository,
     per_page: 100,
   })
-  /* If releases are found, update repolinter result in Changelog rule, to true*/
+  /* If releases are found, update Changelog rule result to true */
   const hasReleases = !(releases.data === undefined || releases.data.length === 0)
   if (hasReleases) {
-    /* Objects! */
+    /* Observe which data type returns: Objects! */
     changelogResult.lintResult.passed = true
   }
 }
