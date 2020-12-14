@@ -59,8 +59,8 @@ const printResults = function (data, results, log = console.log) {
 }
 
 /* Creates a JSON file inside a folder with organization name */
-const createJsonFile = async function (repository, organization, repolinterConnect) {
-  const print = await repolinter.jsonFormatter.formatOutput(repolinterConnect) /*JS Object return into json*/
+const createJsonFile = async function (repository, organization, results) {
+  const print = await repolinter.jsonFormatter.formatOutput(results) /*JS Object return into json*/
   const directory = path.resolve(__dirname, '..', 'reports', organization)
 
   if (!fs.existsSync(directory)) {
