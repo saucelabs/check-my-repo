@@ -96,6 +96,7 @@ const validateChangeLog = async function (results, organization, repository) {
   }
 }
 
+/* Returns a sum of the repositories analized */
 const sumCheckedRepositories = async function (data) {
   let sum = 0
   data.forEach(d => sum++)
