@@ -21,8 +21,6 @@ async function main() {
     per_page: 100,
   })
 
-  await sumCheckedRepositories(data)
-
   for (const d of data) {
     const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${d.name}-`))
     await git.clone(d.clone_url, tmpDir)
@@ -44,6 +42,7 @@ async function main() {
     }
 
   }
+  await sumCheckedRepositories(data)
 }
 
 /* allows to be executed when not used as an imported file */
