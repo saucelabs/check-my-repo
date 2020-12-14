@@ -34,6 +34,15 @@ async function main() {
     printResults(d, repolinterConnect.results)
 
     await createJsonFile(d.name, organization, repolinterConnect)
+
+    /* Sums all the failed rules withing every repository */
+    const filterFails = repolinterConnect.results /* filter messages for what didn't passed */
+      .filter(r => !r.lintResult.passed)
+
+    for (i = 0; i < filterFails.length; i++) {
+      sumFails++
+    }
+
   }
 }
 
