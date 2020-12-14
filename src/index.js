@@ -2,6 +2,7 @@ const { Octokit } = require('@octokit/rest') /* */
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN }) /*lib for GitHub API */
 const repolinter = require('repolinter') /*project which this is build upon */
 const git = require('simple-git/promise')() /*lib for GitHub API */
+const chalk = require('chalk')
 
 const path = require('path')
 const fs = require('fs')
