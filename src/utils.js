@@ -96,4 +96,4 @@ const validateChangeLog = async function (results, organization, repository) {
   }
 }
 
-module.exports = { printResults, createJsonFile, formatedDate, validateChangeLog }
+module.exports = { printResults, createJsonFile, formatedDate, validateChangeLog, sumCheckedRepositories }
