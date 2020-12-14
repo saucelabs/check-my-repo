@@ -43,6 +43,10 @@ async function main() {
       sumFails++
     }
 
+    /* Sums all the repositories that passes all the rules */
+    if (repolinterConnect.results.every(r => r.lintResult && r.lintResult.passed)) {
+      sumAllPassed++
+    }
   }
   await sumCheckedRepositories(data)
   console.log(chalk`\n😨 Total fails encountered =  {redBright.bold ${sumFails}}\n`)
