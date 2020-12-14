@@ -50,6 +50,7 @@ async function main() {
   }
   await sumCheckedRepositories(data)
   console.log(chalk`\n😨 Total fails encountered =  {redBright.bold ${sumFails}}\n`)
+  console.log(chalk`\n🩺 Total compleately healthy repositories =  {greenBright.bold ${sumAllPassed}}\n`)
 }
 
 /* allows to be executed when not used as an imported file */
