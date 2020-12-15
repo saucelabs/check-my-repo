@@ -96,11 +96,4 @@ const validateChangeLog = async function (results, organization, repository) {
   }
 }
 
-/* Returns a sum of the repositories analized */
-const sumCheckedRepositories = async function (data) {
-  let sum = 0
-  data.forEach(d => sum++)
-  console.log(chalk`\nNumber of repositories analised: {cyanBright.bold ${sum}}\n`)
-}
-
-module.exports = { printResults, createJsonFile, formatedDate, validateChangeLog, sumCheckedRepositories }
+module.exports = { printResults, createJsonFile, formatedDate, validateChangeLog }
