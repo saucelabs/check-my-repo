@@ -37,7 +37,6 @@ async function main() {
 
     }
   }
-  await sumCheckedRepositories(data)
 }
 
 /* allows to be executed when not used as an imported file */
