@@ -35,13 +35,9 @@ async function main() {
 
     await createJsonFile(d.name, organization, repolinterConnect)
 
-    /* Sums all the repositories that passes all the rules */
-    if (repolinterConnect.results.every(r => r.lintResult && r.lintResult.passed)) {
-      sumAllPassed++
     }
   }
   await sumCheckedRepositories(data)
-  console.log(chalk`\n🩺 Total compleately healthy repositories =  {greenBright.bold ${sumAllPassed}}\n`)
 }
 
 /* allows to be executed when not used as an imported file */
