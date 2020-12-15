@@ -35,6 +35,12 @@ async function main() {
 
     await createJsonFile(d.name, organization, repolinterConnect)
 
+    /* Creates an array to check its length and sum all passing results without a loop */
+    const hasFailures =
+      repolinterConnect.results /* filter messages for what didn't passed */
+        .filter(r => !r.lintResult.passed).length > 0
+    if (!hasFailures) {
+      passingRepositories++
     }
   }
 }
