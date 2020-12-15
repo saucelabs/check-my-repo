@@ -44,6 +44,7 @@ async function main() {
     }
   }
   console.log(chalk`\n😨 Total repositories with fails =  {redBright.bold ${data.length - passingRepositories}}\n`)
+  console.log(chalk`\n😌 Total healthy repositories =  {greenBright.bold ${passingRepositories}}\n`)
 }
 
 /* allows to be executed when not used as an imported file */
