@@ -35,21 +35,12 @@ async function main() {
 
     await createJsonFile(d.name, organization, repolinterConnect)
 
-    /* Sums all the failed rules withing every repository */
-    const filterFails = repolinterConnect.results /* filter messages for what didn't passed */
-      .filter(r => !r.lintResult.passed)
-
-    for (i = 0; i < filterFails.length; i++) {
-      sumFails++
-    }
-
     /* Sums all the repositories that passes all the rules */
     if (repolinterConnect.results.every(r => r.lintResult && r.lintResult.passed)) {
       sumAllPassed++
     }
   }
   await sumCheckedRepositories(data)
-  console.log(chalk`\n😨 Total fails encountered =  {redBright.bold ${sumFails}}\n`)
   console.log(chalk`\n🩺 Total compleately healthy repositories =  {greenBright.bold ${sumAllPassed}}\n`)
 }
 
