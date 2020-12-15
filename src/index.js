@@ -13,8 +13,7 @@ const { printResults, createJsonFile, validateChangeLog, sumCheckedRepositories 
 const organization = process.argv[2] || 'saucelabs'
 const access = 'public'
 
-let sumFails = 0
-let sumAllPassed = 0
+// let sumFails = 0
 
 async function main() {
   const { data } = await octokit.repos.listForOrg({
