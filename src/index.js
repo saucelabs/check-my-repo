@@ -43,6 +43,7 @@ async function main() {
       passingRepositories++
     }
   }
+  console.log(chalk`\n😨 Total repositories with fails =  {redBright.bold ${data.length - passingRepositories}}\n`)
 }
 
 /* allows to be executed when not used as an imported file */
