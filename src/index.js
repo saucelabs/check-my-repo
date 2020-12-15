@@ -14,6 +14,7 @@ const organization = process.argv[2] || 'saucelabs'
 const access = 'public'
 
 // let sumFails = 0
+let passingRepositories = 0
 
 async function main() {
   const { data } = await octokit.repos.listForOrg({
