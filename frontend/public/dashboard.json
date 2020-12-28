@@ -1,10 +1,10 @@
 {
   "params": {
-    "targetDir": "/var/folders/x6/yn1yfn3s1n52bj2cy7kg815w0000gn/T/repolinter-monocle-X4J37p",
+    "targetDir": "/var/folders/x6/yn1yfn3s1n52bj2cy7kg815w0000gn/T/repolinter-bamboo_sauce-KBXpVg",
     "filterPaths": [],
-    "rulesetPath": "/Users/palomaoliveira/Documents/dev/automated-oss-quality-check/node_modules/repolinter/rulesets/default.json",
+    "rulesetPath": "repolinter.json",
     "ruleset": {
-      "$schema": "./schema.json",
+      "$schema": "https://raw.githubusercontent.com/todogroup/repolinter/master/rulesets/schema.json",
       "version": 2,
       "axioms": {
         "linguist": "language",
@@ -12,163 +12,51 @@
         "packagers": "packager"
       },
       "rules": {
-        "license-file-exists": {
+        "README.md file": {
           "level": "error",
           "rule": {
             "type": "file-existence",
             "options": {
-              "globsAny": [
-                "LICENSE*",
-                "COPYING*"
-              ],
+              "globsAny": ["README*"],
               "nocase": true
             }
-          }
+          },
+          "fix": {
+            "type": "file-create",
+            "options": {
+              "file": "README.md",
+              "replace": true,
+              "text": {
+                "url": "https://github.com/saucelabs/new-project/blob/main/README.md"
+              }
+            }
+          },
+          "policyInfo": "README should always be up-to-date",
+          "policyUrl": "https://opensource.saucelabs.com/docs/"
         },
-        "readme-file-exists": {
+        "Changelog": {
           "level": "error",
           "rule": {
             "type": "file-existence",
             "options": {
-              "globsAny": [
-                "README*"
-              ],
+              "globsAny": ["CHANGELOG*"],
               "nocase": true
             }
-          }
+          },
+          "policyInfo": "A log of all notable changes made to a project"
         },
-        "contributing-file-exists": {
-          "level": "error",
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "{docs/,.github/,}CONTRIB*"
-              ],
-              "nocase": true
-            }
-          }
-        },
-        "code-of-conduct-file-exists": {
-          "level": "error",
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "{docs/,.github/,}CODEOFCONDUCT*",
-                "{docs/,.github/,}CODE-OF-CONDUCT*",
-                "{docs/,.github/,}CODE_OF_CONDUCT*"
-              ],
-              "nocase": true
-            }
-          }
-        },
-        "changelog-file-exists": {
-          "level": "error",
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "CHANGELOG*"
-              ],
-              "nocase": true
-            }
-          }
-        },
-        "security-file-exists": {
-          "level": "error",
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "{docs/,.github/,}SECURITY.md"
-              ]
-            }
-          }
-        },
-        "support-file-exists": {
-          "level": "error",
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "{docs/,.github/,}SUPPORT*"
-              ],
-              "nocase": true
-            }
-          }
-        },
-        "readme-references-license": {
+        "Maintainers email": {
           "level": "error",
           "rule": {
             "type": "file-contents",
             "options": {
               "globsAll": [
-                "README*"
-              ],
-              "content": "license",
-              "flags": "i"
-            }
-          }
-        },
-        "binaries-not-present": {
-          "level": "error",
-          "rule": {
-            "type": "file-type-exclusion",
-            "options": {
-              "type": [
-                "**/*.exe",
-                "**/*.dll",
-                "!node_modules/**"
-              ]
-            }
-          }
-        },
-        "test-directory-exists": {
-          "level": "error",
-          "rule": {
-            "type": "directory-existence",
-            "options": {
-              "globsAny": [
-                "**/test*",
-                "**/specs"
-              ],
-              "nocase": true
-            }
-          }
-        },
-        "integrates-with-ci": {
-          "level": "error",
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                ".gitlab-ci.yml",
-                ".travis.yml",
-                "appveyor.yml",
-                ".appveyor.yml",
-                "circle.yml",
-                ".circleci/config.yml",
-                "Jenkinsfile",
-                ".drone.yml",
-                ".github/workflows/*",
-                "azure-pipelines.yml"
-              ]
-            }
-          }
-        },
-        "code-of-conduct-file-contains-email": {
-          "level": "error",
-          "rule": {
-            "type": "file-contents",
-            "options": {
-              "globsAll": [
-                "CODEOFCONDUCT*",
-                "CODE-OF-CONDUCT*",
-                "CODE_OF_CONDUCT*",
-                ".github/CODEOFCONDUCT*",
-                ".github/CODE-OF-CONDUCT*",
-                ".github/CODE_OF_CONDUCT*"
+                "MAINTAINERS*",
+                "CODE-OWNERS*",
+                "CODE_OWNERS*",
+                ".github/MAINTAINERS*",
+                ".github/CODEOWNERS*",
+                ".github/CODE_OWNERS*"
               ],
               "content": ".+@.+\\..+",
               "flags": "i",
@@ -176,189 +64,48 @@
             }
           }
         },
-        "source-license-headers-exist": {
-          "level": "warning",
-          "rule": {
-            "type": "file-starts-with",
-            "options": {
-              "globsAll": [
-                "**/*.js",
-                "!node_modules/**"
-              ],
-              "lineCount": 5,
-              "patterns": [
-                "Copyright",
-                "License"
-              ],
-              "flags": "i"
-            }
-          }
-        },
-        "github-issue-template-exists": {
+        "License": {
           "level": "error",
           "rule": {
             "type": "file-existence",
             "options": {
-              "globsAny": [
-                "ISSUE_TEMPLATE*",
-                ".github/ISSUE_TEMPLATE*"
-              ]
+              "globsAny": ["LICENSE*", "COPYING*"],
+              "nocase": true
             }
-          }
+          },
+          "fix": {
+            "type": "file-create",
+            "options": {
+              "file": "LICENSE",
+              "replace": true,
+              "text": {
+                "url": "https://github.com/saucelabs/new-project/blob/main/LICENSE"
+              }
+            }
+          },
+          "policyInfo": "A repository must contain a permissive or weak copy-left license",
+          "policyUrl": "https://opensource.saucelabs.com/docs/license-guide/"
         },
-        "github-pull-request-template-exists": {
+        "Do not have binaries files": {
           "level": "error",
           "rule": {
-            "type": "file-existence",
+            "type": "file-type-exclusion",
             "options": {
-              "globsAny": [
-                "PULL_REQUEST_TEMPLATE*",
-                ".github/PULL_REQUEST_TEMPLATE*"
-              ]
+              "type": ["**/*.exe", "**/*.dll", "!node_modules/**"]
             }
-          }
+          },
+          "policyInfo": "Binaries makes your repo heavy, slown and are hard to remove"
         },
-        "javascript-package-metadata-exists": {
+        "Test directory": {
           "level": "error",
-          "where": [
-            "language=javascript"
-          ],
           "rule": {
-            "type": "file-existence",
+            "type": "directory-existence",
             "options": {
-              "globsAny": [
-                "package.json"
-              ]
+              "globsAny": ["**/test*", "**/specs"],
+              "nocase": true
             }
-          }
-        },
-        "ruby-package-metadata-exists": {
-          "level": "error",
-          "where": [
-            "language=ruby"
-          ],
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "Gemfile"
-              ]
-            }
-          }
-        },
-        "java-package-metadata-exists": {
-          "level": "error",
-          "where": [
-            "language=java"
-          ],
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "pom.xml",
-                "build.xml",
-                "build.gradle"
-              ]
-            }
-          }
-        },
-        "python-package-metadata-exists": {
-          "level": "error",
-          "where": [
-            "language=python"
-          ],
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "setup.py",
-                "requirements.txt"
-              ]
-            }
-          }
-        },
-        "objective-c-package-metadata-exists": {
-          "level": "error",
-          "where": [
-            "language=objective-c"
-          ],
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "Cartfile",
-                "Podfile",
-                "*.podspec"
-              ]
-            }
-          }
-        },
-        "swift-package-metadata-exists": {
-          "level": "error",
-          "where": [
-            "language=swift"
-          ],
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "Package.swift"
-              ]
-            }
-          }
-        },
-        "erlang-package-metadata-exists": {
-          "level": "error",
-          "where": [
-            "language=erlang"
-          ],
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "rebar.config"
-              ]
-            }
-          }
-        },
-        "elixir-package-metadata-exists": {
-          "level": "error",
-          "where": [
-            "language=elixir"
-          ],
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "mix.exs"
-              ]
-            }
-          }
-        },
-        "license-detectable-by-licensee": {
-          "level": "off",
-          "where": [
-            "license=*"
-          ],
-          "rule": {
-            "type": "license-detectable-by-licensee",
-            "options": {}
-          }
-        },
-        "notice-file-exists": {
-          "level": "error",
-          "where": [
-            "license=Apache-2.0"
-          ],
-          "rule": {
-            "type": "file-existence",
-            "options": {
-              "globsAny": [
-                "NOTICE*"
-              ],
-              "fail-message": "The NOTICE file is described in section 4.4 of the Apache License version 2.0. Its presence is not mandated by the license itself, but by ASF policy."
-            }
-          }
+          },
+          "policyInfo": "Tests creates a reliable repository"
         }
       }
     }
@@ -368,42 +115,24 @@
   "results": [
     {
       "ruleInfo": {
-        "name": "license-file-exists",
+        "name": "README.md file",
         "level": "error",
         "where": [],
         "ruleType": "file-existence",
         "ruleConfig": {
-          "globsAny": [
-            "LICENSE*",
-            "COPYING*"
-          ],
+          "globsAny": ["README*"],
           "nocase": true
-        }
-      },
-      "status": "PASSED",
-      "lintResult": {
-        "targets": [
-          {
-            "passed": true,
-            "path": "LICENSE",
-            "message": "Found file"
+        },
+        "fixType": "file-create",
+        "fixConfig": {
+          "file": "README.md",
+          "replace": true,
+          "text": {
+            "url": "https://github.com/saucelabs/new-project/blob/main/README.md"
           }
-        ],
-        "passed": true
-      }
-    },
-    {
-      "ruleInfo": {
-        "name": "readme-file-exists",
-        "level": "error",
-        "where": [],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "README*"
-          ],
-          "nocase": true
-        }
+        },
+        "policyInfo": "README should always be up-to-date",
+        "policyUrl": "https://opensource.saucelabs.com/docs/"
       },
       "status": "PASSED",
       "lintResult": {
@@ -419,76 +148,15 @@
     },
     {
       "ruleInfo": {
-        "name": "contributing-file-exists",
+        "name": "Changelog",
         "level": "error",
         "where": [],
         "ruleType": "file-existence",
         "ruleConfig": {
-          "globsAny": [
-            "{docs/,.github/,}CONTRIB*"
-          ],
+          "globsAny": ["CHANGELOG*"],
           "nocase": true
-        }
-      },
-      "status": "PASSED",
-      "lintResult": {
-        "targets": [
-          {
-            "passed": true,
-            "path": "CONTRIBUTING.md",
-            "message": "Found file"
-          }
-        ],
-        "passed": true
-      }
-    },
-    {
-      "ruleInfo": {
-        "name": "code-of-conduct-file-exists",
-        "level": "error",
-        "where": [],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "{docs/,.github/,}CODEOFCONDUCT*",
-            "{docs/,.github/,}CODE-OF-CONDUCT*",
-            "{docs/,.github/,}CODE_OF_CONDUCT*"
-          ],
-          "nocase": true
-        }
-      },
-      "status": "NOT_PASSED_ERROR",
-      "lintResult": {
-        "message": "Did not find a file matching the specified patterns",
-        "targets": [
-          {
-            "passed": false,
-            "pattern": "{docs/,.github/,}CODEOFCONDUCT*"
-          },
-          {
-            "passed": false,
-            "pattern": "{docs/,.github/,}CODE-OF-CONDUCT*"
-          },
-          {
-            "passed": false,
-            "pattern": "{docs/,.github/,}CODE_OF_CONDUCT*"
-          }
-        ],
-        "passed": false
-      }
-    },
-    {
-      "ruleInfo": {
-        "name": "changelog-file-exists",
-        "level": "error",
-        "where": [],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "CHANGELOG*"
-          ],
-          "nocase": true
-        }
+        },
+        "policyInfo": "A log of all notable changes made to a project"
       },
       "status": "NOT_PASSED_ERROR",
       "lintResult": {
@@ -504,182 +172,18 @@
     },
     {
       "ruleInfo": {
-        "name": "security-file-exists",
-        "level": "error",
-        "where": [],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "{docs/,.github/,}SECURITY.md"
-          ]
-        }
-      },
-      "status": "NOT_PASSED_ERROR",
-      "lintResult": {
-        "message": "Did not find a file matching the specified patterns",
-        "targets": [
-          {
-            "passed": false,
-            "pattern": "{docs/,.github/,}SECURITY.md"
-          }
-        ],
-        "passed": false
-      }
-    },
-    {
-      "ruleInfo": {
-        "name": "support-file-exists",
-        "level": "error",
-        "where": [],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "{docs/,.github/,}SUPPORT*"
-          ],
-          "nocase": true
-        }
-      },
-      "status": "NOT_PASSED_ERROR",
-      "lintResult": {
-        "message": "Did not find a file matching the specified patterns",
-        "targets": [
-          {
-            "passed": false,
-            "pattern": "{docs/,.github/,}SUPPORT*"
-          }
-        ],
-        "passed": false
-      }
-    },
-    {
-      "ruleInfo": {
-        "name": "readme-references-license",
+        "name": "Maintainers email",
         "level": "error",
         "where": [],
         "ruleType": "file-contents",
         "ruleConfig": {
           "globsAll": [
-            "README*"
-          ],
-          "content": "license",
-          "flags": "i"
-        }
-      },
-      "status": "NOT_PASSED_ERROR",
-      "lintResult": {
-        "targets": [
-          {
-            "passed": false,
-            "path": "README.md",
-            "message": "Doesn't contain license"
-          }
-        ],
-        "passed": false
-      }
-    },
-    {
-      "ruleInfo": {
-        "name": "binaries-not-present",
-        "level": "error",
-        "where": [],
-        "ruleType": "file-type-exclusion",
-        "ruleConfig": {
-          "type": [
-            "**/*.exe",
-            "**/*.dll",
-            "!node_modules/**"
-          ]
-        }
-      },
-      "status": "PASSED",
-      "lintResult": {
-        "message": "Excluded file type doesn't exist",
-        "targets": [
-          {
-            "passed": true,
-            "pattern": [
-              "**/*.exe",
-              "**/*.dll",
-              "!node_modules/**"
-            ]
-          }
-        ],
-        "passed": true
-      }
-    },
-    {
-      "ruleInfo": {
-        "name": "test-directory-exists",
-        "level": "error",
-        "where": [],
-        "ruleType": "directory-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "**/test*",
-            "**/specs"
-          ],
-          "nocase": true
-        }
-      },
-      "status": "PASSED",
-      "lintResult": {
-        "targets": [
-          {
-            "passed": true,
-            "path": "tests",
-            "message": "Found file"
-          }
-        ],
-        "passed": true
-      }
-    },
-    {
-      "ruleInfo": {
-        "name": "integrates-with-ci",
-        "level": "error",
-        "where": [],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            ".gitlab-ci.yml",
-            ".travis.yml",
-            "appveyor.yml",
-            ".appveyor.yml",
-            "circle.yml",
-            ".circleci/config.yml",
-            "Jenkinsfile",
-            ".drone.yml",
-            ".github/workflows/*",
-            "azure-pipelines.yml"
-          ]
-        }
-      },
-      "status": "PASSED",
-      "lintResult": {
-        "targets": [
-          {
-            "passed": true,
-            "path": ".travis.yml",
-            "message": "Found file"
-          }
-        ],
-        "passed": true
-      }
-    },
-    {
-      "ruleInfo": {
-        "name": "code-of-conduct-file-contains-email",
-        "level": "error",
-        "where": [],
-        "ruleType": "file-contents",
-        "ruleConfig": {
-          "globsAll": [
-            "CODEOFCONDUCT*",
-            "CODE-OF-CONDUCT*",
-            "CODE_OF_CONDUCT*",
-            ".github/CODEOFCONDUCT*",
-            ".github/CODE-OF-CONDUCT*",
-            ".github/CODE_OF_CONDUCT*"
+            "MAINTAINERS*",
+            "CODE-OWNERS*",
+            "CODE_OWNERS*",
+            ".github/MAINTAINERS*",
+            ".github/CODEOWNERS*",
+            ".github/CODE_OWNERS*"
           ],
           "content": ".+@.+\\..+",
           "flags": "i",
@@ -692,27 +196,27 @@
         "targets": [
           {
             "passed": false,
-            "pattern": "CODEOFCONDUCT*"
+            "pattern": "MAINTAINERS*"
           },
           {
             "passed": false,
-            "pattern": "CODE-OF-CONDUCT*"
+            "pattern": "CODE-OWNERS*"
           },
           {
             "passed": false,
-            "pattern": "CODE_OF_CONDUCT*"
+            "pattern": "CODE_OWNERS*"
           },
           {
             "passed": false,
-            "pattern": ".github/CODEOFCONDUCT*"
+            "pattern": ".github/MAINTAINERS*"
           },
           {
             "passed": false,
-            "pattern": ".github/CODE-OF-CONDUCT*"
+            "pattern": ".github/CODEOWNERS*"
           },
           {
             "passed": false,
-            "pattern": ".github/CODE_OF_CONDUCT*"
+            "pattern": ".github/CODE_OWNERS*"
           }
         ],
         "passed": true
@@ -720,51 +224,24 @@
     },
     {
       "ruleInfo": {
-        "name": "source-license-headers-exist",
-        "level": "warning",
-        "where": [],
-        "ruleType": "file-starts-with",
-        "ruleConfig": {
-          "globsAll": [
-            "**/*.js",
-            "!node_modules/**"
-          ],
-          "lineCount": 5,
-          "patterns": [
-            "Copyright",
-            "License"
-          ],
-          "flags": "i"
-        }
-      },
-      "status": "NOT_PASSED_WARN",
-      "lintResult": {
-        "message": "Did not find file matching the specified patterns",
-        "targets": [
-          {
-            "passed": false,
-            "pattern": "**/*.js"
-          },
-          {
-            "passed": false,
-            "pattern": "!node_modules/**"
-          }
-        ],
-        "passed": false
-      }
-    },
-    {
-      "ruleInfo": {
-        "name": "github-issue-template-exists",
+        "name": "License",
         "level": "error",
         "where": [],
         "ruleType": "file-existence",
         "ruleConfig": {
-          "globsAny": [
-            "ISSUE_TEMPLATE*",
-            ".github/ISSUE_TEMPLATE*"
-          ]
-        }
+          "globsAny": ["LICENSE*", "COPYING*"],
+          "nocase": true
+        },
+        "fixType": "file-create",
+        "fixConfig": {
+          "file": "LICENSE",
+          "replace": true,
+          "text": {
+            "url": "https://github.com/saucelabs/new-project/blob/main/LICENSE"
+          }
+        },
+        "policyInfo": "A repository must contain a permissive or weak copy-left license",
+        "policyUrl": "https://opensource.saucelabs.com/docs/license-guide/"
       },
       "status": "NOT_PASSED_ERROR",
       "lintResult": {
@@ -772,216 +249,72 @@
         "targets": [
           {
             "passed": false,
-            "pattern": "ISSUE_TEMPLATE*"
+            "pattern": "LICENSE*"
           },
           {
             "passed": false,
-            "pattern": ".github/ISSUE_TEMPLATE*"
+            "pattern": "COPYING*"
           }
         ],
         "passed": false
-      }
-    },
-    {
-      "ruleInfo": {
-        "name": "github-pull-request-template-exists",
-        "level": "error",
-        "where": [],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "PULL_REQUEST_TEMPLATE*",
-            ".github/PULL_REQUEST_TEMPLATE*"
-          ]
-        }
       },
-      "status": "NOT_PASSED_ERROR",
-      "lintResult": {
-        "message": "Did not find a file matching the specified patterns",
+      "fixResult": {
         "targets": [
           {
-            "passed": false,
-            "pattern": "PULL_REQUEST_TEMPLATE*"
-          },
-          {
-            "passed": false,
-            "pattern": ".github/PULL_REQUEST_TEMPLATE*"
+            "message": "Create file with text from https://github.com/saucelabs/new-project/blob/main/LICENSE",
+            "passed": true,
+            "path": "LICENSE"
           }
         ],
-        "passed": false
+        "passed": true
       }
     },
     {
       "ruleInfo": {
-        "name": "javascript-package-metadata-exists",
+        "name": "Do not have binaries files",
         "level": "error",
-        "where": [
-          "language=javascript"
-        ],
-        "ruleType": "file-existence",
+        "where": [],
+        "ruleType": "file-type-exclusion",
         "ruleConfig": {
-          "globsAny": [
-            "package.json"
-          ]
-        }
+          "type": ["**/*.exe", "**/*.dll", "!node_modules/**"]
+        },
+        "policyInfo": "Binaries makes your repo heavy, slown and are hard to remove"
       },
-      "runMessage": "ignored due to unsatisfied condition(s): \"language=javascript\"",
-      "status": "IGNORED"
+      "status": "PASSED",
+      "lintResult": {
+        "message": "Excluded file type doesn't exist",
+        "targets": [
+          {
+            "passed": true,
+            "pattern": ["**/*.exe", "**/*.dll", "!node_modules/**"]
+          }
+        ],
+        "passed": true
+      }
     },
     {
       "ruleInfo": {
-        "name": "ruby-package-metadata-exists",
+        "name": "Test directory",
         "level": "error",
-        "where": [
-          "language=ruby"
-        ],
-        "ruleType": "file-existence",
+        "where": [],
+        "ruleType": "directory-existence",
         "ruleConfig": {
-          "globsAny": [
-            "Gemfile"
-          ]
-        }
+          "globsAny": ["**/test*", "**/specs"],
+          "nocase": true
+        },
+        "policyInfo": "Tests creates a reliable repository"
       },
-      "runMessage": "ignored due to unsatisfied condition(s): \"language=ruby\"",
-      "status": "IGNORED"
-    },
-    {
-      "ruleInfo": {
-        "name": "java-package-metadata-exists",
-        "level": "error",
-        "where": [
-          "language=java"
+      "status": "PASSED",
+      "lintResult": {
+        "targets": [
+          {
+            "passed": true,
+            "path": "src/test",
+            "message": "Found file"
+          }
         ],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "pom.xml",
-            "build.xml",
-            "build.gradle"
-          ]
-        }
-      },
-      "runMessage": "ignored due to unsatisfied condition(s): \"language=java\"",
-      "status": "IGNORED"
-    },
-    {
-      "ruleInfo": {
-        "name": "python-package-metadata-exists",
-        "level": "error",
-        "where": [
-          "language=python"
-        ],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "setup.py",
-            "requirements.txt"
-          ]
-        }
-      },
-      "runMessage": "ignored due to unsatisfied condition(s): \"language=python\"",
-      "status": "IGNORED"
-    },
-    {
-      "ruleInfo": {
-        "name": "objective-c-package-metadata-exists",
-        "level": "error",
-        "where": [
-          "language=objective-c"
-        ],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "Cartfile",
-            "Podfile",
-            "*.podspec"
-          ]
-        }
-      },
-      "runMessage": "ignored due to unsatisfied condition(s): \"language=objective-c\"",
-      "status": "IGNORED"
-    },
-    {
-      "ruleInfo": {
-        "name": "swift-package-metadata-exists",
-        "level": "error",
-        "where": [
-          "language=swift"
-        ],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "Package.swift"
-          ]
-        }
-      },
-      "runMessage": "ignored due to unsatisfied condition(s): \"language=swift\"",
-      "status": "IGNORED"
-    },
-    {
-      "ruleInfo": {
-        "name": "erlang-package-metadata-exists",
-        "level": "error",
-        "where": [
-          "language=erlang"
-        ],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "rebar.config"
-          ]
-        }
-      },
-      "runMessage": "ignored due to unsatisfied condition(s): \"language=erlang\"",
-      "status": "IGNORED"
-    },
-    {
-      "ruleInfo": {
-        "name": "elixir-package-metadata-exists",
-        "level": "error",
-        "where": [
-          "language=elixir"
-        ],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "mix.exs"
-          ]
-        }
-      },
-      "runMessage": "ignored due to unsatisfied condition(s): \"language=elixir\"",
-      "status": "IGNORED"
-    },
-    {
-      "ruleInfo": {
-        "name": "license-detectable-by-licensee",
-        "level": "off",
-        "where": [
-          "license=*"
-        ],
-        "ruleType": "license-detectable-by-licensee",
-        "ruleConfig": {}
-      },
-      "runMessage": "ignored because level is \"off\"",
-      "status": "IGNORED"
-    },
-    {
-      "ruleInfo": {
-        "name": "notice-file-exists",
-        "level": "error",
-        "where": [
-          "license=Apache-2.0"
-        ],
-        "ruleType": "file-existence",
-        "ruleConfig": {
-          "globsAny": [
-            "NOTICE*"
-          ],
-          "fail-message": "The NOTICE file is described in section 4.4 of the Apache License version 2.0. Its presence is not mandated by the license itself, but by ASF policy."
-        }
-      },
-      "runMessage": "ignored due to unsatisfied condition(s): \"license=Apache-2.0\"",
-      "status": "IGNORED"
+        "passed": true
+      }
     }
   ],
   "targets": {
@@ -999,7 +332,7 @@
       "targets": [
         {
           "passed": true,
-          "path": "pypi"
+          "path": "maven"
         }
       ],
       "passed": true
