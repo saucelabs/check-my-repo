@@ -14,6 +14,7 @@
 <script>
 export default {
   name: 'Dashboard',
+  /* tells Vue.js that we want to add these variables to our reactivity system */
   data() {
     return {
       dashboardDataList: [] /* stored in public folder */,
