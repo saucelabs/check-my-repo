@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Dashboard',
   /* tells Vue.js that we want to add these variables to our reactivity system */
@@ -22,9 +24,7 @@ export default {
   },
   methods: {
     getDashboardData() {
-      fetch('dashboard.json')
-        .then(response => response.json())
-        .then(data => (this.dashboardDataList = data))
+      axios.get('weather.json').then(response => (this.dashboardDataList = response.data))
     },
   },
 }
