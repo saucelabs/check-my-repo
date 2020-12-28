@@ -28,3 +28,12 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+button {
+  padding: 10px;
+  background-color: #1aa832;
+  color: white;
+  border: 1px solid #ccc;
+}
+</style>
