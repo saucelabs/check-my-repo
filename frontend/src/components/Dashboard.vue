@@ -1,8 +1,13 @@
 <template>
   <div>
-    <h1>OSPO Verified Repositories</h1>
-    <button v-on:click="getDashboardData">Get Dashboard Data</button>
-    <div>{{ dashboardDataList }}</div>
+    <h1>CHECK-MY-REPO</h1>
+    <button v-on:click="getDashboardData">Check</button>
+    <!--<div>{{ dashboardDataList }}</div>-->
+    <ul>
+      <li v-for="data in dashboardDataList" :key="data.results">
+        {{ data.results }}
+      </li>
+    </ul>
   </div>
 </template>
 
