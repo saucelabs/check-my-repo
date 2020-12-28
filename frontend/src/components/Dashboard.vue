@@ -1,13 +1,14 @@
 <template>
   <div>
-    <h1>CHECK-MY-REPO</h1>
+    <h1>CHECK MY REPO</h1>
     <button v-on:click="getDashboardData">Check</button>
-    <!--<div>{{ dashboardDataList }}</div>-->
-    <ul>
-      <li v-for="data in dashboardDataList" :key="data.results">
-        {{ data.results }}
-      </li>
-    </ul>
+    <div v-for="data in dashboardDataList" :key="data.id">
+      <div>
+        <div>
+          <span>{{ data.location.city }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
