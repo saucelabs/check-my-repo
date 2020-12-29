@@ -98,4 +98,7 @@ button {
   background-color: #e12726;
   color: #fff;
 }
+.result {
+  font-weight: 900;
+}
 </style>
