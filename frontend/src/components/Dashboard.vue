@@ -2,6 +2,9 @@
   <div>
     <h1>CHECK MY REPO</h1>
     <div class="square">
+      <div class="content total">Number of repositories analised = {{ reposAnalised }}</div>
+      <div class="content passed">😌 Total healthy repositories = {{ allPassed }}</div>
+      <div class="content failed">😨 Total repositories with fails = {{ failedRepo }}</div>
     <div>Number of repositories analised = {{ reposAnalised }}</div>
     <div>😌 Total healthy repositories = {{ allPassed }}</div>
     <div>😨 Total repositories with fails = {{ failedRepo }}</div>
@@ -86,5 +89,16 @@ button {
   padding: 5%;
   margin: 2%;
 }
+.total {
+  background-color: #464b54;
+  color: #fff;
+}
+.passed {
+  background-color: #57c1e8;
+  color: #fff;
+}
+.failed {
+  background-color: #e12726;
+  color: #fff;
 }
 </style>
