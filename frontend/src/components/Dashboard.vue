@@ -44,20 +44,10 @@ export default {
   },
   computed: {
     allPassed: function() {
-      let passingRepositories = 0
-      const hasFailures = this.dashboardDataList.filter(r => !r.lintResult.passed).length > 0
-      if (!hasFailures) {
-        passingRepositories++
-      }
-      return passingRepositories
+      return this.dashboardDataList.length
     },
     failedRepo: function() {
-      let passingRepositories = 0
-      const hasFailures = this.dashboardDataList.filter(r => !r.lintResult.passed).length > 0
-      if (!hasFailures) {
-        passingRepositories++
-      }
-      return this.dashboardDataList.length - passingRepositories
+      return this.dashboardDataList.length
     },
     reposAnalised: function() {
       return this.dashboardDataList.length
