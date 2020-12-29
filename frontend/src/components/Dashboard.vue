@@ -50,7 +50,7 @@ export default {
       return this.dashboardDataList.length
     },
     reposAnalised: function() {
-      return this.dashboardDataList.length
+      return this.dashboardDataList.map(item => item.filter(item => item.lintResult.passed))
     },
   },
 }
