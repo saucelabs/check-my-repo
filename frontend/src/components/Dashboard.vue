@@ -23,11 +23,16 @@ export default {
   data() {
     return {
       dashboardDataList: [] /* stored in public folder */,
+      errored: false,
     }
   },
   methods: {
     getDashboardData() {
       axios.get('weather.json').then(response => (this.dashboardDataList = response.data))
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+        })
     allPassed: function() {
       let passingRepositories = 0
       const hasFailures = this.dashboardDataList.filter(r => !r.lintResult.passed).length > 0
