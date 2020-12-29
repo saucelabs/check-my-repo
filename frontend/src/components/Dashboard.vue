@@ -2,6 +2,7 @@
   <div>
     <h1>CHECK MY REPO</h1>
     <div>Number of repositories analised = {{ reposAnalised }}</div>
+    <div>😌 Total healthy repositories = {{ allPassed }}</div>
     <button v-on:click="getDashboardData">Check</button>
     <div v-for="data in dashboardDataList" :key="data.id">
       <div>
@@ -27,6 +28,14 @@ export default {
   methods: {
     getDashboardData() {
       axios.get('weather.json').then(response => (this.dashboardDataList = response.data))
+    allPassed: function() {
+      let passingRepositories = 0
+      const hasFailures = this.dashboardDataList.filter(r => !r.lintResult.passed).length > 0
+      if (!hasFailures) {
+        passingRepositories++
+      }
+      return passingRepositories
+    },
     reposAnalised: function() {
       return this.dashboardDataList.length
     },
