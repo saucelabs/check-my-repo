@@ -29,11 +29,15 @@ export default {
   },
   methods: {
     getDashboardData() {
-      axios.get('weather.json').then(response => (this.dashboardDataList = response.data))
+      axios
+        .get('dashboard.json')
+        .then(response => (this.dashboardDataList = response.data.results))
         .catch(error => {
           console.log(error)
           this.errored = true
         })
+    },
+  },
     allPassed: function() {
       let passingRepositories = 0
       const hasFailures = this.dashboardDataList.filter(r => !r.lintResult.passed).length > 0
