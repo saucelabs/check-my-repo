@@ -1,17 +1,7 @@
 <template>
   <div>
     <h1>CHECK MY REPO</h1>
-    <div class="square">
-      <div class="content total">Number of repositories analised = {{ reposAnalised }}</div>
-      <div class="content passed">😌 Total healthy repositories = {{ allPassed }}</div>
-      <div class="content failed">😨 Total repositories with fails = {{ failedRepo }}</div>
-    </div>
     <button v-on:click="getDashboardData">Check</button>
-    <div v-for="data in dashboardDataList" :key="data.results">
-      <div>
-        <div>
-          <span>{{ data }}</span>
-        </div>
       </div>
     </div>
   </div>
