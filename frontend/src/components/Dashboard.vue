@@ -1,9 +1,11 @@
 <template>
   <div>
     <h1>CHECK MY REPO</h1>
+    <div class="square">
     <div>Number of repositories analised = {{ reposAnalised }}</div>
     <div>😌 Total healthy repositories = {{ allPassed }}</div>
     <div>😨 Total repositories with fails = {{ failedRepo }}</div>
+    </div>
     <button v-on:click="getDashboardData">Check</button>
     <div v-for="data in dashboardDataList" :key="data.results">
       <div>
@@ -74,5 +76,10 @@ button {
   background: #003a70;
 }
 
+.square {
+  width: 80vw;
+  height: auto;
+  display: flex;
+}
 }
 </style>
