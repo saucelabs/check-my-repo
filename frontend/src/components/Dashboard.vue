@@ -2,6 +2,18 @@
   <div>
     <h1>CHECK MY REPO</h1>
     <button v-on:click="getDashboardData">Check</button>
+    <div class="square">
+      <div class="content total">
+        Number of repositories analised =
+        <div class="result">{{ reposAnalised }}</div>
+      </div>
+      <div class="content passed">
+        😌 Total healthy repositories =
+        <div class="result">{{ allPassed }}</div>
+      </div>
+      <div class="content failed">
+        😨 Total repositories with fails =
+        <div class="result">{{ failedRepo }}</div>
       </div>
     </div>
   </div>
