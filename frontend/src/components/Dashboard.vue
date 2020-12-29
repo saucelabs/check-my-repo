@@ -64,9 +64,15 @@ export default {
 
 <style scoped>
 button {
-  padding: 10px;
-  background-color: #1aa832;
-  color: white;
-  border: 1px solid #ccc;
+  width: 100px;
+  height: 100px;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  background: #003a70;
+}
+
 }
 </style>
