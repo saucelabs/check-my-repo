@@ -5,10 +5,10 @@
     <div>😌 Total healthy repositories = {{ allPassed }}</div>
     <div>😨 Total repositories with fails = {{ failedRepo }}</div>
     <button v-on:click="getDashboardData">Check</button>
-    <div v-for="data in dashboardDataList" :key="data.id">
+    <div v-for="data in dashboardDataList" :key="data.results">
       <div>
         <div>
-          <span>{{ data.location.city }}</span>
+          <span>{{ data }}</span>
         </div>
       </div>
     </div>
