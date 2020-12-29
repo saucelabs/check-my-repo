@@ -38,6 +38,7 @@ export default {
         })
     },
   },
+  computed: {
     allPassed: function() {
       let passingRepositories = 0
       const hasFailures = this.dashboardDataList.filter(r => !r.lintResult.passed).length > 0
