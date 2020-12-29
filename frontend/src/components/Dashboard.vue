@@ -3,6 +3,7 @@
     <h1>CHECK MY REPO</h1>
     <div>Number of repositories analised = {{ reposAnalised }}</div>
     <div>😌 Total healthy repositories = {{ allPassed }}</div>
+    <div>😨 Total repositories with fails = {{ failedRepo }}</div>
     <button v-on:click="getDashboardData">Check</button>
     <div v-for="data in dashboardDataList" :key="data.id">
       <div>
@@ -40,6 +41,14 @@ export default {
         passingRepositories++
       }
       return passingRepositories
+    },
+    failedRepo: function() {
+      let passingRepositories = 0
+      const hasFailures = this.dashboardDataList.filter(r => !r.lintResult.passed).length > 0
+      if (!hasFailures) {
+        passingRepositories++
+      }
+      return this.dashboardDataList.length - passingRepositories
     },
     reposAnalised: function() {
       return this.dashboardDataList.length
