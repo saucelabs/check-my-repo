@@ -81,5 +81,10 @@ button {
   height: auto;
   display: flex;
 }
+.content {
+  font-size: 1.5em;
+  padding: 5%;
+  margin: 2%;
+}
 }
 </style>
