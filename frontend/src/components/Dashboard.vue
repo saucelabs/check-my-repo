@@ -69,6 +69,17 @@ button {
   text-align: center;
   background: #003a70;
 }
+.background {
+  background-color: #ededef;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .square {
   width: 80vw;
