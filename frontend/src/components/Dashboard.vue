@@ -85,6 +85,7 @@ button {
   width: 80vw;
   height: auto;
   display: flex;
+  background-color: white;
 }
 .content {
   font-size: 1.5em;
