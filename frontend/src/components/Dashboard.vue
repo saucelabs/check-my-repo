@@ -47,7 +47,7 @@ export default {
       return this.dashboardDataList.length
     },
     failedRepo: function() {
-      return this.dashboardDataList.length
+      return this.dashboardDataList.filter(r => r.lintResult && !r.lintResult.passed).length
     },
     reposAnalised: function() {
       return this.dashboardDataList.map(item => item.filter(item => item.lintResult.passed))
