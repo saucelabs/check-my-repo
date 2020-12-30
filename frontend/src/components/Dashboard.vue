@@ -44,7 +44,9 @@ export default {
   },
   computed: {
     allPassed: function() {
-      return this.dashboardDataList.length
+      return this.dashboardDataList
+        .filter(r => r.lintResult && r.lintResult.passed)
+        .every(r => this.dashboardDataList.runRuleset && r.ruleInfo.name)
     },
     failedRepo: function() {
       return this.dashboardDataList.filter(r => r.lintResult && !r.lintResult.passed).length
