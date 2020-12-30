@@ -94,14 +94,23 @@ button {
 .total {
   background-color: #464b54;
   color: #fff;
+  &:hover {
+    border: 6px solid #464b54;
+  }
 }
 .passed {
   background-color: #57c1e8;
   color: #fff;
+  &:hover {
+    border: 6px solid #003a70;
+  }
 }
 .failed {
   background-color: #e12726;
   color: #fff;
+  &:hover {
+    border: 6px solid #e12726;
+  }
 }
 .result {
   font-weight: 900;
