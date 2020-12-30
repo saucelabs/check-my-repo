@@ -93,27 +93,31 @@ button {
   margin: 2%;
 }
 .total {
-  background-color: #464b54;
-  color: #fff;
+  color: #464b54;
+  border-radius: 10px;
+  border: 3px solid #464b54;
   &:hover {
     border: 6px solid #464b54;
   }
 }
 .passed {
-  background-color: #57c1e8;
-  color: #fff;
+  color: #003a70;
+  border-radius: 10px;
+  border: 3px solid #003a70;
   &:hover {
     border: 6px solid #003a70;
   }
 }
 .failed {
-  background-color: #e12726;
-  color: #fff;
+  color: #e12726;
+  border-radius: 10px;
+  border: 3px solid #e12726;
   &:hover {
     border: 6px solid #e12726;
   }
 }
 .result {
-  font-weight: 900;
+  font-weight: 500;
+  font-size: 2em;
 }
 </style>
