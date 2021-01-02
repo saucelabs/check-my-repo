@@ -1,72 +1,80 @@
-# Automated OSS Quality Check
+# Check My Repo
 
-This is a tool to automatically check our repositories health and quality and report when something is missing.  
-We expect every public repository in our GitHub organization to contain:
+**Check My Repo** is a tool for OSPOs Open Source Program Offices, to automatically check their repositories health and quality.
+Built upon [Repolinter](https://github.com/todogroup/repolinter) and using [open source best practices](https://opensource.guide/building-community/) as reference, this tools verifies if repositories contains:
 
-- [] License file with copyright attributed to Sauce Labs
-- [] Code of conduct
-- [] Contribution guidelines
-- [] Readme
-- [] Changelog
-- [] Support file
-- [] Security file
-- [] Tests
-- [] CI integration
-- [] SemVer
+- [] Readme.md file
+- [] Changelog.md file or uses GitHib Releases
 - [] Codeowners file with a “Maintain” role
+- [] License file with copyright attributed to Sauce Labs
+- [] Security: if does not have binaries
+- [] Test directory
 
-This tool also provides: 
+Although part of best practices, as all Sauce Labs repositories are under Sauce Labs:
 
-- [] Check if is there a new public repository unapproved by OSPO
-- [] Check for passwords and tokens in the code base
-- [] Check if there are references to internal Sauce infrastructure
+- [x] Code of conduct
+- [x] Contribution guidelines
+- [x] Support file
+      Therefore, this tool does not check for those files, but they can easily be implemented on your project by adding them into **repolinter.json** configuration file, using [repolinter dafault file](https://github.com/todogroup/repolinter/blob/master/rulesets/default.json).
 
+## How does it works
 
-## How to use
-
-1. Clone this project and copy the files into your own project
-2. Go through [this checklist](../../issues/1)
-3. Start developing!
-4. Ensure you are in compliance with Sauce Labs [rules of play](https://opensource.saucelabs.com/docs/releasing/)
-5. If in doubt, get in touch with [opensource@saucelabs](mailto:opensource@saucelabs.com)
-
-## Readme
-
-# Automated OSS Quality Checks
-
-_description_
-
-Describe what this project does. Keep this language human and friendly, so avoid internal references, acronyms and if you 
-have dependencies, provide a direct link to these.
-
-When describing features of your project, remember to explain why these are a benefit and advantage to the user:
-
-```
-This project allows you to scale X (feature) in a fast and predictable way (benefit) - meaning you will use fewer resources and can be confident in your X environment (Advantage).
-```
-
-Think about your project as a product, consider who your audience is, and how your decisions affect the number of potential users, below is a handy checklist of things to consider before open sourcing any code. 
-
-- **Avoid internal dependencies** Obviously projects that require Sauce Labs specific infrastructure, configuration or process have very limited use to anyone outside Sauce Labs. 
-- **Avoid narrow usecases** Does this solve a Sauce Labs-only problem or does it have broarder application - is there things you could change to make it a more general product
-- **Have a Product vision** Do you know where you want to take this product? - then be open about it so future contributors are aware. Being opinionated is great and it helps set expectations and the direction for the project
-- **Take ownership** Are you are benevolent dictator or open to anything? - consider how you will interact with future contrbutors who expect you to be an active maintainer
-- **Safe defaults** How do people get up and running - are there alot of ceremony involved or can you provide a simple out of the box experience so it is easy for users to evaluate your project
+To a detailed understanding you can check the activity diagram under diagrams directory.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+### To run in terminal
+
+1. Clone this project
+2. Install dependencies
 
 ```
-If possible, provide a quick exemple of how to get this running with minimal effort, so anyone curious can get up and running as fast as possible 
+npm install
 ```
+
+```
+node node src/index.js
+```
+
+It enables you to verify all Sauce Labs public repositories, as it is set up as default.
+If you would like to check your own organization repos:
+
+```
+node node src/index.js <your organization github name>
+```
+
+### To run in browser
+
+3. Open frontend folder
+
+```
+cd fronted
+```
+
+4. Run server
+
+```
+npm run serve
+```
+
+5. Open in browser network link provided in terminal
+
+```
+Cmd + click
+```
+
+6. Click **Check** button
+
+If you have any questions or comments, get in touch with us [opensource@saucelabs](mailto:opensource@saucelabs.com)
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+You need to have Node.js install version 12 or latter.
+This project is currently using version 14.
+To check if you have and which Node.js version you can type
 
 ```
-Give examples
+node -v
 ```
 
 ### Installing
@@ -113,9 +121,9 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+- [Maven](https://maven.apache.org/) - Dependency Management
+- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
@@ -123,7 +131,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our process for su
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/saucelabs/_projectname_/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/saucelabs/automated-oss-quality-check/).
 
 ## License
 
@@ -131,4 +139,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Thanks to [@PurpleBooth](https://github.com/PurpleBooth) and Zalando for the [original boilerplate](https://github.com/zalando-incubator/new-project)
+- Thanks to [Todo Group](https://todogroup.org/) for developing Repolinter and kindly supporting us during this development.
