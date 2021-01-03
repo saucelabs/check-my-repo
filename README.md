@@ -1,12 +1,12 @@
 # Check My Repo
 
-**Check My Repo** is a tool for OSPOs Open Source Program Offices, to automatically check their repositories health and quality.
-Built upon [Repolinter](https://github.com/todogroup/repolinter) and using [open source best practices](https://opensource.guide/building-community/) as reference, this tools verifies if repositories contains:
+**Check My Repo** is a tool for OSPOs - Open Source Program Offices - to automatically check their repositories health and quality.
+Built upon [Repolinter](https://github.com/todogroup/repolinter) and using [open source best practices](https://opensource.guide/building-community/) as reference, this tool verifies if a single or all organization's repositories contain:
 
 - [] Readme.md file
-- [] Changelog.md file or uses GitHib Releases
+- [] Changelog.md file or uses GitHub Releases
 - [] Codeowners file with a “Maintain” role
-- [] License file with copyright attributed to Sauce Labs
+- [] License file
 - [] Security: if does not have binaries
 - [] Test directory
 
@@ -36,18 +36,25 @@ This project is build with
 ### To run in terminal
 
 1. Clone this project
+
+```
+git clone https://github.com/saucelabs/automated-oss-quality-check.git
+```
+
 2. Install dependencies
 
 ```
 npm install
 ```
 
+3. Run script
+
 ```
-node node src/index.js
+node src/index.js
 ```
 
 It enables you to verify all Sauce Labs public repositories, as it is set up as default.
-If you would like to check your own organization repos:
+If you would like to check your own organization repos, run:
 
 ```
 node node src/index.js <your organization github name>
@@ -55,25 +62,25 @@ node node src/index.js <your organization github name>
 
 ### To run in browser
 
-3. Open frontend folder
+4. Open frontend folder
 
 ```
 cd fronted
 ```
 
-4. Run server
+5. Run server
 
 ```
 npm run serve
 ```
 
-5. Open in browser network link provided in terminal
+6. Open in browser network link provided in terminal
 
 ```
 Cmd + click
 ```
 
-6. Click **Check** button
+7. Click **Check** button
 
 If you have any questions or comments, get in touch with us [opensource@saucelabs](mailto:opensource@saucelabs.com)
 
@@ -81,7 +88,7 @@ If you have any questions or comments, get in touch with us [opensource@saucelab
 
 You need to have Node.js install version 12 or latter.
 This project is currently using version 14.
-To check if you have and which Node.js version you can type
+To check if you have and which Node.js version you can type:
 
 ```
 node -v
@@ -97,7 +104,7 @@ npm test
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our process for submitting pull requests to us, and please ensure you follow the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our process for submitting pull requests, and please ensure you follow the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## Versioning
 
