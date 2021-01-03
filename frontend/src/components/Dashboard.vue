@@ -51,9 +51,6 @@ export default {
     failedRepo: function() {
       return this.dashboardDataList.filter(r => r.lintResult && !r.lintResult.passed).length
     },
-    reposAnalised: function() {
-      return this.dashboardDataList.length
-    },
   },
 }
 </script>
