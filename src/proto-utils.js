@@ -56,7 +56,7 @@ const validateChangeLog = async function (results, organization, repository) {
   }
 }
 
-function makeResultObject(name, failed, passed) {
+const makeResultObject = async function (name, failed, passed) {
   const obj = {
     name: name,
     failed: failed,
