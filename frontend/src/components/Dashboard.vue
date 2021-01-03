@@ -5,7 +5,7 @@
     <div class="square">
       <div class="content total">
         Repositories
-        <div class="result">{{ reposAnalised }}</div>
+        <div class="result">{{ dashboardDataList.length }}</div>
       </div>
       <div class="content passed">
         All Passed
