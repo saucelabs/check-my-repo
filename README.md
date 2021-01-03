@@ -21,6 +21,16 @@ Although part of best practices, as all Sauce Labs repositories are under Sauce 
 
 To a detailed understanding you can check the activity diagram under diagrams directory.
 
+## Technologies used
+
+This project is build with
+
+- [Node.js v14](https://nodejs.org/en/)
+- [Vue.js 3 cli](https://v3.vuejs.org/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [Repolinter](https://www.npmjs.com/package/repolinter)
+- [Octokit](https://www.npmjs.com/package/@octokit/rest)
+
 ## Getting Started
 
 ### To run in terminal
