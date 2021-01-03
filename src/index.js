@@ -8,12 +8,11 @@ const path = require('path')
 const fs = require('fs')
 const os = require('os')
 
-const { printResults, createJsonFile, validateChangeLog, sumCheckedRepositories } = require('./utils')
+const { printResults, createJsonFile, validateChangeLog } = require('./utils')
 
 const organization = process.argv[2] || 'saucelabs'
 const access = 'public'
 
-// let sumFails = 0
 let passingRepositories = 0
 
 async function main() {
