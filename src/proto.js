@@ -50,6 +50,15 @@ async function main() {
   console.log(chalk`\n😨 Total repositories with fails =  {redBright.bold ${data.length - passingRepositories}}\n`)
   console.log(chalk`\n😌 Total healthy repositories =  {greenBright.bold ${passingRepositories}}\n`)
   console.log(chalk`\nNumber of repositories analised: {cyanBright.bold ${data.length}}\n`)
+  */
+  let totalFails = data.length - passingRepositories
+  console.log(chalk`\n😨 Total repositories with fails =  {redBright.bold ${totalFails}}\n`)
+  let allPassed = passingRepositories
+  console.log(chalk`\n😌 Total healthy repositories =  {greenBright.bold ${allPassed}}\n`)
+  let totalRepositories = data.length
+  console.log(chalk`\nNumber of repositories analised: {cyanBright.bold ${totalRepositories}}\n`)
+
+  return totalFails, allPassed, totalRepositories
 }
 
 /* allows to be executed when not used as an imported file */
