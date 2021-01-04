@@ -38,14 +38,15 @@ async function main() {
       passingRepositories++
     }
 
-    makeResultObject(
+    let makeObject = await makeResultObject(
       d.name,
-      await negativeResults(repolinterConnect.results),
-      await positiveResults(repolinterConnect.results)
+      negativeResults(repolinterConnect.results),
+      positiveResults(repolinterConnect.results)
     )
+    console.log(makeObject)
   }
 
-  console.log(makeResultObject)
+  /*
   console.log(chalk`\n😨 Total repositories with fails =  {redBright.bold ${data.length - passingRepositories}}\n`)
   console.log(chalk`\n😌 Total healthy repositories =  {greenBright.bold ${passingRepositories}}\n`)
   console.log(chalk`\nNumber of repositories analised: {cyanBright.bold ${data.length}}\n`)
