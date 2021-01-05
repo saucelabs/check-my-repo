@@ -39,15 +39,23 @@ const printResults = function (data, results, log = console.log) {
   }
 }
 
+/* Filter positive results and make it available to filter data */
+const positiveResults = function (results) {
+  const posResults = results /* filter messages for what didn't passed */
+    .filter(r => r.lintResult && r.lintResult.passed)
+    .map(r => repolinter.runRuleset && r.ruleInfo.name)
 /* Creates a JSON file inside a folder with organization name */
 const createJsonFile = async function (repository, organization, results) {
   const print = await repolinter.jsonFormatter.formatOutput(results) /*JS Object return into json*/
   const directory = path.resolve(__dirname, '..', 'reports', organization)
 
+  return {
+    passed: posResults,
   if (!fs.existsSync(directory)) {
     console.log(`A directory is created at ${directory}`)
     await fs.promises.mkdir(directory, { recursive: true })
   }
+}
 
   await fs.promises.writeFile(
     path.resolve(directory, `${formatedDate}-${repository}.json`),
