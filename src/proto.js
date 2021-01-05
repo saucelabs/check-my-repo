@@ -28,6 +28,8 @@ async function main() {
     per_page: 8,
   })
 
+  const output = []
+
   for (const d of data) {
     const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${d.name}-`))
     await git.clone(d.clone_url, tmpDir)
