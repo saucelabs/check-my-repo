@@ -10,7 +10,7 @@ const repolinter = require('repolinter') /*project which this is build upon */
 
 const formatedDate = new Date().toISOString().substring(0, 13) /*transforms Date() into shorter string*/
 
-const positiveResults = async function (results) {
+const positiveResults = function (results) {
   const posResults = results /* filter messages for what didn't passed */
     .filter(r => r.lintResult && r.lintResult.passed)
     .map(r => repolinter.runRuleset && r.ruleInfo.name)
@@ -21,7 +21,7 @@ const positiveResults = async function (results) {
   return posResults
 }
 
-const negativeResults = async function (results) {
+const negativeResults = function (results) {
   const negResults = results
     .filter(r => r.lintResult && !r.lintResult.passed)
     .map(r => repolinter.runRuleset && r.ruleInfo.name)
