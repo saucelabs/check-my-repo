@@ -3,8 +3,6 @@ const { Octokit } = require('@octokit/rest') /* */
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN }) /*lib for GitHub API */
 
 const path = require('path')
-// const rimraf = require('rimraf')
-// const git = require('simple-git/promise')() /*lib for GitHub API */
 /** @type {any} */
 const fs = require('fs')
 
@@ -13,23 +11,6 @@ const repolinter = require('repolinter') /*project which this is build upon */
 const chalk = require('chalk')
 
 const formatedDate = new Date().toISOString().substring(0, 13) /*transforms Date() into shorter string*/
-
-/*
-const deleteTempDir = function(){
-  exports.tempGitClone = async function () {
-    if (argv.git) {
-      tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'repolinter-'))
-      const result = await git.clone(argv.directory, tmpDir)
-      if (result) {
-        console.error(result)
-        process.exitCode = 1
-        rimraf(tmpDir, () => {})
-        return
-      }
-    }
-  }
-}
-*/
 
 /* Separate negative and positive results and prints nicely in terminal */
 const printResults = function (data, results, log = console.log) {
@@ -58,20 +39,33 @@ const printResults = function (data, results, log = console.log) {
   }
 }
 
-/* Creates a JSON file inside a folder with organization name */
-const createJsonFile = async function (repository, organization, results) {
-  const print = await repolinter.jsonFormatter.formatOutput(results) /*JS Object return into json*/
-  const directory = path.resolve(__dirname, '..', 'reports', organization)
+/* Filter positive results and make it available to filter data */
+const positiveResults = function (results) {
+  const posResults = results /* filter messages for what didn't passed */
+    .filter(r => r.lintResult && r.lintResult.passed)
+    .map(r => repolinter.runRuleset && r.ruleInfo.name)
 
-  if (!fs.existsSync(directory)) {
-    console.log(`A directory is created at ${directory}`)
-    await fs.promises.mkdir(directory, { recursive: true })
+  return {
+    passed: posResults,
+  }
+}
+
+/* Filter negative results and make it available to filter data */
+const negativeResults = function (results) {
+  const negResults = results
+    .filter(r => r.lintResult && !r.lintResult.passed)
+    .map(r => repolinter.runRuleset && r.ruleInfo.name)
+
+  return {
+    failed: negResults,
   }
 
-  await fs.promises.writeFile(
-    path.resolve(directory, `${formatedDate}-${repository}.json`),
-    JSON.stringify(JSON.parse(print), null, 2)
-  )
+  /*
+  return {
+    results: negResults,
+    ratio: `${negResults.length} out of ${results.length}`,
+  }
+  */
 }
 
 /* Check if Changelog rule exists, if not, verify if releases exist */
@@ -96,4 +90,35 @@ const validateChangeLog = async function (results, organization, repository) {
   }
 }
 
-module.exports = { printResults, createJsonFile, formatedDate, validateChangeLog }
+/* Creates a JSON file inside a folder with organization name */
+const createJsonFile = async function (repository, organization, results) {
+  const print = await repolinter.jsonFormatter.formatOutput(results) /*JS Object return into json*/
+  const directory = path.resolve(__dirname, '..', 'reports', organization)
+
+  if (!fs.existsSync(directory)) {
+    console.log(`A directory is created at ${directory}`)
+    await fs.promises.mkdir(directory, { recursive: true })
+  }
+
+  await fs.promises.writeFile(
+    path.resolve(directory, `${formatedDate}-${repository}.json`),
+    JSON.stringify(JSON.parse(print), null, 2)
+  )
+}
+
+/* Writes and overwrites a JSON file and save it into frontend/public folder */
+const createJsonDashboardFile = async function (output) {
+  const directory = path.resolve(__dirname, '..', 'frontend', 'public')
+
+  await fs.promises.writeFile(path.resolve(directory, 'frontend.json'), JSON.stringify(output))
+}
+
+module.exports = {
+  formatedDate,
+  printResults,
+  positiveResults,
+  negativeResults,
+  validateChangeLog,
+  createJsonFile,
+  createJsonDashboardFile,
+}

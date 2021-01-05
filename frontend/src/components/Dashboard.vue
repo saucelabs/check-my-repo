@@ -5,7 +5,7 @@
     <div class="square">
       <div class="content total">
         Repositories
-        <div class="result">{{ reposAnalised }}</div>
+        <div class="result">{{ dashboardDataList.length }}</div>
       </div>
       <div class="content passed">
         All Passed
@@ -50,9 +50,6 @@ export default {
     },
     failedRepo: function() {
       return this.dashboardDataList.filter(r => r.lintResult && !r.lintResult.passed).length
-    },
-    reposAnalised: function() {
-      return this.dashboardDataList.length
     },
   },
 }
