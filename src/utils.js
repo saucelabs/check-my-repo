@@ -53,6 +53,13 @@ const createJsonFile = async function (repository, organization, results) {
     path.resolve(directory, `${formatedDate}-${repository}.json`),
     JSON.stringify(JSON.parse(print), null, 2)
   )
+
+  /*
+  return {
+    results: negResults,
+    ratio: `${negResults.length} out of ${results.length}`,
+  }
+  */
 }
 
 /* Check if Changelog rule exists, if not, verify if releases exist */
