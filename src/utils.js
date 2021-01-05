@@ -12,23 +12,6 @@ const chalk = require('chalk')
 
 const formatedDate = new Date().toISOString().substring(0, 13) /*transforms Date() into shorter string*/
 
-/*
-const deleteTempDir = function(){
-  exports.tempGitClone = async function () {
-    if (argv.git) {
-      tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'repolinter-'))
-      const result = await git.clone(argv.directory, tmpDir)
-      if (result) {
-        console.error(result)
-        process.exitCode = 1
-        rimraf(tmpDir, () => {})
-        return
-      }
-    }
-  }
-}
-*/
-
 /* Separate negative and positive results and prints nicely in terminal */
 const printResults = function (data, results, log = console.log) {
   const posResults = results /* filter messages for what didn't passed */
