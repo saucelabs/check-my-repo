@@ -54,6 +54,11 @@ const validateChangeLog = async function (results, organization, repository) {
   }
 }
 
+/* Creates a JSON file inside a folder with organization name */
+const createJsonDashboardFile = async function (output) {
+  const directory = path.resolve(__dirname, '..', 'frontend', 'public')
+
+  await fs.promises.writeFile(path.resolve(directory, 'dashboard.json'), JSON.stringify(output))
 }
 
 module.exports = {
