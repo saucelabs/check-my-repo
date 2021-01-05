@@ -57,6 +57,15 @@ const createJsonFile = async function (repository, organization, results) {
   }
 }
 
+/* Filter negative results and make it available to filter data */
+const negativeResults = function (results) {
+  const negResults = results
+    .filter(r => r.lintResult && !r.lintResult.passed)
+    .map(r => repolinter.runRuleset && r.ruleInfo.name)
+
+  return {
+    failed: negResults,
+  }
   await fs.promises.writeFile(
     path.resolve(directory, `${formatedDate}-${repository}.json`),
     JSON.stringify(JSON.parse(print), null, 2)
