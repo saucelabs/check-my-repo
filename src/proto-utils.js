@@ -54,13 +54,6 @@ const validateChangeLog = async function (results, organization, repository) {
   }
 }
 
-const makeResultObject = async function (name, failed, passed) {
-  const obj = {
-    name: name,
-    failed: failed,
-    passed: passed,
-  }
-  return obj
 }
 
 module.exports = {
