@@ -19,6 +19,7 @@ const {
 const organization = process.argv[2] || 'saucelabs'
 const access = 'public'
 
+/* This variable stores the sum of all analised repositories which results are all positives */
 let passingRepositories = 0
 
 async function main() {
@@ -28,6 +29,7 @@ async function main() {
     per_page: 100,
   })
 
+  /* Output is an array of objects to be sent to frontend through frontend.json */
   for (const d of data) {
     const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${d.name}-`))
     await git.clone(d.clone_url, tmpDir)
@@ -36,8 +38,10 @@ async function main() {
     /* Validates if Changelog rule passed, of not, search for releases */
     await validateChangeLog(repolinterConnect.results, organization, d.name)
 
+    /* Print in all the results in terminal */
     printResults(d, repolinterConnect.results)
 
+    * Creates individual .json files for each repo result
     await createJsonFile(d.name, organization, repolinterConnect)
 
     /* Creates an array to check its length and sum all passing results without a loop */
@@ -47,7 +51,9 @@ async function main() {
     if (!hasFailures) {
       passingRepositories++
     }
+    /* Push individual repos results to the array which will contain all the results */
   }
+  /* Creates one .json file in frontend public folder to make this results available */
   console.log(chalk`\n😨 Total repositories with fails =  {redBright.bold ${data.length - passingRepositories}}\n`)
   console.log(chalk`\n😌 Total healthy repositories =  {greenBright.bold ${passingRepositories}}\n`)
   console.log(chalk`\nNumber of repositories analised: {cyanBright.bold ${data.length}}\n`)
