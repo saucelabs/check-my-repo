@@ -15,10 +15,10 @@ const positiveResults = function (results) {
     .filter(r => r.lintResult && r.lintResult.passed)
     .map(r => repolinter.runRuleset && r.ruleInfo.name)
 
-  if (results.every(r => r.lintResult && r.lintResult.passed)) {
-    return 'All passed'
+  return {
+    results: posResults,
+    ratio: `${posResults.length} out of ${results.length}`,
   }
-  return posResults
 }
 
 const negativeResults = function (results) {
@@ -26,10 +26,10 @@ const negativeResults = function (results) {
     .filter(r => r.lintResult && !r.lintResult.passed)
     .map(r => repolinter.runRuleset && r.ruleInfo.name)
 
-  if (results.every(r => r.lintResult && !r.lintResult.passed)) {
-    return 'All failed'
+  return {
+    results: negResults,
+    ratio: `${negResults.length} out of ${results.length}`,
   }
-  return negResults
 }
 
 /* Check if Changelog rule exists, if not, verify if releases exist */
