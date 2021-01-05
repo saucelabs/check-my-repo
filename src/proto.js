@@ -8,7 +8,13 @@ const path = require('path')
 const fs = require('fs')
 const os = require('os')
 
-const { validateChangeLog, positiveResults, negativeResults, makeResultObject } = require('./proto-utils')
+const {
+  validateChangeLog,
+  positiveResults,
+  negativeResults,
+  makeResultObject,
+  createJsonDashboardFile,
+} = require('./proto-utils')
 
 const organization = process.argv[2] || 'saucelabs'
 const access = 'public'
