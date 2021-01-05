@@ -63,4 +63,10 @@ const makeResultObject = async function (name, failed, passed) {
   return obj
 }
 
-module.exports = { formatedDate, validateChangeLog, positiveResults, negativeResults, makeResultObject }
+module.exports = {
+  formatedDate,
+  validateChangeLog,
+  positiveResults,
+  negativeResults,
+  createJsonDashboardFile,
+}
