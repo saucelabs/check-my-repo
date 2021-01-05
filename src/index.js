@@ -41,8 +41,10 @@ async function main() {
     /* Print in all the results in terminal */
     printResults(d, repolinterConnect.results)
 
+    /*
     * Creates individual .json files for each repo result
     await createJsonFile(d.name, organization, repolinterConnect)
+    */
 
     /* Creates an array to check its length and sum all passing results without a loop */
     const hasFailures =
