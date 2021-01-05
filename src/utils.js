@@ -51,9 +51,6 @@ const createJsonFile = async function (repository, organization, results) {
 
   return {
     passed: posResults,
-  if (!fs.existsSync(directory)) {
-    console.log(`A directory is created at ${directory}`)
-    await fs.promises.mkdir(directory, { recursive: true })
   }
 }
 
