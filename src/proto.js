@@ -46,12 +46,11 @@ async function main() {
       passingRepositories++
     }
 
-    let makeObject = await makeResultObject(
-      d.name,
-      negativeResults(repolinterConnect.results),
-      positiveResults(repolinterConnect.results)
-    )
-    console.log(makeObject)
+    output.push({
+      name: d.name,
+      failed: negativeResults(repolinterConnect.results),
+      passed: positiveResults(repolinterConnect.results),
+    })
   }
 
   /*
