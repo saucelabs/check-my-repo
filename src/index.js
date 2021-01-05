@@ -55,7 +55,13 @@ async function main() {
     if (!hasFailures) {
       passingRepositories++
     }
+
     /* Push individual repos results to the array which will contain all the results */
+    output.push({
+      name: d.name,
+      failed: negativeResults(repolinterConnect.results),
+      passed: positiveResults(repolinterConnect.results),
+    })
   }
   /* Creates one .json file in frontend public folder to make this results available */
   console.log(chalk`\n😨 Total repositories with fails =  {redBright.bold ${data.length - passingRepositories}}\n`)
