@@ -33,9 +33,9 @@ export default {
       return this.frontend.filter(r => r.passed && r.failed.length < 1).length
     },
     failedRepo: function() {
-      return this.dashboardDataList.filter(r => r.lintResult && !r.lintResult.passed).length
+      return this.frontend.map(({failed}) => failed).flat().length
     },
-  },
+  }
 }
 </script>
 
