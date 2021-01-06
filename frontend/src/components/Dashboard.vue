@@ -4,7 +4,7 @@
     <div class="square">
       <div class="content total">
         Repositories
-        <div class="result">{{ dashboardDataList.length }}</div>
+        <div class="result">{{frontend.length}}</div>
       </div>
       <div class="content passed">
         All Passed
@@ -32,6 +32,7 @@ export default {
     allPassed: function() {
       return this.frontend.filter(r => r.passed && r.failed.length < 1).length
     },
+
     failedRepo: function() {
       return this.frontend.map(({failed}) => failed).flat().length
     },
