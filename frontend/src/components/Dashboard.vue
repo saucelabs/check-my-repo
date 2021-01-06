@@ -30,9 +30,7 @@ export default {
   },
   computed: {
     allPassed: function() {
-      let allPassed = 0
-      let hasFailures = this.dashboardDataList.filter(r => !r.lintResult.passed).length > 0
-      return !hasFailures ? allPassed++ : 0
+      return this.frontend.filter(r => r.passed && r.failed.length < 1).length
     },
     failedRepo: function() {
       return this.dashboardDataList.filter(r => r.lintResult && !r.lintResult.passed).length
