@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 export default {
   name: 'Dashboard',
@@ -29,17 +28,6 @@ export default {
       dashboardDataList: [] /* stored in public folder */,
       errored: false,
     }
-  },
-  methods: {
-    getDashboardData() {
-      axios
-        .get('dashboard.json')
-        .then(response => (this.dashboardDataList = response.data.results))
-        .catch(error => {
-          console.log(error)
-          this.errored = true
-        })
-    },
   },
   computed: {
     allPassed: function() {
