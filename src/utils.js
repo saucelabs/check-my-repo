@@ -45,9 +45,7 @@ const positiveResults = function (results) {
     .filter(r => r.lintResult && r.lintResult.passed)
     .map(r => repolinter.runRuleset && r.ruleInfo.name)
 
-  return {
-    passed: posResults,
-  }
+  return posResults
 }
 
 /* Filter negative results and make it available to filter data */
@@ -56,9 +54,7 @@ const negativeResults = function (results) {
     .filter(r => r.lintResult && !r.lintResult.passed)
     .map(r => repolinter.runRuleset && r.ruleInfo.name)
 
-  return {
-    failed: negResults,
-  }
+  return negResults
 
   /*
   return {
