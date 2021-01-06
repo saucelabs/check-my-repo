@@ -11,7 +11,7 @@
         <div class="result">{{ allPassed }}</div>
       </div>
       <div class="content failed">
-        With Failures
+        Failures
         <div class="result">{{ failedRepo }}</div>
       </div>
     </div>
