@@ -25,6 +25,7 @@ export default {
   /* tells Vue.js that we want to add these variables to our reactivity system */
   data() {
     return {
+      frontend: reposData
     }
   },
   computed: {
