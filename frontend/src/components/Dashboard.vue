@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import reposData from "../../public/frontend.json"
 
 export default {
   name: 'Dashboard',
