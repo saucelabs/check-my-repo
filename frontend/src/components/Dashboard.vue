@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>CHECK MY REPO</h1>
-    <button v-on:click="getDashboardData">Check</button>
     <div class="square">
       <div class="content total">
         Repositories
