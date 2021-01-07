@@ -44,12 +44,8 @@ jobs:
         run: |
           npm run build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: fontend/dist # The folder the action should deploy.
-          CLEAN: true
-
+      - name: Build
+        working-directory: frontend
+        run: |
+          npm run deploy
 
