@@ -7,10 +7,6 @@ on:
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  repository: ${{github.repository}}
-  user_name: 'OSS Sauce Bot'
-  user_email: 'oss-sauce-bot@users.noreply.github.com'
-  commit_message: ${{ github.event.head_commit.message }}
 
 jobs:
   deploy:
@@ -49,6 +45,9 @@ jobs:
 
       - name: Deploy
         working-directory: frontend
-        run: |
-          npm run deploy
+          with:
+            repository: ${{github.repository}}
+            user_name: 'OSS Sauce Bot'
+            user_email: 'oss-sauce-bot@users.noreply.github.com'
+        run: npm run deploy
 
