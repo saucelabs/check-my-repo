@@ -7,7 +7,6 @@ on:
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  GITHUB_REPOSITORY: ${{GITHUB_REPOSITORY}}
 
 jobs:
   deploy:
@@ -21,6 +20,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12'
+          repository: ${{GITHUB_REPOSITORY}}
 
 
       # Install dependencies
