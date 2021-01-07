@@ -5,35 +5,17 @@ on:
     branches:
       - main
 
-env:
-  GITHUB_TOKEN: ${{GITHUB_TOKEN}}
-
 jobs:
-  deploy:
+  build_vue:
     runs-on: ubuntu-latest
+    name: Build Vue
+    working-directory: ./frontend
     steps:
-      # Add node
-      - name: Setup Node version
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12'
+    - uses: actions/checkout@v2
+    - id: Build-Vue
+      uses: xRealNeon/VuePagesAction@1.0.0
+      with:
+        username: 'discombobulateme'
+        reponame: 'check-my-repo'
+        token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Add a project to work on
-      - name: Clone Repository
-        uses: actions/checkout@v2
-
-      # Install dependencies
-      - name: Install dependencies
-        run: npm install
-
-       # Which file to act upon
-       - name: Frontend
-        working-directory: frontend
-
-      # Install frontend dependencies
-      - name: Install dependencies
-        run: npm install
-
-      # Run deployment script
-      - name: Deploy
-        run: npm run deploy
