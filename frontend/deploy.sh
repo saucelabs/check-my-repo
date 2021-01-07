@@ -7,7 +7,7 @@ npm run build
 cd dist
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
-git config --global user.email "p@discombobulate.me"
+git config --global user.email "paloma.oliveira@saucelabs.com"
 git config --global user.name "discombobulateme"
 
 git init
