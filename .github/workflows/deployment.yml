@@ -45,6 +45,7 @@ jobs:
           npm run build
 
       - name: Deploy 🚀
+        working-directory: frontend
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
