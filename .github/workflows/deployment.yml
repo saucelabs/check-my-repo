@@ -9,7 +9,6 @@ jobs:
   build_vue:
     runs-on: ubuntu-latest
     name: Build Vue
-    working-directory: ./frontend
     steps:
     - uses: actions/checkout@v2
     - id: Build-Vue
