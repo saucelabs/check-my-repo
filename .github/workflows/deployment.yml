@@ -6,31 +6,34 @@ on:
       - main
 
 env:
-  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  GITHUB_TOKEN: ${{GITHUB_TOKEN}}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       # Add node
-      - name: Checkout repo
-        uses: actions/checkout@v2
-      - name: Setup Node
+      - name: Setup Node version
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: '12'
+
+      # Add a project to work on
+      - name: Clone Repository
+        uses: actions/checkout@v2
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
 
        # Which file to act upon
-       - name: Install frontend dependencies
-        working-directory: ./frontend
+       - name: Frontend
+        working-directory: frontend
+
+      # Install frontend dependencies
+      - name: Install dependencies
         run: npm install
-        run: npm run deploy
+
+      # Run deployment script
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages
-          user_name: 'OSS Sauce Bot'
-          user_email: 'oss-sauce-bot@users.noreply.github.com'
-          commit_message: ${{ github.event.head_commit.message }}
+        run: npm run deploy
