@@ -21,7 +21,10 @@ jobs:
         with:
           node-version: '12'
           repository: ${{github.repository}}
-
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          user_name: 'OSS Sauce Bot'
+          user_email: 'oss-sauce-bot@users.noreply.github.com'
+          commit_message: ${{ github.event.head_commit.message }}
 
       # Install dependencies
       - name: Install dependencies
