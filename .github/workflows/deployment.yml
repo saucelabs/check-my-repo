@@ -5,16 +5,43 @@ on:
     branches:
       - main
 
-jobs:
-  build_vue:
-    runs-on: ubuntu-latest
-    name: Build Vue
-    steps:
-    - uses: actions/checkout@v2
-    - id: Build-Vue
-      uses: xRealNeon/VuePagesAction@1.0.0
-      with:
-        username: 'discombobulateme'
-        reponame: 'check-my-repo'
-        token: ${{ secrets.GITHUB_TOKEN }}
+env:
+  GITHUB_TOKEN: ${{GITHUB_TOKEN}}
 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Gives access to repository
+      - name: Workflow access
+        uses: actions/checkout@v2
+      # Add node
+      - name: Setup Node version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+       # Which file to act upon
+      - name: Build site assets
+        working-directory: ${{ github.workspace }}
+        run: ls -la
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: |
+          npm install
+
+      - name: Build
+        working-directory: frontend
+        run: |
+          npm run build
+
+      - name: Deploy
+        working-directory: frontend
+        run: |
+          npm run deploy
