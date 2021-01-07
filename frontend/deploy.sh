@@ -7,8 +7,11 @@ npm run build
 cd dist
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
+git config --global user.email "p@discombobulate.me"
+git config --global user.name "discombobulateme"
+
 git init
 git add -A
 git commit -m 'deploy'
-git push -f https://saucelabs:$GITHUB_TOKEN@github.com/saucelabs/check-my-repo.git master:gh-pages
+git push -f git@github.com:saucelabs/check-my-repo.git master:gh-pages
 cd -
