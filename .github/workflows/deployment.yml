@@ -12,14 +12,23 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Add node
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - run: npm install
-      - run: npm run deploy
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+       # Which file to act upon
+       - name: Install frontend dependencies
+        working-directory: ./frontend
+        run: npm install
+        run: npm run deploy
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
