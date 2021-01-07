@@ -20,10 +20,6 @@ jobs:
         with:
           node-version: '12.x'
 
-      # Install dependencies
-      - name: Install dependencies
-        run: npm install
-
        # Which file to act upon
        - name: Install frontend dependencies
         working-directory: ./frontend
