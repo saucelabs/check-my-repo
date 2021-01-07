@@ -46,10 +46,11 @@ jobs:
 
       - name: Deploy
         working-directory: frontend
-        run: npm run deploy
-          with:
-            repository: ${{github.repository}}
-            user_name: 'OSS Sauce Bot'
-            user_email: 'oss-sauce-bot@users.noreply.github.com'
-            commit_message: ${{ github.event.head_commit.message }}
+        run: |
+          npm run deploy
+        with:
+          repository: ${{github.repository}}
+          user_name: 'OSS Sauce Bot'
+          user_email: 'oss-sauce-bot@users.noreply.github.com'
+          commit_message: ${{ github.event.head_commit.message }}
 
