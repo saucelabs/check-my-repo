@@ -20,6 +20,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12'
+          repository: ${{github.repository}}
+          user_name: 'OSS Sauce Bot'
+          user_email: 'oss-sauce-bot@users.noreply.github.com'
+          commit_message: ${{ github.event.head_commit.message }}
 
       # Install dependencies
       - name: Install dependencies
@@ -42,10 +46,10 @@ jobs:
 
       - name: Deploy
         working-directory: frontend
-        - uses: xRealNeon/VuePagesAction@1.0.0
+        run: npm run deploy
           with:
+            repository: ${{github.repository}}
             user_name: 'OSS Sauce Bot'
             user_email: 'oss-sauce-bot@users.noreply.github.com'
-            repository: ${{github.repository}}
-            token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
             commit_message: ${{ github.event.head_commit.message }}
+
