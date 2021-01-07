@@ -7,6 +7,7 @@ on:
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  GITHUB_REPOSITORY: ${{GITHUB_REPOSITORY}}
 
 jobs:
   deploy:
@@ -36,8 +37,12 @@ jobs:
         run: |
           npm install
 
-      - id: Build-Vue
+      - name: Build
         working-directory: frontend
-        uses: xRealNeon/VuePagesAction@1.0.0
-        with:
-          repository: ${{GITHUB_REPOSITORY}}
+        run: |
+          npm run build
+
+      - name: Deploy
+        working-directory: frontend
+        run: |
+          npm run deploy
