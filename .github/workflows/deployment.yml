@@ -44,15 +44,14 @@ jobs:
         run: |
           npm run build
 
-      - name: Deploy
+      - name: Build Vue
         working-directory: frontend
-        run: |
-          npm run deploy
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v6
-          with:
-          author_name: 'OSS Sauce Bot'
-          author_email: oss-sauce-bot@users.noreply.github.com
-          message: 'deploy'
-          add: -A
+        steps:
+          - uses: actions/checkout@v2
+          - id: Build-Vue
+            uses: xRealNeon/VuePagesAction@1.0.0
+            with:
+              username: 'OSS Sauce Bot'
+              reponame: ${{github.repository}}
+              token: ${{ secrets.GITHUB_TOKEN }}
 
