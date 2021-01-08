@@ -21,6 +21,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12'
+          repository: ${{github.repository}}
+          user_name: 'OSS Sauce Bot'
+          user_email: 'oss-sauce-bot@users.noreply.github.com'
 
       # Install dependencies
       - name: Install dependencies
@@ -28,24 +31,26 @@ jobs:
 
        # Which file to act upon
       - name: Build site assets
-        defaults:
-          run:
-            working-directory: frontend
+        working-directory: ${{ github.workspace }}
+        run: ls -la
 
-        - name: Install dependencies
-          run: |
-            npm install
+      - name: Install dependencies
+        working-directory: frontend
+        run: |
+          npm install
 
-        - name: Build
-          run: |
-            npm run build
+      - name: Build
+        working-directory: frontend
+        run: |
+          npm run build
 
-        - name: Deploy
-          run: |
-            npm run deploy
+      - name: Deploy
+        working-directory: frontend
+        run: |
+          npm run deploy
 
-        - name: Commit changes
-          uses: EndBug/add-and-commit@v6
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v6
           with:
             author_name: 'OSS Sauce Bot'
             author_email: oss-sauce-bot@users.noreply.github.com
