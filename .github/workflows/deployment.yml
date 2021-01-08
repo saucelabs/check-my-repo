@@ -48,7 +48,6 @@ jobs:
         working-directory: frontend
         run: |
           npm run deploy
-
     - name: Commit changes
       uses: EndBug/add-and-commit@v6
         with:
