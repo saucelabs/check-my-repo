@@ -1,6 +1,6 @@
 <template>
   <div>
-    <svg :view-box="ospo-bot"></svg>
+    <img class="bot" :src="require('../assets/ospo-bot.svg')"/>
 
     <p>About</p>
     <p>Open source automated tool daily checking our public
@@ -21,6 +21,14 @@ p {
   font-size: 1em;
   color: white;
   font-weight: 200;
+}
+
+.bot {
+  margin-top: 5%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
 }
 
 </style>
