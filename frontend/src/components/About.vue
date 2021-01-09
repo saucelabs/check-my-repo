@@ -1,7 +1,6 @@
 <template>
   <div>
     <img class="bot" :src="require('../assets/ospo-bot.svg')"/>
-
     <p>About</p>
     <p class="break-line">Open source automated tool daily checking our public</p>
     <p class="break-line">repositories health and quality</p>
@@ -31,7 +30,7 @@ p {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 15%;
+  width: 12%;
 }
 
 </style>
