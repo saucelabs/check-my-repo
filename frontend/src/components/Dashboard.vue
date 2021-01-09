@@ -15,13 +15,16 @@
         <div class="result">{{ failedRepo }}</div>
       </div>
     </div>
+  <About />
   </div>
 </template>
 
 <script>
 import reposData from "../../public/frontend.json"
+import About from './About.vue'
 
 export default {
+  components: { About },
   /* tells Vue.js that we want to add these variables to our reactivity system */
   data() {
     return {
