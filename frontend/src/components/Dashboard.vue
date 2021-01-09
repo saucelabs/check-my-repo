@@ -14,6 +14,7 @@
         Failures
         <div class="result">{{ failedRepo }}</div>
       </div>
+      <Details />
     </div>
   <About />
   </div>
@@ -22,9 +23,10 @@
 <script>
 import reposData from "../../public/frontend.json"
 import About from './About.vue'
+import Details from './Details'
 
 export default {
-  components: { About },
+  components: { About, Details },
   name: 'Dashboard',
   /* tells Vue.js that we want to add these variables to our reactivity system */
   data() {
