@@ -75,25 +75,25 @@ export default {
 .total {
   color: #464b54;
   border-radius: 10px;
-  border: 1px solid #2E3137;
+  border: 1px solid #1C9FCE;
   &:hover {
-    border: 6px solid #2E3137;
+    border: 6px solid #1C9FCE;
   }
 }
 .passed {
-  color: #199306;
+  color: #158906;
   border-radius: 10px;
-  border: 1px solid #199306;
+  border: 1px solid #25A711;
   &:hover {
-    border: 6px solid #199306;
+    border: 6px solid #25A711;
   }
 }
 .failed {
   color: #e12726;
   border-radius: 10px;
-  border: 1px solid #e12726;
+  border: 1px solid #E53E3E;
   &:hover {
-    border: 6px solid #e12726;
+    border: 6px solid #E53E3E;
   }
 }
 .result {
