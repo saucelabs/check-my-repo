@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>CHECK MY REPO</h1>
+    <h1 class="header">CHECK MY REPO</h1>
     <div class="square">
       <div class="content total">
         Repositories
