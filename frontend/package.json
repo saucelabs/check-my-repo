@@ -9,28 +9,28 @@
     "deploy": "sh deploy.sh"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "register-service-worker": "^1.7.1",
-    "vue": "^2.6.11",
-    "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "core-js": "^3.8.2",
+    "register-service-worker": "^1.7.2",
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.9",
+    "vuex": "^3.6.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-pwa": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-plugin-babel": "~4.5.10",
+    "@vue/cli-plugin-eslint": "~4.5.10",
+    "@vue/cli-plugin-pwa": "~4.5.10",
+    "@vue/cli-plugin-router": "~4.5.10",
+    "@vue/cli-plugin-vuex": "~4.5.10",
+    "@vue/cli-service": "~4.5.10",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "lint-staged": "^9.5.0",
+    "eslint": "^7.17.0",
+    "eslint-plugin-vue": "^7.4.1",
+    "lint-staged": "^10.5.3",
     "pug": "^3.0.0",
-    "pug-plain-loader": "^1.0.0",
-    "sass": "^1.32.0",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "pug-plain-loader": "^1.1.0",
+    "sass": "^1.32.2",
+    "sass-loader": "^10.1.0",
+    "vue-template-compiler": "^2.6.12"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
