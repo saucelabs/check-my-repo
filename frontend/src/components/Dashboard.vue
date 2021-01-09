@@ -25,6 +25,7 @@ import About from './About.vue'
 
 export default {
   components: { About },
+  name: 'Dashboard',
   /* tells Vue.js that we want to add these variables to our reactivity system */
   data() {
     return {
@@ -44,59 +45,51 @@ export default {
 </script>
 
 <style scoped lang="scss">
-button {
-  width: 100px;
-  height: 100px;
-  line-height: 50px;
-  border-radius: 50%;
-  font-size: 30px;
-  color: #fff;
+
+.header {
+  grid-column: span 3;
+  padding: 20px;
   text-align: center;
-  background: #003a70;
-}
-.background {
-  background-color: #ededef;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-    'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.4em;
+  background-color: #2E3137;
+  color: white;
+  margin: -1vh;
+  font-weight: 300;
+  font-style: oblique;
 }
 
 .square {
-  width: 80vw;
-  height: auto;
-  display: flex;
-  background-color: white;
+  text-align: center;
+  margin: 5% 15%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .content {
-  font-size: 1.5em;
-  padding: 5%;
-  margin: 2%;
+  font-size: 1.1em;
+  padding: 12%;
+  margin: 3%;
+  background-color: white;
 }
 .total {
   color: #464b54;
   border-radius: 10px;
-  border: 3px solid #464b54;
+  border: 1px solid #2E3137;
   &:hover {
-    border: 6px solid #464b54;
+    border: 6px solid #2E3137;
   }
 }
 .passed {
-  color: #003a70;
+  color: #28F606;
   border-radius: 10px;
-  border: 3px solid #003a70;
+  border: 1px solid #28F606;
   &:hover {
-    border: 6px solid #003a70;
+    border: 6px solid #28F606;
   }
 }
 .failed {
   color: #e12726;
   border-radius: 10px;
-  border: 3px solid #e12726;
+  border: 1px solid #e12726;
   &:hover {
     border: 6px solid #e12726;
   }
