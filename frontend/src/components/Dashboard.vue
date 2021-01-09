@@ -7,7 +7,7 @@
         <div class="result">{{frontend.length}}</div>
       </div>
       <div class="content passed">
-        All Passed
+        Healthy Repos
         <div class="result">{{ allPassed }}</div>
       </div>
       <div class="content failed">
@@ -79,11 +79,11 @@ export default {
   }
 }
 .passed {
-  color: #28F606;
+  color: #199306;
   border-radius: 10px;
-  border: 1px solid #28F606;
+  border: 1px solid #199306;
   &:hover {
-    border: 6px solid #28F606;
+    border: 6px solid #199306;
   }
 }
 .failed {
