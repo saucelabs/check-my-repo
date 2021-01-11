@@ -34,8 +34,12 @@
 </template>
 
 <script>
+import reposData from "../../public/frontend.json"
 export default {
-  name: 'Details'
+  name: 'Details',
+  data() {
+    return {
+      frontend: reposData,
       columns: {
         name: 'Repository name',
         failed: 'Failed rules',
