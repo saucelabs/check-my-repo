@@ -1,6 +1,6 @@
 <template>
   <div class="square-detail">
-    <table>
+    <!-- <table>
       <tr class="table-header">
         <th>Repository name</th>
         <th class="table-header-passed">Passed rule</th>
