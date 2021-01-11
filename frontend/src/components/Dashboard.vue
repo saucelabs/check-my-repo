@@ -55,7 +55,6 @@ export default {
   font-size: 1.4em;
   background-color: #2E3137;
   color: white;
-  margin: -1vh;
   font-weight: 300;
   font-style: oblique;
 }
