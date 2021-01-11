@@ -19,6 +19,16 @@
         <td>repo-3</td>
         <td>Readme</td>
       </tr>
+    </table> -->
+    <table class="table-content">
+      <tr>
+        <th v-for="name in columns" :key="name">{{name}}</th>
+      </tr>
+      <tr v-for="item in tableData" :key="item">
+        <td v-for="(name, key) in columns" :key="key">
+          {{ item[key] }}
+        </td>
+      </tr>
     </table>
   </div>
 </template>
@@ -26,7 +36,21 @@
 <script>
 export default {
   name: 'Details'
+      columns: {
+        name: 'Repository name',
+        failed: 'Failed rules',
+      },
+    }
+  },
+  computed: {
+    tableData() {
+      return this.frontend.map((x, index) => {
+        return index === 0 ? Object.assign(x, this.frontend.name) : x
+      })
+    }
+  }
 }
+
 </script>
 
 <style scoped lang="scss">
