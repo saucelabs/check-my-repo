@@ -61,7 +61,7 @@ export default {
 
 .square {
   text-align: center;
-  margin: 5% 15%;
+  margin: 1% 15%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
