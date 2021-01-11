@@ -65,6 +65,8 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   background-color: white;
   border-radius: 10px;
+  height: 50vh;
+  overflow:scroll;
 }
 .table-header {
   font-size: 1.1em;
@@ -76,6 +78,12 @@ export default {
   color: #e12726;
 }
 
+.table-content {
+  height: 40vh;
+  overflow: auto;
+  text-align:justify;
+}
+
 table {
   color: #464b54;
   padding: 5%;
@@ -85,4 +93,5 @@ table {
 th{
   padding-bottom: 5%;
 }
+
 </style>
