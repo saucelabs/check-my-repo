@@ -14,8 +14,8 @@
         Failures
         <div class="result">{{ failedRepo }}</div>
       </div>
-      <Details />
     </div>
+  <Details />
   <About />
   </div>
 </template>
