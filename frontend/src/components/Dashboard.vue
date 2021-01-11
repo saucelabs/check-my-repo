@@ -80,26 +80,17 @@ export default {
 .total {
   color: #464b54;
   border-radius: 10px;
-  border: 1px solid #1C9FCE;
-  &:hover {
-    border: 6px solid #1C9FCE;
-  }
+  border: 3px solid #1C9FCE;
 }
 .passed {
   color: #158906;
   border-radius: 10px;
-  border: 1px solid #25A711;
-  &:hover {
-    border: 6px solid #25A711;
-  }
+  border: 3px solid #25A711;
 }
 .failed {
   color: #e12726;
   border-radius: 10px;
-  border: 1px solid #E53E3E;
-  &:hover {
-    border: 6px solid #E53E3E;
-  }
+  border: 3px solid #E53E3E;
 }
 .result {
   font-weight: 500;
