@@ -2,7 +2,7 @@
   <div>
     <h1 class="header">CHECK MY REPO</h1>
     <div class="square">
-      <div class="content total">
+      <div class="content total" @click="showDetails()">
         Repositories
         <div class="result">{{frontend.length}}</div>
       </div>
@@ -15,6 +15,7 @@
         <div class="result">{{ failedRepo }}</div>
       </div>
     </div>
+    <component v-bind:is="details"></component>
   <Details />
   <About />
   </div>
@@ -31,7 +32,7 @@ export default {
   /* tells Vue.js that we want to add these variables to our reactivity system */
   data() {
     return {
-      frontend: reposData
+      frontend: reposData,
     }
   },
   computed: {
@@ -42,6 +43,11 @@ export default {
     failedRepo: function() {
       return this.frontend.map(({failed}) => failed).flat().length
     },
+  },
+  methods: {
+    showDetails() {
+      this.components.Details
+    }
   }
 }
 </script>
