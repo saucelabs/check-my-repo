@@ -3,7 +3,7 @@
     <img class="bot" :src="require('../assets/ospo-bot.svg')"/>
     <p>About</p>
     <p class="break-line">Open source automated tool daily checking our public</p>
-    <p class="break-line">repositories health and quality</p>
+    <p class="break-line p-bottom">repositories health and quality</p>
   </div>
 </template>
 
@@ -19,6 +19,9 @@ p {
   font-size: 1em;
   color: white;
   font-weight: 200;
+}
+.p-bottom {
+  padding-bottom: 10%;
 }
 
 .break-line {
