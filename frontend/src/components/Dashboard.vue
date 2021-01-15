@@ -15,8 +15,6 @@
         <div class="result">{{ failedRepo }}</div>
       </div>
     </div>
-    <component v-bind:is="details"></component>
-  <Details />
   <About />
   </div>
 </template>
