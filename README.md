@@ -65,22 +65,27 @@ node node src/index.js <your organization github name>
 4. Open frontend folder
 
 ```
-cd fronted
+cd frontend
 ```
 
-5. Run server
+5. Install dependencies
+```
+npm install
+```
+
+6. Run server
 
 ```
 npm run serve
 ```
 
-6. Open in browser network link provided in terminal
+7. Open in browser network link provided in terminal
 
 ```
 Cmd + click
 ```
 
-7. Click **Check** button
+8. Click **Check** button
 
 If you have any questions or comments, get in touch with us [opensource@saucelabs](mailto:opensource@saucelabs.com)
 
