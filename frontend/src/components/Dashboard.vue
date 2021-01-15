@@ -6,6 +6,11 @@
         Repositories
         <div class="result">{{frontend.length}}</div>
       </button>
+      <div class="content total state" v-on:click="isHidden = !isHidden">
+        <input type="checkbox" class="visually-hidden">
+        Repositories
+        <div class="result">{{frontend.length}}</div>
+      </div>
       <div class="content passed">
         Healthy Repos
         <div class="result">{{ allPassed }}</div>
@@ -97,6 +102,14 @@ export default {
 .state{
   &:hover{background-color: #1C9FCE;}
   &:active{background-color:red;}
+}
+
+
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
+
+    /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
 }
 
 
