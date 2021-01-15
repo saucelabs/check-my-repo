@@ -101,9 +101,7 @@ export default {
 
 .state{
   &:hover{background-color: #1C9FCE;}
-  &:active{background-color:red;}
 }
-
 
 .visually-hidden {
     position: absolute;
