@@ -15,6 +15,9 @@
         <div class="result">{{ failedRepo }}</div>
       </div>
     </div>
+    <div v-if="!isHidden">
+      <Details />
+    </div>
   <About />
   </div>
 </template>
