@@ -93,4 +93,11 @@ export default {
   font-weight: 500;
   font-size: 2em;
 }
+
+.state{
+  &:hover{background-color: #1C9FCE;}
+  &:active{background-color:red;}
+}
+
+
 </style>
