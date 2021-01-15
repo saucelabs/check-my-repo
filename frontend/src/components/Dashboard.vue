@@ -44,11 +44,6 @@ export default {
       return this.frontend.map(({failed}) => failed).flat().length
     },
   },
-  methods: {
-    showDetails() {
-      this.components.Details
-    }
-  }
 }
 </script>
 
