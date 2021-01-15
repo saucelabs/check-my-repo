@@ -2,10 +2,10 @@
   <div>
     <h1 class="header">CHECK MY REPO</h1>
     <div class="square">
-      <button class="content total state" v-on:click="isHidden = !isHidden">
+      <!-- <button class="content total state" v-on:click="isHidden = !isHidden">
         Repositories
         <div class="result">{{frontend.length}}</div>
-      </button>
+      </button> -->
       <div class="content total state" v-on:click="isHidden = !isHidden">
         <input type="checkbox" class="visually-hidden">
         Repositories
