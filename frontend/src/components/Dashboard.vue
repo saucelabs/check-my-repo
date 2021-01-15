@@ -34,6 +34,7 @@ export default {
   data() {
     return {
       frontend: reposData,
+      isHidden: true
     }
   },
   computed: {
