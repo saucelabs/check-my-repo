@@ -7,7 +7,6 @@ on:
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  repository: ${{github.repository}}
 
 jobs:
   deploy:
@@ -21,9 +20,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12'
-          repository: ${{github.repository}}
-          user_name: 'OSS Sauce Bot'
-          user_email: 'oss-sauce-bot@users.noreply.github.com'
 
       - name: Install dependencies
         run: npm install
@@ -33,11 +29,6 @@ jobs:
 
       - name: Install dependencies in frontend
         run: cd frontend && npm install
-
-      # - name: Build
-      #   working-directory: frontend
-      #   run: |
-      #     npm run build
 
       - name: Build Vue
         run: cd frontend && npm run deploy
