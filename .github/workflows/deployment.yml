@@ -3,7 +3,7 @@ name: Publish Check My Repo
 on:
   push:
     branches:
-      - hide-detail
+      - main
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
