@@ -3,7 +3,7 @@ name: Publish Check My Repo
 on:
   push:
     branches:
-      - main
+      - hide-detail
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -25,33 +25,23 @@ jobs:
           user_name: 'OSS Sauce Bot'
           user_email: 'oss-sauce-bot@users.noreply.github.com'
 
-      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-       # Which file to act upon
-      - name: Build site assets
-        working-directory: ${{ github.workspace }}
-        run: ls -la
+      - name: Generate frontend.json file
+        run: node src/index.js
 
-      - name: Install dependencies
-        working-directory: frontend
-        run: |
-          npm install
+      - name: Install dependencies in frontend
+        run: cd frontend && npm install
 
-      - name: Build
-        working-directory: frontend
-        run: |
-          npm run build
+      # - name: Build
+      #   working-directory: frontend
+      #   run: |
+      #     npm run build
 
       - name: Build Vue
-        working-directory: frontend
-        steps:
-          - uses: actions/checkout@v2
-          - id: Build-Vue
-            uses: xRealNeon/VuePagesAction@1.0.0
-            with:
-              username: 'OSS Sauce Bot'
-              reponame: ${{github.repository}}
-              token: ${{ secrets.GITHUB_TOKEN }}
+        run: cd frontend && npm run deploy
+          # username: 'OSS Sauce Bot'
+          # reponame: ${{github.repository}}
+          # token: ${{ secrets.GITHUB_TOKEN }}
 
