@@ -112,5 +112,8 @@ export default {
     /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
 }
 
+h1 {
+  margin-block-start: 0.1em;
+}
 
 </style>
