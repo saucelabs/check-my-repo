@@ -2,10 +2,10 @@
   <div>
     <h1 class="header">CHECK MY REPO</h1>
     <div class="square">
-      <div class="content total" @click="showDetails()">
+      <button class="content total state" v-on:click="isHidden = !isHidden">
         Repositories
         <div class="result">{{frontend.length}}</div>
-      </div>
+      </button>
       <div class="content passed">
         Healthy Repos
         <div class="result">{{ allPassed }}</div>
