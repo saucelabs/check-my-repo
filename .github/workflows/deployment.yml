@@ -1,9 +1,11 @@
 name: Publish Check My Repo
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 0 * * *'
+  # push:
+  #   branches:
+  #     - main
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
