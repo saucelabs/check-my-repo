@@ -25,7 +25,7 @@
 <script>
 import reposData from "../../public/frontend.json"
 import About from './About.vue'
-import Details from './Details'
+import Details from './Details.vue'
 
 export default {
   components: { About, Details },
