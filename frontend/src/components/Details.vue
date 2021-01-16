@@ -4,7 +4,7 @@
       <tr>
         <th v-for="name in columns" :key="name">{{name}}</th>
       </tr>
-      <tr v-for="item in tableData" :key="item">
+      <tr v-for="item in frontend" :key="item">
         <td v-for="(name, key) in columns" :key="key">
           {{ item[key] }}
         </td>
@@ -27,10 +27,6 @@ export default {
     }
   },
   computed: {
-    tableData() {
-      return this.frontend.map((x, index) => {
-        return index === 0 ? Object.assign(x, this.frontend.name) : x
-      })
     }
   }
 }
