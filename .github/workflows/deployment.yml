@@ -1,4 +1,4 @@
-name: Publish Check My Repo
+name: Verify Repo Health Daily
 
 on:
   schedule:
