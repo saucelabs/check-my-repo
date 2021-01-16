@@ -1,25 +1,5 @@
 <template>
   <div class="square-detail">
-    <!-- <table>
-      <tr class="table-header">
-        <th>Repository name</th>
-        <th class="table-header-passed">Passed rule</th>
-        <th class="table-header-failed">Failed rule</th>
-      </tr>
-      <tr>
-        <td>repo-1</td>
-        <td>License</td>
-      </tr>
-      <tr>
-        <td>repo-2</td>
-        <td>Contributor</td>
-        <td>Security</td>
-      </tr>
-      <tr>
-        <td>repo-3</td>
-        <td>Readme</td>
-      </tr>
-    </table> -->
     <table class="table-content">
       <tr>
         <th v-for="name in columns" :key="name">{{name}}</th>
