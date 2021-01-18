@@ -52,7 +52,7 @@ export default {
 .table-healthy {
   height: 20vh;
   overflow: auto;
-  text-align:justify;
+  text-align:center;
   color: #158906;
 }
 
