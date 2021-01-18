@@ -106,6 +106,11 @@ export default {
 
 .state{
   &:hover{background-color: #1C9FCE;}
+.state-healthy{
+  &:hover{
+    background-color: #25A711;
+    color: white;
+    }
 }
 
 .visually-hidden {
