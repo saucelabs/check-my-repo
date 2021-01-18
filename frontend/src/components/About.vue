@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="bot" :src="require('../assets/ospo-bot.svg')"/>
+    <img class="bot" :src="require('../assets/ospo-bot-new.svg')"/>
     <p>About</p>
     <p class="break-line">Open source automated tool daily checking our public</p>
     <p class="break-line p-bottom">repositories health and quality</p>
