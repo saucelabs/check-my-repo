@@ -11,7 +11,7 @@
         Repositories
         <div class="result">{{frontend.length}}</div>
       </div>
-      <div class="content passed">
+      <div class="content passed state-healthy" v-on:click="hideHealthy = !hideHealthy">
         Healthy Repos
         <div class="result">{{ allPassed }}</div>
       </div>
@@ -23,6 +23,9 @@
     <div v-if="!hideRepos">
       <Details />
     </div>
+    <div v-if="!hideHealthy">
+      <Healthy />
+    </div>
   <About />
   </div>
 </template>
@@ -31,15 +34,17 @@
 import reposData from "../../public/frontend.json"
 import About from './About.vue'
 import Details from './Details.vue'
+import Healthy from './Healthy.vue'
 
 export default {
-  components: { About, Details },
+  components: { About, Details, Healthy },
   name: 'Dashboard',
   /* tells Vue.js that we want to add these variables to our reactivity system */
   data() {
     return {
       frontend: reposData,
       hideRepos: true,
+      hideHealthy: true
     }
   },
   computed: {
