@@ -2,7 +2,6 @@
   <div class="square-detail">
     <table class="table-content">
       <tr>
-        <th v-for="name in columns" :key="name">{{name}}</th>
       </tr>
       <tr v-for="item in frontend" :key="item">
         <!-- <td v-for="column in columns" :key="column.key">
@@ -10,9 +9,6 @@
         </td> -->
         <td class="td-left">{{item.name}}</td>
         <td>{{item.failed.join(', ')}}</td>
-        <td v-for="(name, key) in columns" :key="key">
-          {{ item[key] }}
-        </td>
       </tr>
     </table>
   </div>
