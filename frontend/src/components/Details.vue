@@ -5,6 +5,9 @@
         <th v-for="name in columns" :key="name">{{name}}</th>
       </tr>
       <tr v-for="item in frontend" :key="item">
+        <!-- <td v-for="column in columns" :key="column.key">
+          {{ Array.isArray(item[column.key]) ? item[column.key].join(', ') : item[column.key] }}
+        </td> -->
         <td v-for="(name, key) in columns" :key="key">
           {{ item[key] }}
         </td>
