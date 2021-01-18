@@ -6,7 +6,7 @@
         Repositories
         <div class="result">{{frontend.length}}</div>
       </button> -->
-      <div class="content total state" v-on:click="isHidden = !isHidden">
+      <div class="content total state" v-on:click="hideRepos = !hideRepos">
         <input type="checkbox" class="visually-hidden">
         Repositories
         <div class="result">{{frontend.length}}</div>
@@ -20,7 +20,7 @@
         <div class="result">{{ failedRepo }}</div>
       </div>
     </div>
-    <div v-if="!isHidden">
+    <div v-if="!hideRepos">
       <Details />
     </div>
   <About />
@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       frontend: reposData,
-      isHidden: true
+      hideRepos: true,
     }
   },
   computed: {
