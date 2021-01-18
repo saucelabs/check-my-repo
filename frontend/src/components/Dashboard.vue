@@ -105,7 +105,11 @@ export default {
 }
 
 .state{
-  &:hover{background-color: #1C9FCE;}
+  &:hover{
+    background-color: #1C9FCE;
+    color: white;
+    }
+}
 .state-healthy{
   &:hover{
     background-color: #25A711;
