@@ -67,4 +67,12 @@ th{
   padding-bottom: 5%;
 }
 
+td {
+  white-space: pre;
+}
+
+.td-left {
+ padding-right: 5%
+}
+
 </style>
