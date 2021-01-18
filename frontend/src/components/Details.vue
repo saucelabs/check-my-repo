@@ -20,12 +20,12 @@ export default {
   data() {
     return {
       frontend: reposData,
-      columns: {
-        name: 'Repository name',
-        failed: 'Failed rules',
-      },
+      columns: [
+        {key: 'name', name: 'Repository name'},
+        {key: 'failed', name: 'Failed rules', }
+      ],
     }
-  }
+  },
 }
 
 </script>
