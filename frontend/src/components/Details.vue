@@ -25,9 +25,6 @@ export default {
         failed: 'Failed rules',
       },
     }
-  },
-  computed: {
-    }
   }
 }
 
