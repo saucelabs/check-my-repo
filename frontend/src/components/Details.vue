@@ -8,6 +8,8 @@
         <!-- <td v-for="column in columns" :key="column.key">
           {{ Array.isArray(item[column.key]) ? item[column.key].join(', ') : item[column.key] }}
         </td> -->
+        <td class="td-left">{{item.name}}</td>
+        <td>{{item.failed.join(', ')}}</td>
         <td v-for="(name, key) in columns" :key="key">
           {{ item[key] }}
         </td>
