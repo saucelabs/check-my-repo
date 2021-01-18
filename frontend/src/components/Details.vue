@@ -2,6 +2,7 @@
   <div class="square-detail">
     <table class="table-content">
       <tr>
+        <th v-for="column in columns" :key="column.key">{{column.name}}</th>
       </tr>
       <tr v-for="item in frontend" :key="item">
         <!-- <td v-for="column in columns" :key="column.key">
