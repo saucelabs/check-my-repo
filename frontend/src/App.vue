@@ -21,9 +21,12 @@ export default {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #464B54;
   min-height: 100vh;
   margin: -1.2vh;
+}
+
+body {
+  background: #464B54;
 }
 
 </style>
