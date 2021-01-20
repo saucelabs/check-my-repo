@@ -1,7 +1,7 @@
 # Check My Repo
 
 **Check My Repo** is a tool for OSPOs - Open Source Program Offices - to automatically check their repositories health and quality.
-Built upon [Repolinter](https://github.com/todogroup/repolinter) and using [open source best practices](https://opensource.guide/building-community/) as reference, this tool verifies if a single or all organization's repositories contain:
+Built upon [Repolinter](https://github.com/todogroup/repolinter) and using [open source best practices](https://opensource.guide/building-community/) as reference, this tool verifies if all public repositories under an organization contains:
 
 - [] Readme.md file
 - [] Changelog.md file or uses GitHub Releases
@@ -10,16 +10,18 @@ Built upon [Repolinter](https://github.com/todogroup/repolinter) and using [open
 - [] Security: if does not have binaries
 - [] Test directory
 
-Although part of best practices, as all Sauce Labs repositories are under Sauce Labs:
+Although part of best practices, as all Sauce Labs repositories are under SauceLabs:
 
 - [x] Code of conduct
 - [x] Contribution guidelines
 - [x] Support file
-      Therefore, this tool does not check for those files, but they can easily be implemented on your project by adding them into **repolinter.json** configuration file, using [repolinter dafault file](https://github.com/todogroup/repolinter/blob/master/rulesets/default.json).
+      This tool does not check for those files, but they can easily be implemented on your project by adding them into **repolinter.json** configuration file, using [repolinter dafault file](https://github.com/todogroup/repolinter/blob/master/rulesets/default.json).
 
 ## How does it works
 
-To a detailed understanding you can check the activity diagram under diagrams directory.
+This application can run locally or under a GitHub pages. 
+This is [SauceLabs OSPO Check-My-Repo](https://opensource.saucelabs.com/check-my-repo/)
+It is setup to daily lint all of our respositories and redeploy to this page using [GitHub Actions CI/CD](https://github.com/features/actions). This means that information is updated daily automalicaly.
 
 ## Technologies used
 
@@ -27,18 +29,18 @@ This project is build with
 
 - [Node.js v14](https://nodejs.org/en/)
 - [Vue.js 3 cli](https://v3.vuejs.org/)
-- [Axios](https://www.npmjs.com/package/axios)
 - [Repolinter](https://www.npmjs.com/package/repolinter)
 - [Octokit](https://www.npmjs.com/package/@octokit/rest)
+- [GitHub Actions CI/CD](https://github.com/features/actions)
 
-## Getting Started
+## How to make it run on your machine
 
 ### To run in terminal
 
 1. Clone this project
 
 ```
-git clone https://github.com/saucelabs/automated-oss-quality-check.git
+git clone https://github.com/saucelabs/check-my-repo.git
 ```
 
 2. Install dependencies
@@ -57,7 +59,13 @@ It enables you to verify all Sauce Labs public repositories, as it is set up as 
 If you would like to check your own organization repos, run:
 
 ```
-node node src/index.js <your organization github name>
+node src/index.js <your organization github name>
+```
+
+You can also change the code at [src/index.js](https://github.com/saucelabs/check-my-repo/blob/main/src/index.js) line 19, to your organization's name
+
+```
+const organization = process.argv[2] || 'saucelabs'
 ```
 
 ### To run in browser
@@ -85,7 +93,7 @@ npm run serve
 Cmd + click
 ```
 
-8. Click **Check** button
+8. Click **Repositories** button to check all repositories fail results or **Healthy Repos** button to see the list of all of your fully healthy repositories
 
 If you have any questions or comments, get in touch with us [opensource@saucelabs](mailto:opensource@saucelabs.com)
 
@@ -113,7 +121,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our process for su
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/saucelabs/automated-oss-quality-check/).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/saucelabs/check-my-repo).
 
 ## License
 
