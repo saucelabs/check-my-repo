@@ -116,4 +116,10 @@ h1 {
   margin-block-start: 0.1em;
 }
 
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
 </style>
