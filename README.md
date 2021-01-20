@@ -20,8 +20,13 @@ Although part of best practices, as all Sauce Labs repositories are under SauceL
 ## How does it works
 
 This application can run locally or under a GitHub pages. 
-This is [SauceLabs OSPO Check-My-Repo](https://opensource.saucelabs.com/check-my-repo/)
-It is setup to daily lint all of our respositories and redeploy to this page using [GitHub Actions CI/CD](https://github.com/features/actions). This means that information is updated daily automalicaly.
+When running locally, it nicelly shows you the results in terminal. It also generates a frontend.json file with an array of objects containing the filtered results of this verification process. 
+
+![check-my-repo-demo-short](https://user-images.githubusercontent.com/7980624/105194003-72aaed00-5b39-11eb-9643-9bfef5dc2d8a.gif)
+
+It uses this same frontend.json file to send data to our frontend application made with Vue.js
+This is [SauceLabs OSPO Check-My-Repo](https://opensource.saucelabs.com/check-my-repo/) website.
+It is setup to daily lint all of our respositories and re-deploy to the page above using [GitHub Actions CI/CD](https://github.com/features/actions). This means that information is updated daily automalicaly.
 
 ## Technologies used
 
