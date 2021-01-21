@@ -120,6 +120,29 @@ To run tests, run
 npm test
 ```
 
+## Enabling GitHub Actions for your organization
+
+Under .github/workflows you will find 3 actions:
+- One that run tests on every commit 
+And 3 others that: checks the repositories, overwrites the frontend.json file, sends it to frontend than deploys the new data to GitHub pages
+- One when a push is made to main branch
+- One daily at midnight (cron time)
+
+It now uses Sauce Labs environment variables.
+You can change the information for your organization one by changing the following values (just for deployment actions):
+
+```
+with:
+          publish_branch: gh-pages
+          user_name: 'OSS Sauce Bot'
+          user_email: 'oss-sauce-bot@users.noreply.github.com'
+```
+
+If you would like to know more about how to deploy Vue.js to GitHub pages and how to set up GitHub Pages from your repository, I recommend the following articles:
+- [Deploying Vue Apps to Github Pages, by Bobby](https://medium.com/swlh/deploy-vue-app-to-github-pages-2ada48d7397e)
+- [Vue CLI documentation](https://cli.vuejs.org/guide/deployment.html#general-guidelines) for deployment
+- [Getting started with GitHub Pages](https://docs.github.com/en/github/working-with-github-pages/getting-started-with-github-pages)
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our process for submitting pull requests, and please ensure you follow the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
