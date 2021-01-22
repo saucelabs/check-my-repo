@@ -92,7 +92,7 @@
       "rule": {
         "type": "directory-existence",
         "options": {
-          "globsAny": ["**/test*", "**/specs"],
+          "globsAny": ["**/test*", "**/specs", "**/__test__*"],
           "nocase": true
         }
       },
