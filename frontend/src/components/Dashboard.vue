@@ -10,10 +10,10 @@
         Healthy Repos
         <div class="result">{{ allPassed }}</div>
       </button>
-      <div class="content failed">
+      <button class="content failed state" v-on:click="hideRepos = !hideRepos">
         Failures
-        <div class="result">{{ failedRepo }}</div>
-      </div>
+        <div class="result">{{failedRepo}}</div>
+      </button>
     </div>
     <div v-if="!hideRepos">
       <Details />
@@ -101,7 +101,7 @@ export default {
 
 .state{
   &:hover{
-    background-color: #1C9FCE;
+    background-color:#E53E3E;
     color: white;
     }
 }
