@@ -36,6 +36,13 @@ p {
   width: 6%;
 }
 
+a {
+  display: block;
+  text-align: center;
+  margin: 2%;
+  font-size: 1em;
+  color: white;
+  font-weight: 200;
 }
 
 </style>
