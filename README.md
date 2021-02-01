@@ -3,12 +3,12 @@
 **Check My Repo** is a tool for OSPOs - Open Source Program Offices - to automatically check their repositories health and quality.
 Built upon [Repolinter](https://github.com/todogroup/repolinter) and using [open source best practices](https://opensource.guide/building-community/) as reference, this tool verifies if all public repositories under an organization contains:
 
-- [] Readme.md file
-- [] Changelog.md file or uses GitHub Releases
-- [] Codeowners file with a “Maintain” role
-- [] License file
-- [] Security: if does not have binaries
-- [] Test directory
+- [ ] Readme.md file
+- [ ] Changelog.md file or uses GitHub Releases
+- [ ] Codeowners file with a “Maintain” role
+- [ ] License file
+- [ ] Security: if does not have binaries
+- [ ] Test directory
 
 Although part of best practices, as all Sauce Labs repositories are under SauceLabs:
 
