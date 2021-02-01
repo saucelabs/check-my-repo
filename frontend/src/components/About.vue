@@ -33,7 +33,9 @@ p {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 12%;
+  width: 6%;
+}
+
 }
 
 </style>
