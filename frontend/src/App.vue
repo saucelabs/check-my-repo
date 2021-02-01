@@ -21,8 +21,6 @@ export default {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  margin: -1.2vh;
 }
 
 body {
