@@ -57,7 +57,6 @@ export default {
 <style scoped lang="scss">
 
 .header {
-  grid-column: span 3;
   padding: 20px;
   text-align: center;
   font-size: 1.4em;
