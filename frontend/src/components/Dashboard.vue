@@ -103,13 +103,15 @@ export default {
   &:hover{
     background-color:#E53E3E;
     color: white;
+    cursor: grab;
     }
 }
 .state-healthy{
   &:hover{
     background-color: #25A711;
     color: white;
-    }
+    cursor: grab;
+  }
 }
 
 h1 {
