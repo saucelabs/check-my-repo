@@ -25,6 +25,9 @@ export default {
 
 body {
   background: #464B54;
+  margin: 0%;
+  padding: 0%;
+  border: 0vh;
 }
 
 </style>
