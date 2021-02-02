@@ -1,4 +1,4 @@
-name: Deploy on push to main
+name: Deploy Frontend On Push To Main
 
 on:
   push:
@@ -21,11 +21,5 @@ jobs:
         with:
           node-version: '12'
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Generate frontend.json file
-        run: node src/index.js
-
-      - name: Deploy
-        uses: ./.github/workflows/deployment.yml
+      - name: Deploy Site
+        uses: ./.github/actions/deploy
