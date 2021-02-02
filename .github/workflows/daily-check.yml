@@ -11,10 +11,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # Gives access to repository
-      - name: Workflow access
+      - name: Gives access to repository
         uses: actions/checkout@v2
-      # Add node
       - name: Setup Node version
         uses: actions/setup-node@v1
         with:
