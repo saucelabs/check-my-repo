@@ -10,7 +10,7 @@ Built upon [Repolinter](https://github.com/todogroup/repolinter) and using [open
 - [ ] Security: if does not have binaries
 - [ ] Test directory
 
-Although part of best practices, as all Sauce Labs repositories are under SauceLabs:
+Although part of best practices, as all Sauce Labs repositories are under Sauce Labs:
 
 - [x] Code of conduct
 - [x] Contribution guidelines
@@ -19,13 +19,13 @@ Although part of best practices, as all Sauce Labs repositories are under SauceL
 
 ## How does it works
 
-This application can run locally or under a GitHub pages. 
-When running locally, it nicelly shows you the results in terminal. It also generates a frontend.json file with an array of objects containing the filtered results of this verification process. 
+This application can run locally or under a GitHub pages.
+When running locally, it nicelly shows you the results in terminal. It also generates a frontend.json file with an array of objects containing the filtered results of this verification process.
 
 ![check-my-repo-demo-short](https://user-images.githubusercontent.com/7980624/105194003-72aaed00-5b39-11eb-9643-9bfef5dc2d8a.gif)
 
 It uses this same frontend.json file to send data to our frontend application made with Vue.js
-This is [SauceLabs OSPO Check-My-Repo](https://opensource.saucelabs.com/check-my-repo/) website.
+This is [Sauce Labs OSPO Check-My-Repo](https://opensource.saucelabs.com/check-my-repo/) website.
 It is setup to daily lint all of our respositories and re-deploy to the page above using [GitHub Actions CI/CD](https://github.com/features/actions). This means that information is updated daily automalicaly.
 
 ## Technologies used
@@ -123,7 +123,7 @@ npm test
 ## Enabling GitHub Actions for your organization
 
 Under .github/workflows you will find 3 actions:
-- One that run tests on every commit 
+- One that run tests on every commit
 And 3 others that: checks the repositories, overwrites the frontend.json file, sends it to frontend than deploys the new data to GitHub pages
 - One when a push is made to main branch
 - One daily at midnight (cron time)
