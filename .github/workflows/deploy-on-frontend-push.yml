@@ -1,0 +1,31 @@
+name: Deploy on push to main
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Gives access to repository
+      - name: Workflow access
+        uses: actions/checkout@v2
+      # Add node
+      - name: Setup Node version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate frontend.json file
+        run: node src/index.js
+
+      - name: Deploy
+        uses: ./.github/workflows/deployment.yml
