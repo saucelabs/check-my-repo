@@ -12,7 +12,7 @@
       </button>
       <button class="content failed state" v-on:click="hideRepos = !hideRepos">
         Failures
-        <div class="result">{{failedRepo}}</div>
+        <div class="result">{{frontend.length - allPassed}}</div>
       </button>
     </div>
     <div v-if="!hideRepos">
@@ -46,7 +46,7 @@ export default {
     allPassed: function() {
       return this.frontend.filter(r => r.passed && r.failed.length < 1).length
     },
-
+    // sum of all failures found
     failedRepo: function() {
       return this.frontend.map(({failed}) => failed).flat().length
     },
