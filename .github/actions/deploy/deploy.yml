@@ -1,4 +1,8 @@
-name: Deployment
+name: Deploy to GitHub Pages
+
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 runs:
   using: "composite"
   steps:
