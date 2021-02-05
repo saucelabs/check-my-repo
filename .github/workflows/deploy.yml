@@ -9,7 +9,6 @@ on:
 jobs:
   on-push-and-daily:
     name: Install Node & Frontend
-    runs-on: ubuntu-latest
     steps:
       - name: Install Frontend
         run: cd frontend && npm install
