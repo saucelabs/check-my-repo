@@ -33,4 +33,5 @@ jobs:
         with:
           name: frontend-json
           path: frontend/public/frontend.json
+          retention-days: 1
 
