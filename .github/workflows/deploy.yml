@@ -8,7 +8,7 @@ on:
 
 jobs:
   on-push-and-daily:
-    name: Install Node & Frontend
+    name: Install Frontend Copy Artifact Deploy
     steps:
       - name: Install Frontend
         run: cd frontend && npm install
