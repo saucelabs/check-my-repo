@@ -8,7 +8,6 @@ on:
 
 jobs:
   Install Frontend Copy Artifact & Deploy:
-    runs:
     steps:
       - name: Install dependencies in frontend
         run: cd frontend && npm install
