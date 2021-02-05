@@ -1,12 +1,8 @@
 name: Verify Repo Health Daily
 
-# on:
-#   schedule:
-#     - cron: '0 0 * * *'
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 0 * * *'
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -31,7 +27,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: frontend.json
-          path: path/to/artifact
+          name: frontend-json
+          path: frontend/public/frontend.json
           retention-days: 1
 
