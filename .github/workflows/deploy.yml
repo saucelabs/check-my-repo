@@ -2,7 +2,9 @@ name: Deploy to GitHub Pages
 
 on:
   workflow_run:
-    workflows: ["Verify Repo Health Daily", "Deploy On Push To Main"]
+    workflows:
+      - Verify Repo Health Daily
+      - Deploy On Push To Main
     types:
       - completed
 
