@@ -20,10 +20,10 @@ jobs:
       - name: Install Frontend
         run: cd frontend && npm install
 
-      - name: Copy frontend.json file artifact
+      - name: Copy artifact to frontend
         uses: actions/download-artifact@v2
         with:
-          name: frontend.json
+          name: frontend-json
           path: /frontend/public/
 
       - name: Build Vue
