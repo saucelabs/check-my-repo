@@ -19,7 +19,7 @@ jobs:
         name: frontend.json
         path: /frontend/public/
 
-        - name: Build Vue
+      - name: Build Vue
         run: cd frontend && npm run build
 
         - name: Deploy Vue Site
