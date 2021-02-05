@@ -1,7 +1,12 @@
 name: Deploy to GitHub Pages
 
+on:
+  workflow_run:
+    workflows: ["daily-check", "deploy-on-push"]
+    types:
+      - completed
+
 runs:
-  using: "composite"
   steps:
     - name: Install dependencies in frontend
       run: cd frontend && npm install
