@@ -24,9 +24,9 @@ jobs:
       - name: Generate frontend.json file
         run: node src/index.js
 
-      - name: Create frontend.json as artifact
+      - name: Upload frontend.json as artifact
         uses: actions/upload-artifact@v2
-          with:
-            name: frontend.json
-            path: frontend/public/frontend.json
+        with:
+          name: frontend.json
+          path: frontend/public/frontend.json
 

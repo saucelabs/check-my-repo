@@ -7,7 +7,7 @@ on:
       - completed
 
 jobs:
-  Install Frontend Copy Artifact & Deploy
+  Install Frontend Copy Artifact & Deploy:
     runs:
     steps:
       - name: Install dependencies in frontend
