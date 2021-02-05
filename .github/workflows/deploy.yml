@@ -13,7 +13,7 @@ jobs:
     steps:
       run: cd frontend && npm install
 
-      - name: Copy frontend.json file artifact
+      name: Copy frontend.json file artifact
       uses: actions/download-artifact@v2
       with:
         name: frontend.json
