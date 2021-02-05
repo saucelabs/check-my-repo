@@ -15,6 +15,3 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12'
-
-      - name: Deploy using artifact
-        uses: ./.github/workflows/deploy.yml

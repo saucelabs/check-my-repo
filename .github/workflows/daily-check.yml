@@ -30,5 +30,3 @@ jobs:
             name: frontend.json
             path: frontend/public/frontend.json
 
-      - name: Deploy using artifact
-        uses: ./.github/workflows/deploy.yml
