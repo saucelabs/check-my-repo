@@ -8,7 +8,7 @@ on:
 
 jobs:
   on-push-and-daily:
-    name: Install Frontend Copy Artifact Deploy
+    runs-on: ubuntu-latest
     steps:
       - name: Install Frontend
         run: cd frontend && npm install
