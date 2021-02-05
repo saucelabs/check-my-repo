@@ -5,11 +5,8 @@ on:
     branches:
       - main
 
-env:
-  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
 jobs:
-  deploy:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Gives access to repository
@@ -19,18 +16,5 @@ jobs:
         with:
           node-version: '12'
 
-      - name: Install dependencies in frontend
-        run: cd frontend && npm install
-
-      - name: Build Vue
-        run: cd frontend && npm run build
-
-      - name: Deploy Vue Site
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend/dist
-          publish_branch: gh-pages
-          user_name: 'OSS Sauce Bot'
-          user_email: 'oss-sauce-bot@users.noreply.github.com'
-          commit_message: ${{ github.event.head_commit.message }}
+      - name: Deploy using artifact
+        uses: ./.github/actions/deploy.yml
