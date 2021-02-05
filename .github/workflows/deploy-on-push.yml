@@ -17,4 +17,4 @@ jobs:
           node-version: '12'
 
       - name: Deploy using artifact
-        uses: ./.github/actions/deploy.yml
+        uses: ./.github/actions/deploy
