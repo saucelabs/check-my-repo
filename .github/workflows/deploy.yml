@@ -27,8 +27,7 @@ jobs:
           path: ~/frontend/public
 
       - name: Display structure of downloaded artifact
-          run: ls
-          working-directory: frontend/public
+          run: cd frontend && ls
 
       - name: Build Vue
         run: cd frontend && npm run build
