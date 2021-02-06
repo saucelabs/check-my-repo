@@ -24,6 +24,9 @@ jobs:
       - name: Generate artifact
         run: node src/index.js
 
+      - name: Install Frontend
+        run: cd frontend && npm install
+
       - name: Build Vue
         run: cd frontend && npm run build
 
