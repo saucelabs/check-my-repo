@@ -4,11 +4,8 @@ on:
   schedule:
     - cron: '0 0 * * *'
 
-env:
-  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
 jobs:
-  Linting:
+  Lint-Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Gives access to repository
@@ -31,8 +28,6 @@ jobs:
           path: frontend/public/frontend.json
           retention-days: 1
 
-  Deploy:
-    steps:
       - name: Install Frontend
         run: cd frontend && npm install
 
