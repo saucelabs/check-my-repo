@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  Linting & Deploying:
+  Lint-Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Gives access to repository
