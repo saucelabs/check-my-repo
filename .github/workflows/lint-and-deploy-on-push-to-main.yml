@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  Linting:
+  Linting & Deploying:
     runs-on: ubuntu-latest
     steps:
       - name: Gives access to repository
@@ -29,8 +29,6 @@ jobs:
           path: frontend/public/frontend.json
           retention-days: 1
 
-  Deploy:
-    steps:
       - name: Install Frontend
         run: cd frontend && npm install
 
