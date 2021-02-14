@@ -3,7 +3,10 @@ name: Deploy to GitHub Pages
 on:
   workflow_run:
     # workflows: ["Verify Repo Health Daily", "Lint And Deploy On Push To Main"]
+<<<<<<< HEAD
     workflows: ["none"]
+=======
+>>>>>>> Re add both daily and on push jobs
     types:
       - completed
 
