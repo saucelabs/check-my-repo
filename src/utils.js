@@ -103,10 +103,10 @@ const createJsonFile = async function (repository, organization, results) {
 }
 
 /* Writes and overwrites a JSON file and save it into frontend/public folder */
-const createJsonDashboardFile = async function (output) {
+const createJsonDashboardFile = async function (output, organization) {
   const directory = path.resolve(__dirname, '..', 'frontend', 'public')
 
-  await fs.promises.writeFile(path.resolve(directory, 'frontend.json'), JSON.stringify(output))
+  await fs.promises.writeFile(path.resolve(directory, `${organization}.json`), JSON.stringify(output))
 }
 
 module.exports = {
