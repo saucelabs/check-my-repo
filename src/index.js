@@ -8,6 +8,9 @@ const path = require('path')
 const fs = require('fs')
 const os = require('os')
 
+const main = require('./organization')
+const mainUser = require('./user')
+
 const {
   printResults,
   validateChangeLog,
@@ -18,65 +21,25 @@ const {
 
 const organization = process.argv[2] || 'saucelabs'
 const access = 'public'
+const user = 'apifortress'
 
 /* This variable stores the sum of all analised repositories which results are all positives */
 let passingRepositories = 0
 
-async function main() {
-  const { data } = await octokit.repos.listForOrg({
-    org: organization,
-    type: access,
-    per_page: 100,
-  })
-
-  /* Output is an array of objects to be sent to frontend through frontend.json */
-  const output = []
-
-  for (const d of data) {
-    const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${d.name}-`))
-    await git.clone(d.clone_url, tmpDir)
-    const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
-
-    /* Validates if Changelog rule passed, of not, search for releases */
-    await validateChangeLog(repolinterConnect.results, organization, d.name)
-
-    /* Print in all the results in terminal */
-    printResults(d, repolinterConnect.results)
-
-    /*
-    * Creates individual .json files for each repo result
-    await createJsonFile(d.name, organization, repolinterConnect)
-    */
-
-    /* Creates an array to check its length and sum all passing results without a loop */
-    const hasFailures =
-      repolinterConnect.results /* filter messages for what didn't passed */
-        .filter(r => !r.lintResult.passed).length > 0
-    if (!hasFailures) {
-      passingRepositories++
-    }
-
-    /* Push individual repos results to the array which will contain all the results */
-    output.push({
-      name: d.name,
-      failed: negativeResults(repolinterConnect.results),
-      passed: positiveResults(repolinterConnect.results),
-    })
+async function index() {
+  if (organization !== octokit.orgs) {
+    mainUser()
   }
-  /* Creates one .json file in frontend public folder to make this results available */
-  await createJsonDashboardFile(output)
 
-  console.log(chalk`\n😨 Total repositories with fails =  {redBright.bold ${data.length - passingRepositories}}\n`)
-  console.log(chalk`\n😌 Total healthy repositories =  {greenBright.bold ${passingRepositories}}\n`)
-  console.log(chalk`\nNumber of repositories analised: {cyanBright.bold ${data.length}}\n`)
+  main()
 }
 
 /* allows to be executed when not used as an imported file */
-if (require.main === module) {
-  main().then(
+if (require.index === module) {
+  index().then(
     () => console.log('Validation successful!'),
     err => console.log('Validation failed:', err.stack)
   )
 }
 
-module.exports = main
+module.exports = index
