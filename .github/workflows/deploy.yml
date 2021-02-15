@@ -2,13 +2,12 @@ name: Deploy to GitHub Pages
 
 on:
   workflow_run:
-    # workflows: ["Verify Repo Health Daily", "Lint And Deploy On Push To Main"]
-    workflows: ["none"]
+    workflows: ["Verify Repo Health Daily", "Lint And Deploy On Push To Main"]
     types:
       - completed
 
 jobs:
-  on-push-and-daily:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Gives access to repository
@@ -25,7 +24,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: frontend-json
-          path: ~/frontend/public
+          path: ./frontend/public
 
       - name: Build Vue
         run: cd frontend && npm run build

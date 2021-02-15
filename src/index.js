@@ -1,8 +1,10 @@
 const { Octokit } = require('@octokit/rest') /* */
-const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN }) /*lib for GitHub API */
+const octokit = new Octokit({ auth: process.env.PERSONAL_TOKEN }) /*lib for GitHub API */
 const repolinter = require('repolinter') /*project which this is build upon */
 const git = require('simple-git/promise')() /*lib for GitHub API */
 const chalk = require('chalk')
+
+const myVariables = require('../check-my-repo-config.json')
 
 const path = require('path')
 const fs = require('fs')
@@ -16,17 +18,22 @@ const {
   createJsonDashboardFile,
 } = require('./utils')
 
-const organization = process.argv[2] || 'saucelabs'
-const access = 'public'
+const input = myVariables.owner
 
 /* This variable stores the sum of all analised repositories which results are all positives */
 let passingRepositories = 0
 
 async function main() {
-  const { data } = await octokit.repos.listForOrg({
-    org: organization,
-    type: access,
-    per_page: 100,
+
+  /* Verifies if it is an organization or a user */
+  const { data: { type } } = await octokit.request(`GET /users/${input}`)
+
+  const fetchRepos = type === 'Organization' ? octokit.repos.listForOrg : octokit.repos.listForUser
+
+  const { data } = await fetchRepos({
+    org: input,
+    username: input,
+    per_page: myVariables.pagination
   })
 
   /* Output is an array of objects to be sent to frontend through frontend.json */
@@ -38,15 +45,10 @@ async function main() {
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
 
     /* Validates if Changelog rule passed, of not, search for releases */
-    await validateChangeLog(repolinterConnect.results, organization, d.name)
+    await validateChangeLog(repolinterConnect.results, input, d.name)
 
     /* Print in all the results in terminal */
     printResults(d, repolinterConnect.results)
-
-    /*
-    * Creates individual .json files for each repo result
-    await createJsonFile(d.name, organization, repolinterConnect)
-    */
 
     /* Creates an array to check its length and sum all passing results without a loop */
     const hasFailures =
@@ -59,6 +61,7 @@ async function main() {
     /* Push individual repos results to the array which will contain all the results */
     output.push({
       name: d.name,
+      url: d.clone_url,
       failed: negativeResults(repolinterConnect.results),
       passed: positiveResults(repolinterConnect.results),
     })
