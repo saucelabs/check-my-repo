@@ -2,13 +2,12 @@ name: Deploy to GitHub Pages
 
 on:
   workflow_run:
-    # workflows: ["Verify Repo Health Daily", "Lint And Deploy On Push To Main"]
-    workflows: ["none"]
+    workflows: ["Verify Repo Health Daily", "Lint And Deploy On Push To Main"]
     types:
       - completed
 
 jobs:
-  on-push-and-daily:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Gives access to repository
