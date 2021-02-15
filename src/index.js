@@ -66,7 +66,7 @@ async function main() {
     })
   }
   /* Creates one .json file in frontend public folder to make this results available */
-  await createJsonDashboardFile(output, user)
+  await createJsonDashboardFile(output)
 
   console.log(chalk`\n😨 Total repositories with fails =  {redBright.bold ${data.length - passingRepositories}}\n`)
   console.log(chalk`\n😌 Total healthy repositories =  {greenBright.bold ${passingRepositories}}\n`)
