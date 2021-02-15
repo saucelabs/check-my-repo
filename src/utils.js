@@ -65,7 +65,7 @@ const negativeResults = function (results) {
 }
 
 /* Check if Changelog rule exists, if not, verify if releases exist */
-const validateChangeLog = async function (results, organization, repository) {
+const validateChangeLog = async function (results, input, repository) {
   /* search if the rule exists */
   const changelogResult = results.find(item => item.ruleInfo.name === 'Changelog')
   /* if Changelog rule do not exists, or the result has already passed, do not continue */
@@ -74,7 +74,7 @@ const validateChangeLog = async function (results, organization, repository) {
   }
   /* verify if there are releases */
   const releases = await octokit.repos.listReleases({
-    owner: organization,
+    owner: input,
     repo: repository,
     per_page: 100,
   })
@@ -87,9 +87,9 @@ const validateChangeLog = async function (results, organization, repository) {
 }
 
 /* Creates a JSON file inside a folder with organization name */
-const createJsonFile = async function (repository, organization, results) {
+const createJsonFile = async function (repository, input, results) {
   const print = await repolinter.jsonFormatter.formatOutput(results) /*JS Object return into json*/
-  const directory = path.resolve(__dirname, '..', 'reports', organization)
+  const directory = path.resolve(__dirname, '..', 'reports', input)
 
   if (!fs.existsSync(directory)) {
     console.log(`A directory is created at ${directory}`)
@@ -103,10 +103,10 @@ const createJsonFile = async function (repository, organization, results) {
 }
 
 /* Writes and overwrites a JSON file and save it into frontend/public folder */
-const createJsonDashboardFile = async function (output, organization) {
+const createJsonDashboardFile = async function (output) {
   const directory = path.resolve(__dirname, '..', 'frontend', 'public')
 
-  await fs.promises.writeFile(path.resolve(directory, `${organization}.json`), JSON.stringify(output))
+  await fs.promises.writeFile(path.resolve(directory, 'frontend.json'), JSON.stringify(output))
 }
 
 module.exports = {
