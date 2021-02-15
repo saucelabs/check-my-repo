@@ -11,7 +11,7 @@ on:
       - completed
 
 jobs:
-  on-push-and-daily:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Gives access to repository
