@@ -18,9 +18,7 @@ const {
   createJsonDashboardFile,
 } = require('./utils')
 
-// const organization = process.argv[2] || 'saucelabs'
-const access = 'public'
-const user = 'apifortress'
+const input = myVariables.owner
 
 let passingRepositories = 0
 
