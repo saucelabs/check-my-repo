@@ -24,7 +24,10 @@ const input = myVariables.owner
 let passingRepositories = 0
 
 async function main() {
+  /* Verifies if it is an organization or a user */
+  const { data: { type } } = await octokit.request(`GET /users/${input}`)
 
+  const fetchRepos = type === 'Organization' ? octokit.repos.listForOrg : octokit.repos.listForUsers
 
 
   /* Output is an array of objects to be sent to frontend through frontend.json */
