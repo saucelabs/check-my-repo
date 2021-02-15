@@ -4,6 +4,8 @@ const repolinter = require('repolinter') /*project which this is build upon */
 const git = require('simple-git/promise')() /*lib for GitHub API */
 const chalk = require('chalk')
 
+const myVariables = require('../check-my-repo-config.json')
+
 const path = require('path')
 const fs = require('fs')
 const os = require('os')
