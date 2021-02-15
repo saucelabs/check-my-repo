@@ -24,10 +24,11 @@ const input = myVariables.owner
 let passingRepositories = 0
 
 async function main() {
+
   /* Verifies if it is an organization or a user */
   const { data: { type } } = await octokit.request(`GET /users/${input}`)
 
-  const fetchRepos = type === 'Organization' ? octokit.repos.listForOrg : octokit.repos.listForUsers
+  const fetchRepos = type === 'Organization' ? octokit.repos.listForOrg : octokit.repos.listForUser
 
   const { data } = await fetchRepos({
     org: input,
