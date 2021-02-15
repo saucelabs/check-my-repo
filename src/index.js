@@ -10,9 +10,6 @@ const path = require('path')
 const fs = require('fs')
 const os = require('os')
 
-// const main = require('./organization')
-// const mainUser = require('./user')
-
 const {
   printResults,
   validateChangeLog,
