@@ -44,7 +44,7 @@ async function main() {
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
 
     /* Validates if Changelog rule passed, of not, search for releases */
-    await validateChangeLog(repolinterConnect.results, user, d.name)
+    await validateChangeLog(repolinterConnect.results, input, d.name)
 
     /* Print in all the results in terminal */
     printResults(d, repolinterConnect.results)
