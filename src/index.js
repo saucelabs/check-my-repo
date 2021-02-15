@@ -25,14 +25,7 @@ let passingRepositories = 0
 
 async function main() {
 
-  const { data } = await octokit.repos.listPublic({
-    user: user,
-    type: access,
-    per_page: 5,
-  })
 
-  console.log(data)
-  process.exit()
 
   /* Output is an array of objects to be sent to frontend through frontend.json */
   const output = []
