@@ -23,14 +23,6 @@ const input = myVariables.owner
 /* This variable stores the sum of all analised repositories which results are all positives */
 let passingRepositories = 0
 
-// async function index() {
-//   if (organization !== octokit.orgs) {
-//     mainUser()
-//   }
-
-//   main()
-// }
-
 async function main() {
 
   const { data } = await octokit.repos.listPublic({
