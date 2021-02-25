@@ -70,6 +70,13 @@ th{
 
 td {
   white-space: pre;
+
+  &:first-child {
+    border-top: none;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .td-left {
