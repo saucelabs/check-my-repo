@@ -58,6 +58,10 @@ export default {
   text-align:justify;
 }
 
+.separating-line {
+    border-top: 3px #F00 dashed;
+}
+
 table {
   color: #464b54;
   padding: 5%;
