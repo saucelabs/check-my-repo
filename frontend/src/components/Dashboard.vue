@@ -8,11 +8,11 @@
       </div>
       <button class="content passed state-healthy" v-on:click="hideHealthy = !hideHealthy">
         Healthy Repos
-        <div class="result">{{ allPassed }} ✓</div>
+        <div class="result">{{ allPassed }}</div>
       </button>
       <button class="content failed state" v-on:click="hideRepos = !hideRepos">
         Failing Repos
-        <div class="result">{{frontend.length - allPassed}} 𝘟</div>
+        <div class="result">{{frontend.length - allPassed}}</div>
       </button>
     </div>
     <div v-if="!hideRepos">
