@@ -5,10 +5,6 @@
         <th v-for="column in columns" :key="column.key">{{column.name}}</th>
       </tr>
       <tr v-for="item in frontend" :key="item">
-        <!-- <td v-for="column in columns" :key="column.key">
-          {{ Array.isArray(item[column.key]) ? item[column.key].join(', ') : item[column.key] }}
-        </td> -->
-        <td class="td-left">{{item.name}}</td>
         <td>{{item.failed.join(', ')}}</td>
       </tr>
     </table>
