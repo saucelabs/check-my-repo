@@ -5,7 +5,9 @@
         <th v-for="column in columns" :key="column.key">{{column.name}}</th>
       </tr>
       <tr v-for="item in frontend" :key="item">
-        <td v-if="item.failed.length !== 0" class="td-left">{{item.name}}</td>
+        <td v-if="item.failed.length !== 0" class="td-left">
+          <a v-bind:href="item.url">{{item.name}}</a>
+        </td>
         <td>{{item.failed.join(', ')}}</td>
       </tr>
     </table>
