@@ -21,21 +21,8 @@ jobs:
       - name: Generate frontend data
         run: node src/index.js
 
-      # - name: Upload artifact
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: frontend-json
-      #     path: frontend/public/frontend.json
-      #     retention-days: 1
-
       - name: Install Frontend
         run: cd frontend && npm install
-
-      # - name: Copy artifact to frontend
-      #   uses: actions/download-artifact@v2
-      #   with:
-      #     name: frontend-json
-      #     path: ~/frontend/public
 
       - name: Build Vue
         run: cd frontend && npm run build
