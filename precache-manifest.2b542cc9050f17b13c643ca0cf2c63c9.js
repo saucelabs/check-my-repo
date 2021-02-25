@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "257d0725d6fe3149242c",
-    "url": "/check-my-repo/css/app.9c6878b7.css"
+    "revision": "7ffa76a54d4e7a7c5854",
+    "url": "/check-my-repo/css/app.5a7e6429.css"
   },
   {
-    "revision": "aa6c2d456c0a70e0ea8396994cd9086b",
+    "revision": "80363e0817a2ee1a8cdc31c655137484",
     "url": "/check-my-repo/frontend.json"
   },
   {
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/check-my-repo/img/ospo-bot-new.d16ebdb9.svg"
   },
   {
-    "revision": "aaf5c89ea6a6909f57c81641fa3665a0",
+    "revision": "d0c486f24a4d98b758a3db602fa360d7",
     "url": "/check-my-repo/index.html"
   },
   {
-    "revision": "257d0725d6fe3149242c",
-    "url": "/check-my-repo/js/app.3f5bcc7d.js"
+    "revision": "7ffa76a54d4e7a7c5854",
+    "url": "/check-my-repo/js/app.0b9b0ce6.js"
   },
   {
     "revision": "515c3b60337dfbe02b1a",
