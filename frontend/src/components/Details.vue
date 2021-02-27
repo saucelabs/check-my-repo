@@ -67,8 +67,6 @@ a {
   &:visited{
    color: #FFF503;
   }
-.separating-line {
-    border-top: 3px #F00 dashed;
 }
 
 table {
