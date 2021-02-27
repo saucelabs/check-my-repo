@@ -75,6 +75,7 @@ table {
   color: #464b54;
   padding: 5%;
   text-align: left;
+  border-spacing: 0ch;
 }
 
 th{
