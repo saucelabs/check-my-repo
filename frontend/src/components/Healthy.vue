@@ -21,7 +21,7 @@ export default {
     return {
       frontend: reposData,
       columns: {
-        name: 'Healthy Repository',
+        name: 'Healthy Repos',
       },
     }
   },
@@ -40,7 +40,7 @@ export default {
   margin: 2% 16%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  background-color: white;
+  background-color: #2E3137;
   border-radius: 10px;
   height: 50vh;
   overflow:scroll;
