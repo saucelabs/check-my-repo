@@ -6,22 +6,24 @@
         <div>
           <img class="icon" :src="require('../assets/box.svg')" alt="Feather Icon Box"/>
         </div>
-        Total Repos
+        <h4>Total Repos</h4>
         <div class="result">{{frontend.length}}</div>
       </div>
       <button class="content passed state-healthy" v-on:click="hideHealthy = !hideHealthy">
         <div>
           <img class="icon" :src="require('../assets/check-circle.svg')" alt="Feather Icon Check"/>
         </div>
-        Healthy Repos
+        <h4>Healthy Repos</h4>
         <div class="result">{{ allPassed }}</div>
+        <p>View repos</p>
       </button>
       <button class="content failed state" v-on:click="hideRepos = !hideRepos">
         <div>
           <img class="icon" :src="require('../assets/x-circle.svg')" alt="Feather Icon No Check"/>
         </div>
-        Failing Repos
+        <h4>Failing Repos</h4>
         <div class="result">{{frontend.length - allPassed}}</div>
+        <p>View repos</p>
       </button>
     </div>
     <div v-if="!hideRepos">
