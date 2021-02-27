@@ -89,9 +89,9 @@ export default {
   border-top: 5px solid #8CFF4D;
 }
 .failed {
-  color: #e12726;
-  border-radius: 10px;
-  border: 3px solid #E53E3E;
+  color: #FF5953;
+  border-radius: 4px;
+  border-top: 5px solid #FF5953;
 }
 .result {
   font-weight: 500;
