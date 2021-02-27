@@ -60,6 +60,13 @@ export default {
   text-align:justify;
 }
 
+a {
+  font-weight: 500;
+  color: #6ED6FF;
+
+  &:visited{
+   color: #FFF503;
+  }
 .separating-line {
     border-top: 3px #F00 dashed;
 }
