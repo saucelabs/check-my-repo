@@ -3,14 +3,23 @@
     <h1 class="header">CHECK MY REPO</h1>
     <div class="square">
       <div class="content total">
+        <div>
+          <img class="icon" :src="require('../assets/box.svg')" alt="Feather Icon Box"/>
+        </div>
         Total Repos
         <div class="result">{{frontend.length}}</div>
       </div>
       <button class="content passed state-healthy" v-on:click="hideHealthy = !hideHealthy">
+        <div>
+          <img class="icon" :src="require('../assets/check-circle.svg')" alt="Feather Icon Check"/>
+        </div>
         Healthy Repos
         <div class="result">{{ allPassed }}</div>
       </button>
       <button class="content failed state" v-on:click="hideRepos = !hideRepos">
+        <div>
+          <img class="icon" :src="require('../assets/x-circle.svg')" alt="Feather Icon No Check"/>
+        </div>
         Failing Repos
         <div class="result">{{frontend.length - allPassed}}</div>
       </button>
