@@ -111,14 +111,14 @@ export default {
 
 .state{
   &:hover{
-    background-color:#E53E3E;
+    background-color:#6E2E2C;
     color: white;
     cursor: grab;
     }
 }
 .state-healthy{
   &:hover{
-    background-color: #25A711;
+    background-color: #3C6625;
     color: white;
     cursor: grab;
   }
