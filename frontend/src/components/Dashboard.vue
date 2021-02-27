@@ -84,9 +84,9 @@ export default {
   border-top: 5px solid #6ED6FF;
 }
 .passed {
-  color: #158906;
-  border-radius: 10px;
-  border: 3px solid #25A711;
+  color: #8CFF4D;
+  border-radius: 4px;
+  border-top: 5px solid #8CFF4D;
 }
 .failed {
   color: #e12726;
