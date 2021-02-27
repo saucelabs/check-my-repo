@@ -81,17 +81,9 @@ th{
 }
 
 td {
-  white-space: pre;
-  // border: solid;
-  // border-width: 0.1px 0;
-  // border-color: #bfc2c6;
-
-  &:first-child {
-    border-top: none;
-  }
-  &:last-child {
-    border-bottom: none;
-  }
+  // white-space: pre;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
 }
 
 .td-left {
