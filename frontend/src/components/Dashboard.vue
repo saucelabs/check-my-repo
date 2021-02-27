@@ -138,4 +138,17 @@ h1 {
   margin: 0%;
 }
 
+h4{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1em;
+  color: white;
+  font-weight: 500;
+  margin: 0px;
+}
+
+p{
+  color: #6ED6FF;
+  margin: 12px;
+}
+
 </style>
