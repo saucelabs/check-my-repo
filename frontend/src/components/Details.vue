@@ -57,7 +57,6 @@ export default {
 .table-content {
   height: 40vh;
   overflow: auto;
-  text-align:justify;
 }
 
 a {
