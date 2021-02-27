@@ -3,7 +3,7 @@
     <h1 class="header">CHECK MY REPO</h1>
     <div class="square">
       <div class="content total">
-        Repositories
+        Total Repos
         <div class="result">{{frontend.length}}</div>
       </div>
       <button class="content passed state-healthy" v-on:click="hideHealthy = !hideHealthy">
@@ -79,9 +79,9 @@ export default {
   background-color: white;
 }
 .total {
-  color: #464b54;
-  border-radius: 10px;
-  border: 3px solid #1C9FCE;
+  color:white;
+  border-radius: 4px;
+  border-top: 5px solid #6ED6FF;
 }
 .passed {
   color: #158906;
