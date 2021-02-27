@@ -74,7 +74,6 @@ export default {
   background-color: #2E3137;
   color: white;
   font-weight: 300;
-  font-style: oblique;
 }
 
 .square {
@@ -107,6 +106,7 @@ export default {
 .result {
   font-weight: 500;
   font-size: 2em;
+  padding: 12px;
 }
 
 .state{
@@ -124,11 +124,16 @@ export default {
   }
 }
 
+.icon{
+  padding-bottom: 8px;
+}
+
 h1 {
   margin-block-start: 0.1em;
 }
 
 button {
+  border: none;
   &:focus {
     outline: none;
   }
