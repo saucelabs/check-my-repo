@@ -1,11 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7ffa76a54d4e7a7c5854",
-    "url": "/check-my-repo/css/app.5a7e6429.css"
+    "revision": "fee2e0e3f57ee729b37b",
+    "url": "/check-my-repo/css/app.47435ffe.css"
   },
   {
-    "revision": "80363e0817a2ee1a8cdc31c655137484",
+    "revision": "2c8ee6009d0771b9561f8bf07c050826",
     "url": "/check-my-repo/frontend.json"
+  },
+  {
+    "revision": "26a4ab40e854ffc81edd20afbe1b9e4d",
+    "url": "/check-my-repo/img/box.26a4ab40.svg"
+  },
+  {
+    "revision": "d6824ff7a7d9d69c317743b0621ca33a",
+    "url": "/check-my-repo/img/check-circle.d6824ff7.svg"
   },
   {
     "revision": "82b9c7a5a3f405032b1db71a25f67021",
@@ -16,12 +24,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/check-my-repo/img/ospo-bot-new.d16ebdb9.svg"
   },
   {
-    "revision": "d0c486f24a4d98b758a3db602fa360d7",
+    "revision": "6d2ee7efd2f34768d46f9161321ab479",
+    "url": "/check-my-repo/img/x-circle.6d2ee7ef.svg"
+  },
+  {
+    "revision": "6869e6b01887702bcdcfb49ce55fab10",
     "url": "/check-my-repo/index.html"
   },
   {
-    "revision": "7ffa76a54d4e7a7c5854",
-    "url": "/check-my-repo/js/app.0b9b0ce6.js"
+    "revision": "fee2e0e3f57ee729b37b",
+    "url": "/check-my-repo/js/app.73c9f552.js"
   },
   {
     "revision": "515c3b60337dfbe02b1a",
