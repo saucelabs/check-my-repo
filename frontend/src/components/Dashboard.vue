@@ -76,7 +76,7 @@ export default {
   font-size: 1.1em;
   padding: 12%;
   margin: 3%;
-  background-color: white;
+  background-color: #2E3137;
 }
 .total {
   color:white;
