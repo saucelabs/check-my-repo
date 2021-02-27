@@ -70,7 +70,7 @@ a {
 }
 
 table {
-  color: #464b54;
+  color: white;
   padding: 5%;
   text-align: left;
   border-spacing: 0ch;
