@@ -87,7 +87,7 @@ td {
 }
 
 .td-left {
- padding-right: 5%
+ padding: 18px 0;
 }
 
 </style>
