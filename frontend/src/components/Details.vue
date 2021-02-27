@@ -5,10 +5,12 @@
         <th v-for="column in columns" :key="column.key">{{column.name}}</th>
       </tr>
       <tr v-for="item in frontend" :key="item">
-        <td v-if="item.failed.length !== 0" class="td-left">
-          <a v-bind:href="item.url">{{item.name}}</a>
-        </td>
-        <td>{{item.failed.join(', ')}}</td>
+        <template style="" v-if="item.failed.length !== 0" >
+          <td class="td-left">
+            <a v-bind:href="item.url">{{item.name}}</a>
+          </td>
+          <td>{{item.failed.join(', ')}}</td>
+        </template>
       </tr>
     </table>
   </div>
@@ -37,7 +39,7 @@ export default {
   margin: 0% 16%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  background-color: white;
+  background-color: #2E3137;
   border-radius: 10px;
   height: 50vh;
   overflow:scroll;
@@ -55,17 +57,22 @@ export default {
 .table-content {
   height: 40vh;
   overflow: auto;
-  text-align:justify;
 }
 
-.separating-line {
-    border-top: 3px #F00 dashed;
+a {
+  font-weight: 500;
+  color: #6ED6FF;
+
+  &:visited{
+   color: #FFF503;
+  }
 }
 
 table {
-  color: #464b54;
+  color: white;
   padding: 5%;
   text-align: left;
+  border-spacing: 0ch;
 }
 
 th{
@@ -73,21 +80,13 @@ th{
 }
 
 td {
-  white-space: pre;
-  // border: solid;
-  // border-width: 0.1px 0;
-  // border-color: #bfc2c6;
-
-  &:first-child {
-    border-top: none;
-  }
-  &:last-child {
-    border-bottom: none;
-  }
+  // white-space: pre;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
 }
 
 .td-left {
- padding-right: 5%
+ padding: 18px 0;
 }
 
 </style>

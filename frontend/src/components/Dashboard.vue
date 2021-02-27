@@ -3,16 +3,27 @@
     <h1 class="header">CHECK MY REPO</h1>
     <div class="square">
       <div class="content total">
-        Repositories
+        <div>
+          <img class="icon" :src="require('../assets/box.svg')" alt="Feather Icon Box"/>
+        </div>
+        <h4>Total Repos</h4>
         <div class="result">{{frontend.length}}</div>
       </div>
       <button class="content passed state-healthy" v-on:click="hideHealthy = !hideHealthy">
-        Healthy Repos
+        <div>
+          <img class="icon" :src="require('../assets/check-circle.svg')" alt="Feather Icon Check"/>
+        </div>
+        <h4>Healthy Repos</h4>
         <div class="result">{{ allPassed }}</div>
+        <p>View repos</p>
       </button>
       <button class="content failed state" v-on:click="hideRepos = !hideRepos">
-        Failing Repos
+        <div>
+          <img class="icon" :src="require('../assets/x-circle.svg')" alt="Feather Icon No Check"/>
+        </div>
+        <h4>Failing Repos</h4>
         <div class="result">{{frontend.length - allPassed}}</div>
+        <p>View repos</p>
       </button>
     </div>
     <div v-if="!hideRepos">
@@ -63,7 +74,6 @@ export default {
   background-color: #2E3137;
   color: white;
   font-weight: 300;
-  font-style: oblique;
 }
 
 .square {
@@ -76,41 +86,46 @@ export default {
   font-size: 1.1em;
   padding: 12%;
   margin: 3%;
-  background-color: white;
+  background-color: #2E3137;
 }
 .total {
-  color: #464b54;
-  border-radius: 10px;
-  border: 3px solid #1C9FCE;
+  color:white;
+  border-radius: 4px;
+  border-top: 5px solid #6ED6FF;
 }
 .passed {
-  color: #158906;
-  border-radius: 10px;
-  border: 3px solid #25A711;
+  color: #8CFF4D;
+  border-radius: 4px;
+  border-top: 5px solid #8CFF4D;
 }
 .failed {
-  color: #e12726;
-  border-radius: 10px;
-  border: 3px solid #E53E3E;
+  color: #FF5953;
+  border-radius: 4px;
+  border-top: 5px solid #FF5953;
 }
 .result {
   font-weight: 500;
   font-size: 2em;
+  padding: 12px;
 }
 
 .state{
   &:hover{
-    background-color:#E53E3E;
+    background-color:#6E2E2C;
     color: white;
     cursor: grab;
     }
 }
 .state-healthy{
   &:hover{
-    background-color: #25A711;
+    background-color: #3C6625;
     color: white;
     cursor: grab;
   }
+}
+
+.icon{
+  padding-bottom: 8px;
 }
 
 h1 {
@@ -118,6 +133,7 @@ h1 {
 }
 
 button {
+  border: none;
   &:focus {
     outline: none;
   }
@@ -125,6 +141,19 @@ button {
 
 h1 {
   margin: 0%;
+}
+
+h4{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1em;
+  color: white;
+  font-weight: 500;
+  margin: 0px;
+}
+
+p{
+  color: #6ED6FF;
+  margin: 12px;
 }
 
 </style>
