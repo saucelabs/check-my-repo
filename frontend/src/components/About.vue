@@ -41,8 +41,13 @@ a {
   text-align: center;
   margin: 2%;
   font-size: 1em;
-  color: white;
-  font-weight: 200;
+  color: #6ED6FF;
+  font-weight: 400;
+
+  &:hover{
+    color: #FFF503;
+    font-weight: 500;
+  }
 }
 
 </style>
