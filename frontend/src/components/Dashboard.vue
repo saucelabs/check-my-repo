@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="header">CHECK MY REPO</h1>
+    <Navbar />
     <div class="square">
       <div class="content total">
         <div>
@@ -41,9 +41,10 @@ import reposData from "../../public/frontend.json"
 import About from './About.vue'
 import Details from './Details.vue'
 import Healthy from './Healthy.vue'
+import Navbar from './Navbar'
 
 export default {
-  components: { About, Details, Healthy },
+  components: { About, Details, Healthy, Navbar },
   name: 'Dashboard',
   /* tells Vue.js that we want to add these variables to our reactivity system */
   data() {
@@ -67,15 +68,6 @@ export default {
 
 <style scoped lang="scss">
 
-.header {
-  padding: 20px;
-  text-align: center;
-  font-size: 1.4em;
-  background-color: #2E3137;
-  color: white;
-  font-weight: 300;
-}
-
 .square {
   text-align: center;
   margin: 1% 15%;
@@ -90,18 +82,18 @@ export default {
 }
 .total {
   color:white;
-  border-radius: 4px;
   border-top: 5px solid #6ED6FF;
+  border-radius: 7px;
 }
 .passed {
   color: #8CFF4D;
-  border-radius: 4px;
   border-top: 5px solid #8CFF4D;
+  border-radius: 7px;
 }
 .failed {
   color: #FF5953;
-  border-radius: 4px;
   border-top: 5px solid #FF5953;
+  border-radius: 7px;
 }
 .result {
   font-weight: 500;
