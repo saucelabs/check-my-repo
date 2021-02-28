@@ -56,14 +56,10 @@ nav ul li:first-child {
   margin-right: auto;
 }
 nav ul li a {
-  font-weight: 300;
+  font-weight: 400;
   font-family: 'Noto Sans KR', sans-serif;
   text-align: right;
   text-decoration: none;
-
-  &:visited{
-   color: #FFF503;
-  }
 
   &:hover{
     color: #FFF503;
