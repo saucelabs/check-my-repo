@@ -1,14 +1,13 @@
 <template>
   <div>
-    <img class="bot" :src="require('../assets/ospo-bot-new.svg')"/>
-    <a href="https://github.com/saucelabs/check-my-repo">About</a>
-    <p class="break-line">Open source automated tool daily checking our public</p>
-    <p class="break-line p-bottom">repositories health and quality</p>
+    <h1>About</h1>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
+  components: {  },
   name: 'About'
 }
 </script>
