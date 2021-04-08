@@ -60,11 +60,17 @@ export default {
 }
 
 a {
-  font-weight: 500;
-  color: #6ED6FF;
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+
+  &:hover{
+   color: #6ED6FF;
+   font-weight: 500;
+  }
 
   &:visited{
-   color: #FFF503;
+   color: #6ED6FF;
   }
 }
 
@@ -81,7 +87,7 @@ th{
 
 td {
   // white-space: pre;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.5px solid lightgrey;
   text-align: left;
 }
 

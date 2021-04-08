@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar />
     <div class="square">
       <div class="content total">
         <div>
@@ -32,19 +31,16 @@
     <div v-if="!hideHealthy">
       <Healthy />
     </div>
-  <About />
   </div>
 </template>
 
 <script>
 import reposData from "../../public/frontend.json"
-import About from './About.vue'
 import Details from './Details.vue'
 import Healthy from './Healthy.vue'
-import Navbar from './Navbar'
 
 export default {
-  components: { About, Details, Healthy, Navbar },
+  components: { Details, Healthy },
   name: 'Dashboard',
   /* tells Vue.js that we want to add these variables to our reactivity system */
   data() {
