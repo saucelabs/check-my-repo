@@ -7,7 +7,7 @@
       <tr v-for="item in frontend" :key="item">
         <template style="" v-if="item.failed.length !== 0" >
           <td class="td-left">
-            <a v-bind:href="item.url">{{item.name}}</a>
+            <a v-bind:href="item.url" target="_blank" rel="noopener">{{item.name}}</a>
           </td>
           <td>{{item.failed.join(', ')}}</td>
         </template>
