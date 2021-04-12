@@ -1,25 +1,20 @@
 <template>
   <div>
     <div class="square">
-      <div class="content total">
-        <div>
-          <img class="icon" :src="require('../assets/box.svg')" alt="Feather Icon Box"/>
-        </div>
+      <button class="content total" v-on:click="goToRepo()">
+        <img class="icon" :src="require('../assets/box.svg')" alt="Feather Icon Box"/>
         <h4>Total Repos</h4>
         <div class="result">{{frontend.length}}</div>
-      </div>
+        <p>Go to GitHub Repo</p>
+      </button>
       <button class="content passed state-healthy" v-on:click="hideHealthy = !hideHealthy">
-        <div>
-          <img class="icon" :src="require('../assets/check-circle.svg')" alt="Feather Icon Check"/>
-        </div>
+        <img class="icon" :src="require('../assets/check-circle.svg')" alt="Feather Icon Check"/>
         <h4>Healthy Repos</h4>
         <div class="result">{{ allPassed }}</div>
         <p>View repos</p>
       </button>
       <button class="content failed state" v-on:click="hideRepos = !hideRepos">
-        <div>
-          <img class="icon" :src="require('../assets/x-circle.svg')" alt="Feather Icon No Check"/>
-        </div>
+        <img class="icon" :src="require('../assets/x-circle.svg')" alt="Feather Icon No Check"/>
         <h4>Failing Repos</h4>
         <div class="result">{{frontend.length - allPassed}}</div>
         <p>View repos</p>
@@ -59,6 +54,11 @@ export default {
       return this.frontend.map(({failed}) => failed).flat().length
     },
   },
+  methods: {
+    goToRepo: () => {
+      window.open("https://github.com/saucelabs?q=&type=public&language=&sort=", "_blank", "noopener");
+    }
+  }
 }
 </script>
 
@@ -80,6 +80,11 @@ export default {
   color:white;
   border-top: 5px solid #6ED6FF;
   border-radius: 7px;
+  &:hover{
+    background-color:#179fd45b;
+    color: white;
+    cursor: grab;
+    }
 }
 .passed {
   color: #8CFF4D;
