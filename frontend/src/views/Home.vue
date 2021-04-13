@@ -5,6 +5,7 @@
         <img class="icon" :src="require('../assets/box.svg')" alt="Feather Icon Box"/>
         <h4>Total Repos</h4>
         <div class="result">{{frontend.length}}</div>
+        <p class="text">Repository <img class="icon" :src="require('../assets/external-link.svg')" alt="Feather External Link"/></p>
         <p>Go to GitHub Repo</p>
       </button>
       <button class="content passed state-healthy" v-on:click="hideHealthy = !hideHealthy">
