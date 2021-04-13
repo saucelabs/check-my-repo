@@ -2,20 +2,19 @@
   <div>
     <div class="square">
       <button class="content total" v-on:click="goToRepo()">
-        <img class="icon" :src="require('../assets/box.svg')" alt="Feather Icon Box"/>
+        <img class="icon-space" :src="require('../assets/box.svg')" alt="Feather Icon Box"/>
         <h4>Total Repos</h4>
         <div class="result">{{frontend.length}}</div>
         <p class="text">Repository <img class="icon" :src="require('../assets/external-link.svg')" alt="Feather External Link"/></p>
-        <p>Go to GitHub Repo</p>
       </button>
       <button class="content passed state-healthy" v-on:click="hideHealthy = !hideHealthy">
-        <img class="icon" :src="require('../assets/check-circle.svg')" alt="Feather Icon Check"/>
-        <h4>Healthy Repos</h4>
-        <div class="result">{{ allPassed }}</div>
-        <p>View repos</p>
+          <img class="icon-space" :src="require('../assets/check-circle.svg')" alt="Feather Icon Check"/>
+          <h4>Healthy Repos</h4>
+          <div class="result">{{ allPassed }}</div>
+          <p>View repos</p>
       </button>
       <button class="content failed state" v-on:click="hideRepos = !hideRepos">
-        <img class="icon" :src="require('../assets/x-circle.svg')" alt="Feather Icon No Check"/>
+        <img class="icon-space" :src="require('../assets/x-circle.svg')" alt="Feather Icon No Check"/>
         <h4>Failing Repos</h4>
         <div class="result">{{frontend.length - allPassed}}</div>
         <p>View repos</p>
@@ -38,12 +37,13 @@ import Healthy from '../components/Healthy.vue'
 export default {
   components: { Details, Healthy },
   name: 'Home',
+
   /* tells Vue.js that we want to add these variables to our reactivity system */
   data() {
     return {
       frontend: reposData,
       hideRepos: true,
-      hideHealthy: true
+      hideHealthy: true,
     }
   },
   computed: {
