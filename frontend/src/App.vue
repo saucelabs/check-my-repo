@@ -1,16 +1,20 @@
 <template>
   <div id="app">
-    <Dashboard />
+    <Navbar />
+    <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
-import Dashboard from './components/Dashboard.vue'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 export default {
   name: 'app',
   components: {
-    Dashboard,
+    Navbar,
+    Footer
   },
 }
 </script>

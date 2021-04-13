@@ -1,7 +1,7 @@
 <template>
   <div>
     <img class="bot" :src="require('../assets/ospo-bot-new.svg')"/>
-    <a href="https://github.com/saucelabs/check-my-repo">About</a>
+    <a href="https://github.com/saucelabs/check-my-repo" target="_blank" rel="noopener">GitHub</a>
     <p class="break-line">Open source automated tool daily checking our public</p>
     <p class="break-line p-bottom">repositories health and quality</p>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'About'
+  name: 'Footer'
 }
 </script>
 
@@ -18,7 +18,7 @@ p {
   text-align: center;
   font-size: 1em;
   color: white;
-  font-weight: 200;
+  font-weight: 300;
 }
 .p-bottom {
   padding-bottom: 10%;
@@ -41,12 +41,16 @@ a {
   text-align: center;
   margin: 2%;
   font-size: 1em;
-  color: #6ED6FF;
-  font-weight: 400;
+  color: white;
+  font-weight: 300;
 
   &:hover{
-    color: #FFF503;
-    font-weight: 500;
+   color: #6ED6FF;
+   font-weight: 500;
+  }
+
+  &:visited{
+   color: #6ED6FF;
   }
 }
 

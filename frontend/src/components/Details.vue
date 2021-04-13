@@ -7,7 +7,7 @@
       <tr v-for="item in frontend" :key="item">
         <template style="" v-if="item.failed.length !== 0" >
           <td class="td-left">
-            <a v-bind:href="item.url">{{item.name}}</a>
+            <a v-bind:href="item.url" target="_blank" rel="noopener">{{item.name}}</a>
           </td>
           <td>{{item.failed.join(', ')}}</td>
         </template>
@@ -60,11 +60,17 @@ export default {
 }
 
 a {
-  font-weight: 500;
-  color: #6ED6FF;
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+
+  &:hover{
+   color: #6ED6FF;
+   font-weight: 500;
+  }
 
   &:visited{
-   color: #FFF503;
+   color: #6ED6FF;
   }
 }
 
@@ -81,7 +87,7 @@ th{
 
 td {
   // white-space: pre;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.5px solid lightgrey;
   text-align: left;
 }
 
