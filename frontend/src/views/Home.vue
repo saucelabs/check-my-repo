@@ -118,8 +118,15 @@ export default {
   }
 }
 
-.icon{
+.icon-space{
   padding-bottom: 8px;
+}
+
+.icon,
+.text {
+  vertical-align: middle;
+  display: inline-block;
+  padding-bottom: 3px;
 }
 
 h1 {
