@@ -13,6 +13,7 @@ jobs:
       - name: Setup Node version
         uses: actions/setup-node@v1
         with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           node-version: '12'
 
       - name: Install dependencies
