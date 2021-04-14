@@ -22,7 +22,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Generate frontened data
+      - name: Generate frontend data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node src/index.js
 
       - name: Install Frontend
@@ -40,4 +42,3 @@ jobs:
           user_name: 'OSS Sauce Bot'
           user_email: 'oss-sauce-bot@users.noreply.github.com'
           commit_message: ${{ github.event.head_commit.message }}
-
