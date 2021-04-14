@@ -34,7 +34,8 @@ jobs:
       - name: Deploy Vue Site
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/dist
           publish_branch: gh-pages
           user_name: 'OSS Sauce Bot'
