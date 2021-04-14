@@ -1,4 +1,4 @@
-name: Lint And Deploy On Push To Main
+name: JUST A TEST
 
 on:
   push:
@@ -22,4 +22,6 @@ jobs:
         run: npm install
 
       - name: Generate frontened data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node src/index.js
