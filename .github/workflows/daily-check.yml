@@ -10,12 +10,13 @@ jobs:
     steps:
       - name: Gives access to repository
         uses: actions/checkout@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Node version
         uses: actions/setup-node@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
           node-version: '12'
 
       - name: Install dependencies
