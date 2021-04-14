@@ -10,19 +10,20 @@ jobs:
     steps:
       - name: Gives access to repository
         uses: actions/checkout@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Node version
         uses: actions/setup-node@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           node-version: '12'
 
       - name: Install dependencies
         run: npm install
 
       - name: Generate frontend data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node src/index.js
 
       - name: Install Frontend
