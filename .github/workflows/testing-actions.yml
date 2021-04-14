@@ -1,0 +1,25 @@
+name: Lint And Deploy On Push To Main
+
+on:
+  push:
+
+jobs:
+  Lint-Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gives access to repository
+        uses: actions/checkout@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Node version
+        uses: actions/setup-node@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          node-version: '12'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate frontened data
+        run: node src/index.js
