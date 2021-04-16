@@ -30,13 +30,15 @@ async function main() {
 
   const fetchRepos = type === 'Organization' ? octokit.repos.listForOrg : octokit.repos.listForUser
 
+  /* Stores pagination iteration results */
   const results = []
+  /* Parameters to call octokit API requests */
   const parameters = {
       org: input,
       username: input,
       per_page: myVariables.pagination
     }
-
+  /* This function allows to iterate over all paginations, as explained in documentaton */
   for await (const response of octokit.paginate.iterator(fetchRepos, parameters))
     {
       results.push(...response.data)
