@@ -9,7 +9,11 @@
           <td class="td-left">
             <a v-bind:href="item.url" target="_blank" rel="noopener">{{item.name}}</a>
           </td>
-          <td>{{item.failed.join(', ')}}</td>
+          <td class="{
+            'badge--green': item.failed === 'Changelog',
+            'badge--pink': item.failed === 'License',
+          }"
+          >{{item.failed.join(', ')}}</td>
         </template>
       </tr>
     </table>
