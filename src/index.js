@@ -30,6 +30,7 @@ async function main() {
 
   const fetchRepos = type === 'Organization' ? octokit.repos.listForOrg : octokit.repos.listForUser
 
+  const results = []
 
   for await (const response of octokit.paginate.iterator(fetchRepos, parameters))
     {
