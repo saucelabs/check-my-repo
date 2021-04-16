@@ -45,7 +45,7 @@ async function main() {
   /* Output is an array of objects to be sent to frontend through frontend.json */
   const output = []
 
-  for (const d of data) {
+  for (const d of results) {
     const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${d.name}-`))
     await git.clone(d.clone_url, tmpDir)
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
