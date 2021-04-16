@@ -31,15 +31,15 @@
   },
   "homepage": "https://github.com/saucelabs/automated-oss-quality-check#readme",
   "dependencies": {
-    "@octokit/rest": "^18.0.6",
+    "@octokit/rest": "18.5.2",
     "chalk": "^4.1.0",
     "linguist": "^0.1.7",
     "rainbow-penguin": "^1.0.3",
-    "repolinter": "^0.9.0",
+    "repolinter": "0.11.1",
     "rimraf": "^3.0.2",
-    "simple-git": "^2.21.0"
+    "simple-git": "2.38.0"
   },
   "devDependencies": {
-    "jest": "^26.6.3"
+    "jest": "26.6.3"
   }
 }
