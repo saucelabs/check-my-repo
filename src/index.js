@@ -77,9 +77,9 @@ async function main() {
   /* Creates one .json file in frontend public folder to make this results available */
   await createJsonDashboardFile(output)
 
-  console.log(chalk`\n😨 Total repositories with fails =  {redBright.bold ${data.length - passingRepositories}}\n`)
+  console.log(chalk`\n😨 Total repositories with fails =  {redBright.bold ${results.length - passingRepositories}}\n`)
   console.log(chalk`\n😌 Total healthy repositories =  {greenBright.bold ${passingRepositories}}\n`)
-  console.log(chalk`\nNumber of repositories analysed: {cyanBright.bold ${data.length}}\n`)
+  console.log(chalk`\nNumber of repositories analysed: {cyanBright.bold ${results.length}}\n`)
 }
 
 /* allows to be executed when not used as an imported file */
