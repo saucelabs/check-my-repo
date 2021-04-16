@@ -30,11 +30,11 @@ async function main() {
 
   const fetchRepos = type === 'Organization' ? octokit.repos.listForOrg : octokit.repos.listForUser
 
-  const { data } = await fetchRepos({
-    org: input,
-    username: input,
-    per_page: myVariables.pagination
-  })
+
+  for await (const response of octokit.paginate.iterator(fetchRepos, parameters))
+    {
+      results.push(...response.data)
+    }
 
   /* Output is an array of objects to be sent to frontend through frontend.json */
   const output = []
