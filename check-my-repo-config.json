@@ -1,6 +1,6 @@
 {
   "owner": "saucelabs",
   "pagination": 100,
-  "action-user-name": "OSS Sauce Bot",
-  "action-email": "oss-sauce-bot@users.noreply.github.com"
+  "action-user-name": "OSS Check My Repo",
+  "action-email": "oss-check-my-repo-bot@users.noreply.github.com"
 }
