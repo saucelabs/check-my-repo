@@ -9,6 +9,15 @@
           <td class="td-left">
             <a v-bind:href="item.url" target="_blank" rel="noopener">{{item.name}}</a>
           </td>
+          <td v-for="item in item.failed" :key="item">
+            <spam v-if="item.includes('Changelog')" class="badge low"> Changelog </spam>
+            <spam v-if="item.includes('License')" class="badge high"> License </spam>
+            <spam v-if="item.includes('Test directory')" class="badge medium"> Tests </spam>
+            <spam v-if="item.includes('Maintainers email')" class="badge medium"> Ownership </spam>
+            <spam v-if="item.includes('Do not have binaries files')" class="badge high"> Security </spam>
+            <spam v-if="item.includes('Code of conduct')" class="badge low"> Code of Conduct </spam>
+            <spam v-if="item.includes('Contributor guidelines')" class="badge low"> Contributor </spam>
+          </td>
           <td class="{
             'badge--green': item.failed === 'Changelog',
             'badge--pink': item.failed === 'License',
