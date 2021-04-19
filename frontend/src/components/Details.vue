@@ -47,7 +47,7 @@ export default {
   margin: 0% 16%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  background-color: #2E3137;
+  background-color: var(--square-background-color);
   border-radius: 10px;
   height: 100%;
 }
@@ -55,30 +55,15 @@ export default {
   font-size: 1.1em;
 }
 .table-header-passed {
-  color: #158906;
+  color: var(--passed-color);
 }
 .table-header-failed {
-  color: #e12726;
+  color: var(--failed-color);
 }
 
 .table-content {
   height: 40vh;
   overflow: auto;
-}
-
-a {
-  font-size: 1.1em;
-  color: white;
-  text-decoration: none;
-
-  &:hover{
-   color: #6ED6FF;
-   font-weight: 500;
-  }
-
-  &:visited{
-   color: #6ED6FF;
-  }
 }
 
 table {
@@ -94,7 +79,8 @@ th{
 
 td {
   // white-space: pre;
-  border-bottom: 0.5px solid lightgrey;
+  // border-bottom: 0.5px solid lightgrey;
+  border-width: 100%;
   text-align: left;
 }
 
