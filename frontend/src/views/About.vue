@@ -29,39 +29,23 @@ export default {
 
 <style scoped lang="scss">
 .square {
-  color: white;
   text-align: left;
   margin: 1% 15%;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  border-top: 5px solid #6ED6FF;
+  border-top: 5px solid var(--primary-color);
   border-radius: 7px;
 }
 .content {
   font-size: 1.1em;
   padding: 12%;
   margin: 3%;
-  background-color: #2E3137;
+  background-color: var(--square-background-color);
 }
 
 .quote {
   font-style: italic;
   margin-left: 30px;
   font-size: 1em;
-}
-
-a {
-  font-size: 1em;
-  color: white;
-  font-weight: 300;
-
-  &:hover{
-   color: #6ED6FF;
-   font-weight: 500;
-  }
-
-  &:visited{
-   color: #6ED6FF;
-  }
 }
 
 h1 {

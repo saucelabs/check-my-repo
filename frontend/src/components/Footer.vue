@@ -14,12 +14,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-p {
-  text-align: center;
-  font-size: 1em;
-  color: white;
-  font-weight: 300;
-}
 .p-bottom {
   padding-bottom: 10%;
 }
@@ -40,18 +34,6 @@ a {
   display: block;
   text-align: center;
   margin: 2%;
-  font-size: 1em;
-  color: white;
-  font-weight: 300;
-
-  &:hover{
-   color: #6ED6FF;
-   font-weight: 500;
-  }
-
-  &:visited{
-   color: #6ED6FF;
-  }
 }
 
 </style>

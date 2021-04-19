@@ -38,8 +38,7 @@ export default {
 
 nav {
   margin: 0;
-  background-color: #2E3137;
-  color: white;
+  background-color: var(--square-background-color);
 }
 
 nav ul {
@@ -63,15 +62,21 @@ nav ul li a {
   text-decoration: none;
 
   &:hover{
-    color: #6ED6FF;
+    color: var(--primary-color);
   }
 
   &:active{
-    color: #6ED6FF;
+    color: var(--primary-color);
   }
 }
 nav ul li:first-child {
   margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  :nav ul li a {
+    display: contents;
+  }
 }
 
 </style>

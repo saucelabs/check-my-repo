@@ -61,11 +61,10 @@ export default {
 
 <style scoped lang="scss">
 .square {
-  color: white;
   text-align: left;
   margin: 1% 15%;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  border-top: 5px solid #6ED6FF;
+  border-top: 5px solid var(--primary-color);
   border-radius: 7px;
 }
 .content {
@@ -79,21 +78,6 @@ export default {
   font-style: italic;
   margin-left: 30px;
   font-size: 1em;
-}
-
-a {
-  font-size: 1em;
-  color: white;
-  font-weight: 300;
-
-  &:hover{
-   color: #6ED6FF;
-   font-weight: 500;
-  }
-
-  &:visited{
-   color: #6ED6FF;
-  }
 }
 
 h1 {
