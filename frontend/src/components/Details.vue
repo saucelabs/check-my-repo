@@ -49,8 +49,7 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   background-color: #2E3137;
   border-radius: 10px;
-  height: 50vh;
-  overflow:scroll;
+  height: 100%;
 }
 .table-header {
   font-size: 1.1em;
