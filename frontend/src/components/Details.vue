@@ -18,11 +18,6 @@
             <spam v-if="item.includes('Code of conduct')" class="badge low"> Code of Conduct </spam>
             <spam v-if="item.includes('Contributor guidelines')" class="badge low"> Contributor </spam>
           </td>
-          <td class="{
-            'badge--green': item.failed === 'Changelog',
-            'badge--pink': item.failed === 'License',
-          }"
-          >{{item.failed.join(', ')}}</td>
         </template>
       </tr>
     </table>
