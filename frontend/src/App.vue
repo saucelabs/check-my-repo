@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 #app {
   font-family: -apple-system, 'Noto Sans KR', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,58 +27,46 @@ export default {
 }
 
 body {
-  background: #464B54;
+  background: var(--app-background);
   margin: 0%;
   padding: 0%;
   border: 0vh;
+  color: white;
 }
 
-.badge {
-  background: var(--color-prime-light-grey);
-  border: none;
-  border-radius: var(--border-radius);
-  color: var(--color-prime-olive);
-  font-size: var(--font-size-xs);
-  filter: drop-shadow(2px 2px 12px rgba(0, 0, 0, 0));
+p {
   text-align: center;
-  overflow: hidden;
-  transition: background-color var(--transition-time), filter var(--transition-time);
+  font-size: 1em;
+  color: white;
+  font-weight: 300;
+}
+
+a {
+  color: white;
+  font-size: 1.1em;
+  font-weight: 300;
   text-decoration: none;
 }
 
-@media screen and (min-width: 768px) {
-  .badge {
-    font-size: var(--font-size-large);
-  }
+a:visited{
+  color: var(--primary-color);
 }
 
-.badge:hover {
-  background: var(--color-prime-light-grey-hover);
-  /* filter: drop-shadow(2px 2px 12px rgba(0, 0, 0, 0.25)); */
+a:hover{
+  color: var(--primary-color);
+  font-weight: 500;
 }
 
-.badge--shadow {
-  filter: drop-shadow(2px 2px 12px rgba(0, 0, 0, 0.25));
+:root {
+  --app-background: #464B54;
+  --square-background-color: #2E3137;
+  --passed-color: #158906;
+  --passed-color-accent: #8CFF4D;
+  --failed-color: #e12726;
+  --primary-color: #6ED6FF;
+  --grey-accent: lightgrey;
+  --shadow: rgb(34, 33, 33);
 }
 
-.badge--shadow:hover {
-  filter: drop-shadow(2px 2px 25px rgba(0, 0, 0, 0.3));
-}
-
-.badge--green {
-  background-color: var(--color-prime-green);
-}
-
-.badge--green:hover {
-  background-color: var(--color-prime-green-hover);
-}
-
-.badge--pink {
-  background-color: var(--color-prime-pink);
-}
-
-.badge--pink:hover {
-  background-color: var(--color-prime-pink-hover);
-}
 
 </style>
