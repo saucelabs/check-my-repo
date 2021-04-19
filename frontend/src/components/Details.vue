@@ -102,4 +102,30 @@ td {
  padding: 18px 0;
 }
 
+.badge {
+  border: none;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px var(--shadow);
+  text-align: center;
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--app-background);
+  color: white;
+}
+
+.low {
+  background-color: var(--app-background);
+}
+
+.medium {
+  background-color: var(--primary-color);
+  color: var(--square-background-color);
+}
+
+.high {
+  background-color: var(--failed-color);
+}
+
+
 </style>
