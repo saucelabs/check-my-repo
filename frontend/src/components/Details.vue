@@ -50,6 +50,7 @@ export default {
   background-color: var(--square-background-color);
   border-radius: 10px;
   height: 100%;
+  border-top: 5px solid var(--failed-color);
 }
 .table-header {
   font-size: 1.1em;
@@ -78,8 +79,7 @@ th{
 }
 
 td {
-  // white-space: pre;
-  // border-bottom: 0.5px solid lightgrey;
+  border-bottom: 1px solid var(--app-background);
   border-width: 100%;
   text-align: left;
 }

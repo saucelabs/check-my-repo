@@ -44,7 +44,7 @@ p {
 a {
   color: white;
   font-size: 1.1em;
-  font-weight: 300;
+  font-weight: 400;
   text-decoration: none;
 }
 

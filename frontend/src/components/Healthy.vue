@@ -49,10 +49,10 @@ export default {
 }
 
 .table-healthy {
-  height: 20vh;
   overflow: auto;
   text-align:left;
-  color: var(--passed-color-accent);
+  border-top: 5px solid var(--passed-color-accent);
+  border-radius: 10px;
 }
 
 table {
