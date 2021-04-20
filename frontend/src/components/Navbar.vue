@@ -73,10 +73,19 @@ nav ul li:first-child {
   margin-right: auto;
 }
 
-@media screen and (min-width: 768px) {
-  :nav ul li a {
+@media (max-width: 545px) {
+  nav ul li a {
     display: contents;
   }
+
+  .name {
+    font-size: 1.2em;
+  }
+
+  nav ul li {
+  padding-right: 15px;
+  padding-left: 15px;
+}
 }
 
 </style>

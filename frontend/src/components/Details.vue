@@ -113,5 +113,17 @@ td {
   background-color: var(--failed-color);
 }
 
+@media (max-width: 545px) {
+  .square-detail {
+    margin: 1%;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+.badge {
+  font-size: 15px;
+}
+
+}
 
 </style>

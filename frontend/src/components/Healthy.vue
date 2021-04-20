@@ -68,4 +68,10 @@ td {
   white-space: pre
 }
 
+@media (max-width: 545px) {
+  .square-healthy {
+    margin: 1%;
+  }
+}
+
 </style>
