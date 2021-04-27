@@ -1,7 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "26fa5195003c2baa2ca6",
-    "url": "/check-my-repo/css/app.22164105.css"
+    "revision": "93f74069f7a748b2f76343017df68872",
+    "url": "/check-my-repo/config.json"
+  },
+  {
+    "revision": "4da07fec49f9830541e2",
+    "url": "/check-my-repo/css/app.31169421.css"
   },
   {
     "revision": "59586844fea6670be7f9bda5b35f167d",
@@ -20,6 +24,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/check-my-repo/img/external-link.f729e99d.svg"
   },
   {
+    "revision": "82b9c7a5a3f405032b1db71a25f67021",
+    "url": "/check-my-repo/img/logo.82b9c7a5.png"
+  },
+  {
     "revision": "d16ebdb9c003e86a269fa348c6445094",
     "url": "/check-my-repo/img/ospo-bot-new.d16ebdb9.svg"
   },
@@ -28,16 +36,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/check-my-repo/img/x-circle.6d2ee7ef.svg"
   },
   {
-    "revision": "a6c0cce599baa0ea626df2ad4df0b9e3",
+    "revision": "a4f11eb883e702607c4aa7fa60c08d23",
     "url": "/check-my-repo/index.html"
   },
   {
-    "revision": "26fa5195003c2baa2ca6",
-    "url": "/check-my-repo/js/app.d4081783.js"
+    "revision": "4da07fec49f9830541e2",
+    "url": "/check-my-repo/js/app.1fec31a2.js"
   },
   {
     "revision": "4f312830231cfb801796",
     "url": "/check-my-repo/js/chunk-vendors.7e269652.js"
+  },
+  {
+    "revision": "f003fc4aae864c738e2fdd41ff0e6715",
+    "url": "/check-my-repo/logo.png"
   },
   {
     "revision": "4b14c64efaf846819b9a229b4193c8b7",
