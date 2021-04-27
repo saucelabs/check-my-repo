@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="bot" :src="require('../assets/ospo-bot-new.svg')"/>
+    <img class="bot" :src="require(`../assets/${config.logo}`)"/>
     <a href="https://github.com/saucelabs/check-my-repo" target="_blank" rel="noopener">GitHub</a>
     <p class="break-line">Open source automated tool daily checking our public</p>
     <p class="break-line p-bottom">repositories health and quality</p>
@@ -8,9 +8,18 @@
 </template>
 
 <script>
+import config from "../../public/config.json"
+
 export default {
-  name: 'Footer'
+  name: 'Footer',
+
+  data() {
+    return {
+      config: config,
+    }
+  },
 }
+
 </script>
 
 <style scoped lang="scss">
