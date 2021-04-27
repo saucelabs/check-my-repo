@@ -31,6 +31,7 @@
 
 <script>
 import reposData from "../../public/frontend.json"
+import config from "../../public/config.json"
 import Details from '../components/Details.vue'
 import Healthy from '../components/Healthy.vue'
 
@@ -44,6 +45,7 @@ export default {
       frontend: reposData,
       hideRepos: true,
       hideHealthy: true,
+      config: config,
     }
   },
   computed: {
@@ -57,9 +59,9 @@ export default {
   },
   methods: {
     goToRepo: () => {
-      window.open("https://github.com/saucelabs?q=&type=public&language=&sort=", "_blank", "noopener");
-    }
-  }
+      window.open(config.github, "_blank", "noopener");
+    },
+  },
 }
 </script>
 
