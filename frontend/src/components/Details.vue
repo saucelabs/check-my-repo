@@ -11,12 +11,13 @@
           </td>
           <td v-for="item in item.failed" :key="item">
             <spam v-if="item.includes('Changelog')" class="badge low"> Changelog </spam>
-            <spam v-if="item.includes('License')" class="badge high"> License </spam>
-            <spam v-if="item.includes('Test directory')" class="badge medium"> Tests </spam>
-            <spam v-if="item.includes('Maintainers email')" class="badge medium"> Ownership </spam>
-            <spam v-if="item.includes('Do not have binaries files')" class="badge high"> Security </spam>
             <spam v-if="item.includes('Code of conduct')" class="badge low"> Code of Conduct </spam>
             <spam v-if="item.includes('Contributor guidelines')" class="badge low"> Contributor </spam>
+            <spam v-if="item.includes('License')" class="badge high"> License </spam>
+            <spam v-if="item.includes('Maintainers email')" class="badge medium"> Ownership </spam>
+            <spam v-if="item.includes('README.md file')" class="badge low"> Readme </spam>
+            <spam v-if="item.includes('Do not have binaries files')" class="badge high"> Security </spam>
+            <spam v-if="item.includes('Test directory')" class="badge medium"> Test Dir </spam>
           </td>
         </template>
       </tr>
