@@ -46,9 +46,18 @@ nav ul {
   padding: 0;
   display: flex;
 }
+
 nav ul li {
   display: inline-block;
   list-style-type: none;
+
+  &:hover{
+    color: var(--primary-color);
+  }
+}
+
+a.pages.exact-active.active {
+  color: var(--primary-color);
 }
 
 nav ul li a {
@@ -60,15 +69,8 @@ nav ul li a {
   font-family: 'Noto Sans KR', sans-serif;
   text-align: right;
   text-decoration: none;
-
-  &:hover{
-    color: var(--primary-color);
-  }
-
-  &:active{
-    color: var(--primary-color);
-  }
 }
+
 nav ul li:first-child {
   margin-right: auto;
 }
