@@ -81,7 +81,28 @@ th{
 
 td {
   text-align: left;
+  // border-bottom: 1px solid var(--app-background);
+}
+
+tr:before {
+  content: '';
+  position: absolute;
+  width: 60%;
   border-bottom: 1px solid var(--app-background);
+}
+
+tr:nth-child(1):before {
+  content: '';
+  position: absolute;
+  width: 60%;
+  border-bottom: 0px solid var(--app-background);
+}
+
+tr:nth-child(2):before {
+  content: '';
+  position: absolute;
+  width: 60%;
+  border-bottom: 0px solid var(--app-background);
 }
 
 .td-left {
@@ -121,6 +142,9 @@ td {
   }
 .badge {
   font-size: 15px;
+}
+tr:before {
+  width: 85%;
 }
 
 }
