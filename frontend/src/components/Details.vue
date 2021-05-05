@@ -15,9 +15,9 @@
             <spam v-if="item.includes('Contributor guidelines')" class="badge low"> Contributor </spam>
             <spam v-if="item.includes('License')" class="badge high"> License </spam>
             <spam v-if="item.includes('Maintainers email')" class="badge medium"> Ownership </spam>
-            <spam v-if="item.includes('README.md file')" class="badge low"> Readme </spam>
+            <spam v-if="item.includes('README.md file')" class="badge hight"> Readme </spam>
             <spam v-if="item.includes('Do not have binaries files')" class="badge high"> Security </spam>
-            <spam v-if="item.includes('Test directory')" class="badge medium"> Test Dir </spam>
+            <spam v-if="item.includes('Test directory')" class="badge medium"> TestDir </spam>
           </td>
         </template>
       </tr>
@@ -70,9 +70,9 @@ export default {
 
 table {
   color: white;
-  padding: 5%;
   text-align: left;
-  border-spacing: 0ch;
+  padding: 5%;
+  border-spacing: 0;
 }
 
 th{
@@ -80,9 +80,8 @@ th{
 }
 
 td {
-  border-bottom: 1px solid var(--app-background);
-  border-width: 100%;
   text-align: left;
+  border-bottom: 1px solid var(--app-background);
 }
 
 .td-left {
@@ -93,7 +92,6 @@ td {
   border: none;
   padding: 5px;
   border-radius: 8px;
-  box-shadow: 2px 2px 10px var(--shadow);
   text-align: center;
   overflow: hidden;
   text-decoration: none;
