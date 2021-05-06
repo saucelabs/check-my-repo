@@ -2,8 +2,6 @@ name: Lint And Deploy On Push To Main
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   Lint-Deploy:
@@ -24,6 +22,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node src/index.js
+
+      - name: Generate Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: frontend/public/frontend.json
 
       - name: Install Frontend
         run: cd frontend && npm install
