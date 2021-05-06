@@ -22,6 +22,7 @@
     "@vue/cli-plugin-router": "~4.5.10",
     "@vue/cli-plugin-vuex": "~4.5.10",
     "@vue/cli-service": "~4.5.10",
+    "axe-core": "4.2.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.17.0",
     "eslint-plugin-vue": "^7.4.1",
@@ -30,6 +31,7 @@
     "pug-plain-loader": "^1.1.0",
     "sass": "^1.32.2",
     "sass-loader": "^10.1.0",
+    "vue-axe": "2.4.4",
     "vue-template-compiler": "^2.6.12"
   },
   "gitHooks": {
