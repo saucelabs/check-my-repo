@@ -2,8 +2,6 @@ name: Lint And Deploy On Push To Main
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   Lint-Deploy:
