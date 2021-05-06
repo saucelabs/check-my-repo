@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="square">
-      <button class="content total" v-on:click="goToRepo()">
+      <button class="content total" v-on:click="goToRepo(frontend[0].repo)">
         <img class="icon-space" :src="require('../assets/box.svg')" alt="Feather Icon Box"/>
         <h4>Total Repos</h4>
         <div class="result">{{frontend.length}}</div>
@@ -60,8 +60,8 @@ export default {
     },
   },
   methods: {
-    goToRepo: () => {
-      window.open(reposData.repo, "_blank", "noopener");
+    goToRepo: (url) => {
+      window.open(url, "_blank", "noopener");
     },
   },
 }
