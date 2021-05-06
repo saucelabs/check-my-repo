@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     goToRepo: () => {
-      window.open(config.github, "_blank", "noopener");
+      window.open(reposData.repo, "_blank", "noopener");
     },
   },
 }
