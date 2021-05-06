@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "93f74069f7a748b2f76343017df68872",
+    "revision": "e4f55f003e876f3ed13c411383787c75",
     "url": "/check-my-repo/config.json"
   },
   {
-    "revision": "e720638652b2d8636a8f",
-    "url": "/check-my-repo/css/app.3c60d56d.css"
+    "revision": "a449abafb10a5e537bb9",
+    "url": "/check-my-repo/css/app.1832341f.css"
   },
   {
-    "revision": "89e06aa7ca6a0e0d8d87bdff5eb797e3",
+    "revision": "4f956afd21fd4f64d59dcf6c08b819ad",
     "url": "/check-my-repo/frontend.json"
   },
   {
@@ -24,24 +24,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/check-my-repo/img/external-link.f729e99d.svg"
   },
   {
-    "revision": "f003fc4aae864c738e2fdd41ff0e6715",
-    "url": "/check-my-repo/img/logo.f003fc4a.png"
-  },
-  {
     "revision": "d16ebdb9c003e86a269fa348c6445094",
-    "url": "/check-my-repo/img/ospo-bot-new.d16ebdb9.svg"
+    "url": "/check-my-repo/img/logo.d16ebdb9.svg"
   },
   {
     "revision": "6d2ee7efd2f34768d46f9161321ab479",
     "url": "/check-my-repo/img/x-circle.6d2ee7ef.svg"
   },
   {
-    "revision": "3361731bf3aaa5d7efdfcf2bd97a700d",
+    "revision": "962aae8f642ef6fd47d0faa20271cb3b",
     "url": "/check-my-repo/index.html"
   },
   {
-    "revision": "e720638652b2d8636a8f",
-    "url": "/check-my-repo/js/app.f2baa5e7.js"
+    "revision": "a449abafb10a5e537bb9",
+    "url": "/check-my-repo/js/app.5244d5b8.js"
   },
   {
     "revision": "4f312830231cfb801796",
@@ -52,12 +48,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/check-my-repo/logo.png"
   },
   {
-    "revision": "4b14c64efaf846819b9a229b4193c8b7",
-    "url": "/check-my-repo/manifest.json"
+    "revision": "d16ebdb9c003e86a269fa348c6445094",
+    "url": "/check-my-repo/logo.svg"
   },
   {
-    "revision": "d16ebdb9c003e86a269fa348c6445094",
-    "url": "/check-my-repo/ospo-bot-new.svg"
+    "revision": "4b14c64efaf846819b9a229b4193c8b7",
+    "url": "/check-my-repo/manifest.json"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
