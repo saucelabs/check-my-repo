@@ -73,6 +73,7 @@ async function main() {
 
     /* Push individual repos results to the array which will contain all the results */
     output.push({
+      repo: d.url,
       name: d.name,
       url: d.clone_url,
       failed: negativeResults(repolinterConnect.results),
