@@ -4,7 +4,10 @@ const repolinter = require('repolinter') /*project which this is build upon */
 const git = require('simple-git/promise')() /*lib for GitHub API */
 const chalk = require('chalk')
 
-const myVariables = require('../check-my-repo-config.json')
+const repository = process.env.GITHUB_REPOSITORY
+
+
+const [owner] = repository.split('/')
 
 const path = require('path')
 const fs = require('fs')
@@ -18,15 +21,13 @@ const {
   createJsonDashboardFile,
 } = require('./utils')
 
-const input = myVariables.owner
-
 /* This variable stores the sum of all analised repositories which results are all positives */
 let passingRepositories = 0
 
 async function main() {
 
   /* Verifies if it is an organization or a user */
-  const { data: { type } } = await octokit.request(`GET /users/${input}`)
+  const { data: { type } } = await octokit.request(`GET /users/${owner}`)
 
   const fetchRepos = type === 'Organization' ? octokit.repos.listForOrg : octokit.repos.listForUser
 
@@ -34,10 +35,11 @@ async function main() {
   const results = []
   /* Parameters to call octokit API requests */
   const parameters = {
-      org: input,
-      username: input,
-      per_page: myVariables.pagination
-    }
+      org: owner,
+      username: owner,
+      per_page: 100,
+  }
+
   /* This function allows to iterate over all paginations, as explained in documentaton */
   for await (const response of octokit.paginate.iterator(fetchRepos, parameters))
     {
@@ -53,7 +55,7 @@ async function main() {
     const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
 
     /* Validates if Changelog rule passed, of not, search for releases */
-    await validateChangeLog(repolinterConnect.results, input, d.name)
+    await validateChangeLog(repolinterConnect.results, owner, d.name)
 
     /* Print in all the results in terminal */
     printResults(d, repolinterConnect.results)
