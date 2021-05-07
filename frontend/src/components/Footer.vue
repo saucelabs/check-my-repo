@@ -45,4 +45,8 @@ a {
   margin: 2%;
 }
 
+p {
+  text-align: center;
+}
+
 </style>
