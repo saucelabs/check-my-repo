@@ -3,18 +3,20 @@
     <div class="square content">
       <h1>About</h1>
       <p>
-        A demanding and complex Open Source Program Offices’ task is to guarantee the health of its organization repositories.
-      </p>
-      <p>
-        Aiming to help Open Source Program Offices OSPO and Open Source communities, we, at <a href="https://opensource.saucelabs.com/" target="_blank" rel="noopener">Sauce Labs OSPO</a>, created Check-My-Repo, an automated tool built upon <a href="https://www.npmjs.com/package/repolinter" target="_blank" rel="noopener">Repolinter</a>, that verifies the main necessary parameters to comply with OS best practices: from Readme to License.
-        By automating this verification OSPO’s maintenance is more effective and effortless, and can help your organization to have compliant software projects easier to service, test, upgrade, and maintain.
-      </p>
-      <p>
-        Built with Node.js, Repolinter and Vue.js, it is designed to run local and automated, displaying results on GitHub page.
-        Just fork it and adjust it to your own configurations using a simple json file.
-      </p>
-      <p>
-        To know more about it, fork it and use it, go to the <a href="https://github.com/saucelabs/check-my-repo" target="_blank" rel="noopener">project repository on GitHub</a>.
+        Aiming to help Open Source Software OSS maintainers we, at the <a href="https://opensource.saucelabs.com" target="_blank" rel="noopener">Sauce Labs Open Source Program Office</a>,
+        created Check-My-Repo.
+        <br>
+        <br>
+        An automated tool built upon <a href="https://todogroup.github.io/repolinter/" target="_blank" rel="noopener">Repolinter</a>,
+        that verifies if the main necessary parameters to comply with <a href="https://opensource.guide/building-community/" target="_blank" rel="noopener">open source best practices</a>, from Readme to License,
+        are present in the organization's repositories.
+        <br>
+        <br>
+        By automating this verification open source projects maintenance is more effective and effortless,
+        and can help you and your organization to have compliant software projects easier to service, test, upgrade, and maintain.
+        <br>
+        <br>
+        To implement it in your organization all you need to do is to <a href="https://github.com/saucelabs/check-my-repo" target="_blank" rel="noopener">fork the repository on GitHub</a>. It's that easy.
       </p>
     </div>
   </div>
@@ -49,12 +51,12 @@ export default {
 }
 
 h1 {
-  text-align: right;
+  text-align: left;
   margin-bottom: 50px;
 }
 
 h2 {
-  text-align: right;
+  text-align: left;
   margin-top: 50px;
   margin-bottom: 50px;
 }
