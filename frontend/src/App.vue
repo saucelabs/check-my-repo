@@ -70,6 +70,30 @@ a:hover{
     }
 }
 
+.badge {
+  padding: 3px 10px;
+  margin-left: 5px;
+  line-height: 2.5;
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--app-background);
+  color: white;
+}
+
+.low {
+  color: var(--square-background-color);
+  background-color: var(--grey-accent);
+}
+
+.medium {
+  background-color: var(--primary-color);
+  color: var(--square-background-color);
+}
+
+.high {
+  background-color: var(--failed-color);
 }
 
 :root {
