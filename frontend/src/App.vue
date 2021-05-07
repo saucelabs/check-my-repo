@@ -35,7 +35,7 @@ body {
 }
 
 p {
-  text-align: center;
+  text-align: left;
   font-size: 1em;
   color: white;
   font-weight: 300;
