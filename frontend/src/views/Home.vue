@@ -165,6 +165,7 @@ h4{
 p{
   color: #6ED6FF;
   margin: 12px;
+  text-align: center;
 }
 
 </style>
