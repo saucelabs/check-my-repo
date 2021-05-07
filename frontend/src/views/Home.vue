@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="square">
-      <button class="content total" v-on:click="goToRepo(frontend[0].repo)">
+      <button aria-label="Total repos" class="content total" v-on:click="goToRepo(frontend[0].repo)">
         <img class="icon-space" :src="require('../assets/box.svg')" alt="Feather Icon Box"/>
         <h4>Total Repos</h4>
         <div class="result">{{frontend.length}}</div>
         <p class="text">Repository <img class="icon" :src="require('../assets/external-link.svg')" alt="Feather External Link"/></p>
       </button>
-      <button role="switch" class="content passed" v-bind:class="{'state-healthy': !buttonPassedOff}" v-on:click="hideHealthy = !hideHealthy, buttonPassedOff = !buttonPassedOff">
+      <button aria-label="List healthy repos" role="switch" class="content passed" v-bind:class="{'state-healthy': !buttonPassedOff}" v-on:click="hideHealthy = !hideHealthy, buttonPassedOff = !buttonPassedOff">
           <img class="icon-space" :src="require('../assets/check-circle.svg')" alt="Feather Icon Check"/>
           <h4>Healthy Repos</h4>
           <div class="result">{{ allPassed }}</div>
           <p>View repos</p>
       </button>
-      <button role="switch" class="content failed" v-bind:class="{'state-failed': !buttonFailedOff}" v-on:click="hideRepos = !hideRepos, buttonFailedOff = !buttonFailedOff">
+      <button aria-label="List failing repos" role="switch" class="content failed" v-bind:class="{'state-failed': !buttonFailedOff}" v-on:click="hideRepos = !hideRepos, buttonFailedOff = !buttonFailedOff">
         <img class="icon-space" :src="require('../assets/x-circle.svg')" alt="Feather Icon No Check"/>
         <h4>Failing Repos</h4>
         <div class="result">{{frontend.length - allPassed}}</div>
