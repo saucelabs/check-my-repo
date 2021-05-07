@@ -53,8 +53,23 @@ a:visited{
 }
 
 a:hover{
-  color: var(--primary-color);
-  font-weight: 500;
+  background: linear-gradient(to right, yellow, #6ED6FF, rgb(206, 117, 244), #00ff00, #ff3399, white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+}
+
 }
 
 :root {
