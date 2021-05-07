@@ -9,15 +9,17 @@
           <td class="td-left">
             <a v-bind:href="item.url" target="_blank" rel="noopener">{{item.name}}</a>
           </td>
-          <td v-for="item in item.failed" :key="item">
-            <spam v-if="item.includes('Changelog')" class="badge low"> Changelog </spam>
-            <spam v-if="item.includes('Code of conduct')" class="badge low"> Code of Conduct </spam>
-            <spam v-if="item.includes('Contributor guidelines')" class="badge low"> Contributor </spam>
-            <spam v-if="item.includes('License')" class="badge high"> License </spam>
-            <spam v-if="item.includes('Maintainers email')" class="badge medium"> Ownership </spam>
-            <spam v-if="item.includes('README.md file')" class="badge hight"> Readme </spam>
-            <spam v-if="item.includes('Do not have binaries files')" class="badge high"> Security </spam>
-            <spam v-if="item.includes('Test directory')" class="badge medium"> TestDir </spam>
+          <td>
+            <span v-for="item in item.failed" :key="item">
+              <span v-if="item.includes('Changelog')" class="badge low"> Changelog </span>
+              <span v-if="item.includes('Code of conduct')" class="badge low"> Code of Conduct </span>
+              <span v-if="item.includes('Contributor guidelines')" class="badge low"> Contributor </span>
+              <span v-if="item.includes('License')" class="badge high"> License </span>
+              <span v-if="item.includes('Maintainers email')" class="badge medium"> Ownership </span>
+              <span v-if="item.includes('README.md file')" class="badge hight"> Readme </span>
+              <span v-if="item.includes('Do not have binaries files')" class="badge high"> Security </span>
+              <span v-if="item.includes('Test directory')" class="badge medium"> TestDir </span>
+            </span>
           </td>
         </template>
       </tr>
@@ -53,15 +55,6 @@ export default {
   height: 100%;
   border-top: 5px solid var(--failed-color);
 }
-.table-header {
-  font-size: 1.1em;
-}
-.table-header-passed {
-  color: var(--passed-color);
-}
-.table-header-failed {
-  color: var(--failed-color);
-}
 
 .table-content {
   height: 40vh;
@@ -77,60 +70,16 @@ table {
 
 th{
   padding-bottom: 5%;
+  width: 50%;
 }
 
 td {
   text-align: left;
-  // border-bottom: 1px solid var(--app-background);
-}
-
-tr:before {
-  content: '';
-  position: absolute;
-  width: 60%;
   border-bottom: 1px solid var(--app-background);
-}
-
-tr:nth-child(1):before {
-  content: '';
-  position: absolute;
-  width: 60%;
-  border-bottom: 0px solid var(--app-background);
-}
-
-tr:nth-child(2):before {
-  content: '';
-  position: absolute;
-  width: 60%;
-  border-bottom: 0px solid var(--app-background);
 }
 
 .td-left {
  padding: 18px 0;
-}
-
-.badge {
-  border: none;
-  padding: 5px;
-  border-radius: 8px;
-  text-align: center;
-  overflow: hidden;
-  text-decoration: none;
-  background: var(--app-background);
-  color: white;
-}
-
-.low {
-  background-color: var(--app-background);
-}
-
-.medium {
-  background-color: var(--primary-color);
-  color: var(--square-background-color);
-}
-
-.high {
-  background-color: var(--failed-color);
 }
 
 @media (max-width: 545px) {
@@ -140,12 +89,10 @@ tr:nth-child(2):before {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-.badge {
-  font-size: 15px;
-}
-tr:before {
-  width: 85%;
-}
+
+  .badge {
+    font-size: 15px;
+  }
 
 }
 
