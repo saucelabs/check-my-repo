@@ -5,9 +5,7 @@
         <th v-for="name in columns" :key="name">{{name}}</th>
       </tr>
       <tr>
-        <td>
-          {{ healthy }}
-        </td>
+        <td>{{ healthy }}</td>
       </tr>
     </table>
   </div>
