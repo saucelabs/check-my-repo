@@ -43,7 +43,7 @@ p {
 
 a {
   color: white;
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 400;
   text-decoration: none;
 }
