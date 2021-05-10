@@ -4,11 +4,13 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
-Vue.config.productionTip = true
+Vue.config.productionTip = false
 
 if (process.env.NODE_ENV === 'development') {
   const VueAxe = require('vue-axe').default
-  Vue.use(VueAxe)
+  Vue.use(VueAxe, {
+  auto: true  // enable auto check.
+})
 }
 
 new Vue({
