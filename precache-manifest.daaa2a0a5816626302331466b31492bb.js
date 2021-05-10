@@ -1,14 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e4f55f003e876f3ed13c411383787c75",
-    "url": "/check-my-repo/config.json"
+    "revision": "f13158f1eb3e97104c8b",
+    "url": "/check-my-repo/css/app.35269c04.css"
   },
   {
-    "revision": "eaff70e17eadc06ce352",
-    "url": "/check-my-repo/css/app.0aa41542.css"
-  },
-  {
-    "revision": "ecd3cce449571f41cd96f63870b77087",
+    "revision": "f7b496ec7db58a90fbc664047be2a381",
     "url": "/check-my-repo/frontend.json"
   },
   {
@@ -32,12 +28,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/check-my-repo/img/x-circle.6d2ee7ef.svg"
   },
   {
-    "revision": "41a64124252ed054942e72aabd67e481",
+    "revision": "78126e87a0f2354d5e0ebf3e483bf017",
     "url": "/check-my-repo/index.html"
   },
   {
-    "revision": "eaff70e17eadc06ce352",
-    "url": "/check-my-repo/js/app.2f8c125b.js"
+    "revision": "f13158f1eb3e97104c8b",
+    "url": "/check-my-repo/js/app.970422a7.js"
   },
   {
     "revision": "4f312830231cfb801796",
