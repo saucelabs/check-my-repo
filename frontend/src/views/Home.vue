@@ -91,6 +91,7 @@ export default {
     cursor: grab;
     }
 }
+
 .passed {
   color: #8CFF4D;
   border-top: 5px solid #8CFF4D;
@@ -101,6 +102,7 @@ export default {
     cursor: grab;
   }
 }
+
 .failed {
   color: #FF5953;
   border-top: 5px solid #FF5953;
@@ -111,6 +113,7 @@ export default {
     cursor: grab;
   }
 }
+
 .result {
   font-weight: 500;
   font-size: 2em;
@@ -163,7 +166,7 @@ h4{
 }
 
 p{
-  color: #6ED6FF;
+  color: white;
   margin: 12px;
   text-align: center;
 }
