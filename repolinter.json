@@ -97,6 +97,60 @@
         }
       },
       "policyInfo": "Tests creates a reliable repository"
+    },
+     "Contributing": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["{docs/,.github/,}CONTRIB*"],
+          "nocase": true
+        }
+      }
+    },
+    "Code of Conduct": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": [
+            "{docs/,.github/,}CODEOFCONDUCT*",
+            "{docs/,.github/,}CODE-OF-CONDUCT*",
+            "{docs/,.github/,}CODE_OF_CONDUCT*"
+          ],
+          "nocase": true
+        }
+      }
+    },
+    "Security file": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["{docs/,.github/,}SECURITY.md"]
+        }
+      }
+    },
+    "Support file": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["{docs/,.github/,}SUPPORT*"],
+          "nocase": true
+        }
+      }
+    },
+     "License reference on readme": {
+      "level": "error",
+      "rule": {
+        "type": "file-contents",
+        "options": {
+          "globsAll": ["README*"],
+          "content": "license",
+          "flags": "i"
+        }
+      }
     }
   }
 }
