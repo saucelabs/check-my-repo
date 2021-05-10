@@ -7,13 +7,13 @@
         <div class="result">{{frontend.length}}</div>
         <p class="text">Repository <img class="icon" :src="require('../assets/external-link.svg')" alt="Feather External Link"/></p>
       </button>
-      <button aria-label="List healthy repos" role="switch" class="content passed" v-bind:class="{'state-healthy': !buttonPassedOff}" v-on:click="hideHealthy = !hideHealthy, buttonPassedOff = !buttonPassedOff">
+      <button aria-label="List healthy repos" role="switch" class="content passed" aria-checked="false" v-bind:class="{'state-healthy': !buttonPassedOff}" v-on:click="hideHealthy = !hideHealthy, buttonPassedOff = !buttonPassedOff">
           <img class="icon-space" :src="require('../assets/check-circle.svg')" alt="Feather Icon Check"/>
           <h4>Healthy Repos</h4>
           <div class="result">{{ allPassed }}</div>
           <p>View repos</p>
       </button>
-      <button aria-label="List failing repos" role="switch" class="content failed" v-bind:class="{'state-failed': !buttonFailedOff}" v-on:click="hideRepos = !hideRepos, buttonFailedOff = !buttonFailedOff">
+      <button aria-label="List failing repos" role="switch" class="content failed" aria-checked="false" v-bind:class="{'state-failed': !buttonFailedOff}" v-on:click="hideRepos = !hideRepos, buttonFailedOff = !buttonFailedOff">
         <img class="icon-space" :src="require('../assets/x-circle.svg')" alt="Feather Icon No Check"/>
         <h4>Failing Repos</h4>
         <div class="result">{{frontend.length - allPassed}}</div>
