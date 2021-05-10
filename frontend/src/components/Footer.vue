@@ -8,15 +8,12 @@
 </template>
 
 <script>
-import config from "../../public/config.json"
 
 export default {
   name: 'Footer',
 
   data() {
-    return {
-      config: config,
-    }
+
   },
 }
 

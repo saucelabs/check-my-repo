@@ -31,7 +31,6 @@
 
 <script>
 import reposData from "../../public/frontend.json"
-import config from "../../public/config.json"
 import Details from '../components/Details.vue'
 import Healthy from '../components/Healthy.vue'
 
@@ -45,7 +44,6 @@ export default {
       frontend: reposData,
       hideRepos: true,
       hideHealthy: true,
-      config: config,
       buttonPassedOff: true,
       buttonFailedOff: true,
     }
