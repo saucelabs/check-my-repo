@@ -35,7 +35,7 @@ body {
 }
 
 p {
-  text-align: center;
+  text-align: left;
   font-size: 1em;
   color: white;
   font-weight: 300;
@@ -43,7 +43,7 @@ p {
 
 a {
   color: white;
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 400;
   text-decoration: none;
 }
@@ -53,8 +53,47 @@ a:visited{
 }
 
 a:hover{
-  color: var(--primary-color);
-  font-weight: 500;
+  background: linear-gradient(to right, yellow, #6ED6FF, rgb(206, 117, 244), #00ff00, #ff3399, white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+.badge {
+  padding: 3px 10px;
+  margin-left: 5px;
+  line-height: 2.5;
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--app-background);
+  color: white;
+}
+
+.low {
+  color: var(--square-background-color);
+  background-color: var(--grey-accent);
+}
+
+.medium {
+  background-color: var(--primary-color);
+  color: var(--square-background-color);
+}
+
+.high {
+  background-color: var(--failed-color);
 }
 
 :root {

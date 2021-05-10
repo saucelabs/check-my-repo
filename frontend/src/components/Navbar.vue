@@ -45,15 +45,12 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
 }
 
 nav ul li {
   display: inline-block;
   list-style-type: none;
-
-  &:hover{
-    color: var(--primary-color);
-  }
 }
 
 a.pages.exact-active.active {
@@ -69,6 +66,24 @@ nav ul li a {
   font-family: 'Noto Sans KR', sans-serif;
   text-align: right;
   text-decoration: none;
+}
+
+nav ul li a:hover{
+  background: linear-gradient(to right, yellow, #6ED6FF, rgb(206, 117, 244), #00ff00, #ff3399, white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
 }
 
 nav ul li:first-child {
