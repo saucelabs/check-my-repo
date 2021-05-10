@@ -11,14 +11,17 @@
           </td>
           <td>
             <span v-for="item in item.failed" :key="item">
-              <span v-if="item.includes('Changelog')" class="badge low"> Changelog </span>
-              <span v-if="item.includes('Code of conduct')" class="badge low"> Code of Conduct </span>
-              <span v-if="item.includes('Contributor guidelines')" class="badge low"> Contributor </span>
-              <span v-if="item.includes('License')" class="badge high"> License </span>
-              <span v-if="item.includes('Maintainers email')" class="badge medium"> Ownership </span>
               <span v-if="item.includes('README.md file')" class="badge hight"> Readme </span>
+              <span v-if="item.includes('Changelog')" class="badge low"> Changelog </span>
+              <span v-if="item.includes('Maintainers email')" class="badge medium"> Ownership </span>
+              <span v-if="item.includes('License')" class="badge high"> License </span>
               <span v-if="item.includes('Do not have binaries files')" class="badge high"> Security </span>
               <span v-if="item.includes('Test directory')" class="badge medium"> TestDir </span>
+              <span v-if="item.includes('Contributing')" class="badge low"> Contributor </span>
+              <span v-if="item.includes('Code of conduct')" class="badge low"> Code of Conduct </span>
+              <span v-if="item.includes('Security file')" class="badge medium"> SecurityFile </span>
+              <span v-if="item.includes('Support file')" class="badge medium"> Support </span>
+              <span v-if="item.includes('License reference on readme')" class="badge medium"> LicenseOnReadme </span>
             </span>
           </td>
         </template>
