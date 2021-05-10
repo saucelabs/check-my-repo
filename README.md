@@ -1,18 +1,21 @@
 # (Ͼ˳Ͽ)...check-my-repo!!!
 
-Aiming to help Open Source Software OSS maintainers we, at the [Sauce Labs Open Source Program Office](https://opensource.saucelabs.com/), created Check-My-Repo. 
+Aiming to help Open Source Software OSS maintainers we, at the [Sauce Labs Open Source Program Office](https://opensource.saucelabs.com/), created Check-My-Repo.
 An automated tool built upon  [Repolinter](https://todogroup.github.io/repolinter/), that verifies if the main necessary parameters to comply with [open source best practices](https://opensource.guide/building-community/): from Readme to License, are present in the organizations or users repositories.
 By automating this verification open source projects maintenance is more effective and effortless, and can help you and your organization to have compliant software projects easier to service, test, upgrade, and maintain.
-Built with [Node.js](https://nodejs.org/en/), [Repolinter](https://www.npmjs.com/package/repolinter) and [Vue.js](https://v3.vuejs.org/), it is designed to run locally and automated, displaying results on your organization’s or user’s GitHub Page. 
- 
-Meant to be as easy as possible to enable right away usage, all you need to do is: fork it, and enable Pages choosing gh-pages as your GitHub pages repository. That easy 😊. 
+Built with [Node.js](https://nodejs.org/en/), [Repolinter](https://www.npmjs.com/package/repolinter) and [Vue.js](https://v3.vuejs.org/), it is designed to run locally and automated, displaying results on your organization’s or user’s GitHub Page.
+
+Meant to be as easy as possible to enable right away usage, all you need to do is: fork it, and enable Pages choosing gh-pages as your GitHub pages repository. That easy 😊.
 
 ## How to adopt it into my organization?
 
+Fork it, and enable Pages choosing gh-pages as your GitHub pages repository.
 
 https://user-images.githubusercontent.com/7980624/117662543-f566bf00-b19f-11eb-85d2-9bd937d1907b.mov
 
-Using GitHub Actions and default environment variables, it will automatically get our user/ organization public information,
+Using GitHub Actions and default environment variables, it will automatically get our user/ organization public information.
+
+**Please note** that, as Actions are planned to run once a day on cron: '0 0 * * *' time, or when a push is made to the main branch, you need to wait until your organization/ user information is updated in the page.
 
 It is designed to be as neutral as possible and comply with A11y accessibility guidelines. But, of course, you can modify all you want, it is open sourced under MIT license. Check  [How to Configure]() file to know how to do it.
 
