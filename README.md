@@ -9,7 +9,9 @@ Meant to be as easy as possible to enable right away usage, all you need to do i
 
 ## How to adopt it into my organization?
 
-Fork it, and enable Pages choosing gh-pages as your GitHub pages repository.
+1. Fork it
+2. Enable Actions on Settings/ Actions Permissions
+3. Enable Pages on Settings/ Pages by choosing gh-pages as your GitHub pages repository
 
 https://user-images.githubusercontent.com/7980624/117662543-f566bf00-b19f-11eb-85d2-9bd937d1907b.mov
 
