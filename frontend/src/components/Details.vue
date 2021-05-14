@@ -20,8 +20,6 @@
               <span v-if="item.includes('Contributing')" class="badge low"> Contributor </span>
               <span v-if="item.includes('Code of conduct')" class="badge low"> Code of Conduct </span>
               <span v-if="item.includes('Security file')" class="badge medium"> SecurityFile </span>
-              <span v-if="item.includes('Support file')" class="badge medium"> Support </span>
-              <span v-if="item.includes('License reference on readme')" class="badge medium"> LicenseOnReadme </span>
             </span>
           </td>
         </template>
