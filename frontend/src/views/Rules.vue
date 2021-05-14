@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="square content">
       <h1>Rules</h1>
       Check-My-Repo uses a ruleset that searches for files considered essential in an open source project, according to best practices.
@@ -48,7 +47,6 @@
       <p class="quote">When a project seems hostile or unwelcoming, even if it’s just one person whose behavior is tolerated by others, you risk losing many more contributors, some of whom you may never even meet. It’s not always easy to adopt or enforce a code of conduct, but fostering a welcoming environment will help your community grow.</p>
       <p>You can read more about it at <a href="https://opensource.guide/code-of-conduct/#:~:text=as%20a%20maintainer-,Why%20do%20I%20need%20a%20code%20of%20conduct%3F,just%20your%20participants%2C%20but%20yourself." target="_blank" rel="noopener">Open Source Guide</a>.</p>
     </div>
-  </div>
 </template>
 
 <script>
@@ -81,12 +79,6 @@ export default {
 
 h1 {
   text-align: left;
-  margin-bottom: 50px;
-}
-
-h2 {
-  text-align: left;
-  margin-top: 50px;
   margin-bottom: 50px;
 }
 
