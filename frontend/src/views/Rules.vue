@@ -52,13 +52,26 @@
     </p>
 
     <span class="badge low">CodeOfConduct</span>
-    <p>A code of conduct establishes expectations and facilitates a healthy and constructive community.</p>
+    <p>A code of conduct establishes expectations and facilitates a healthy and constructive community.
     <p class="quote">When a project seems hostile or unwelcoming, even if it’s just one person whose behavior is tolerated by others, you risk losing many more contributors, some of whom you may never even meet. It’s not always easy to adopt or enforce a code of conduct, but fostering a welcoming environment will help your community grow.</p>
     <p>You can read more about it at <a href="https://opensource.guide/code-of-conduct/#:~:text=as%20a%20maintainer-,Why%20do%20I%20need%20a%20code%20of%20conduct%3F,just%20your%20participants%2C%20but%20yourself." target="_blank" rel="noopener">Open Source Guide</a>.</p>
+
+    <span class="badge low">LicenseOnReadme</span>
+    <p>Although the license is valid in any format, as long as it is added to the project, having it in the main file ensures it will be clearly visible.
+      So even if the license exists in a separate file it is important to have a mention of it in the README.
+      Some projects add copyright and license on the first line of every file of the project.
+    </p>
 
     <span class="badge low">Security</span>
     <p>A SECURITY.md is where a security policy goes, a place to instruct users how to report a security vulnerability.
       This allows users to easily report and maintainers to quickly take actions upon vulnerabilities.
+    </p>
+
+    <span class="badge low">Support</span>
+    <p>A SUPPORT.md file is used to describe how the project is being maintained and how responsible a maintainer will be on issues.
+      A SUPPORT.md file is used to describe how the project is being maintained and how responsible a maintainer will be on issues.
+      It can include: how and where can a user get help and support, which communication channels should be used and what not to do to avoid communication noise.
+      This file helps both users and maintainers to communicate to each other having their needs to get into the right channel.
     </p>
     </div>
 </template>
