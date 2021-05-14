@@ -14,7 +14,7 @@
               <span v-if="item.includes('README.md file')" class="badge hight"> Readme </span>
               <span v-if="item.includes('Changelog')" class="badge low"> Changelog </span>
               <span v-if="item.includes('Maintainers email')" class="badge medium"> Ownership </span>
-              <span v-if="item.includes('License')" class="badge high"> License </span>
+              <span v-if="item.includes('License' || 'License reference on readme')" class="badge high"> License </span>
               <span v-if="item.includes('Do not have binaries files')" class="badge high"> Binaries </span>
               <span v-if="item.includes('Test directory')" class="badge medium"> TestDir </span>
               <span v-if="item.includes('Contributing')" class="badge low"> Contributor </span>
