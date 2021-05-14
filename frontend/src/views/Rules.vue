@@ -34,7 +34,7 @@
       Check-my-repo searches if the project has a CHANGELOG.md file in the project root or if it contains a release tag on GitHub.
     </p>
 
-    <span class="badge medium">Contributor</span>
+    <span class="badge medium">Contributing</span>
     <p>A contributor guideline saves lots of time from both maintainers and contributors.
       Eager contributors rely on it to be their guiding hand.
     </p>
