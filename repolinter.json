@@ -7,7 +7,7 @@
     "packagers": "packager"
   },
   "rules": {
-    "README.md file": {
+    "README.md": {
       "level": "error",
       "rule": {
         "type": "file-existence",
@@ -77,7 +77,7 @@
       "policyInfo": "A repository must contain a permissive or weak copy-left license",
       "policyUrl": "https://opensource.saucelabs.com/docs/license-guide/"
     },
-    "Do not have binaries files": {
+    "Do not have binaries": {
       "level": "error",
       "rule": {
         "type": "file-type-exclusion",
@@ -103,7 +103,7 @@
       "rule": {
         "type": "file-existence",
         "options": {
-          "globsAny": ["{docs/,.github/,}CONTRIB*, SUPPORT*"],
+          "globsAny": ["{docs/,.github/,}CONTRIB*"],
           "nocase": true
         }
       }
@@ -122,7 +122,7 @@
         }
       }
     },
-    "Security file": {
+    "Security": {
       "level": "error",
       "rule": {
         "type": "file-existence",
@@ -131,7 +131,17 @@
         }
       }
     },
-     "License reference on readme": {
+    "Support": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "globsAny": ["{docs/,.github/,}SUPPORT*"],
+          "nocase": true
+        }
+      }
+    },
+     "Mention": {
       "level": "error",
       "rule": {
         "type": "file-contents",
