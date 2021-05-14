@@ -1,7 +1,7 @@
 {
-  "name": "automated-oss-quality-check",
+  "name": "check-my-repo",
   "version": "1.0.0",
-  "description": "tool to automatically check our repositories health and quality",
+  "description": "An automated tool built upon Repolinter, that verifies the main necessary parameters to comply with OS best practices",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saucelabs/automated-oss-quality-check.git"
+    "url": "https://github.com/saucelabs/check-my-repo"
   },
   "keywords": [
     "repolinter",
@@ -24,12 +24,12 @@
     "check",
     "quality"
   ],
-  "author": "Paloma Oliveira",
+  "author": "Paloma Oliveira <paloma.oliveira@saucelabs.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/saucelabs/automated-oss-quality-check/issues"
+    "url": "https://github.com/saucelabs/check-my-repo/issues"
   },
-  "homepage": "https://github.com/saucelabs/automated-oss-quality-check#readme",
+  "homepage": "https://github.com/saucelabs/check-my-repo",
   "dependencies": {
     "@octokit/rest": "18.5.2",
     "chalk": "^4.1.0",

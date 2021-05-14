@@ -56,6 +56,7 @@ const negativeResults = function (results) {
 
   return negResults
 
+  /* In case someone needs an output with ratio */
   /*
   return {
     results: negResults,
