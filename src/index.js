@@ -32,7 +32,8 @@ async function main() {
   /* Verifies if it is an organization or a user */
   const { data: { type } } = await octokit.request(`GET /users/${owner}`)
 
-  const fetchRepos = type === 'Organization' ? octokit.repos.listForOrg : octokit.repos.listForUser
+  const ORGANIZATION = 'Organization'
+  const fetchRepos = type === ORGANIZATION ? octokit.repos.listForOrg : octokit.repos.listForUser
 
   /* Stores pagination iteration results */
   const results = []
