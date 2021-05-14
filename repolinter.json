@@ -103,7 +103,7 @@
       "rule": {
         "type": "file-existence",
         "options": {
-          "globsAny": ["{docs/,.github/,}CONTRIB*"],
+          "globsAny": ["{docs/,.github/,}CONTRIB*, SUPPORT*"],
           "nocase": true
         }
       }
@@ -128,16 +128,6 @@
         "type": "file-existence",
         "options": {
           "globsAny": ["{docs/,.github/,}SECURITY.md"]
-        }
-      }
-    },
-    "Support file": {
-      "level": "error",
-      "rule": {
-        "type": "file-existence",
-        "options": {
-          "globsAny": ["{docs/,.github/,}SUPPORT*"],
-          "nocase": true
         }
       }
     },
