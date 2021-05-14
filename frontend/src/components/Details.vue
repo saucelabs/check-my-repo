@@ -18,8 +18,8 @@
               <span v-if="item.includes('Do not have binaries files')" class="badge high"> Binaries </span>
               <span v-if="item.includes('Test directory')" class="badge medium"> TestDir </span>
               <span v-if="item.includes('Contributing')" class="badge low"> Contributor </span>
-              <span v-if="item.includes('Code of conduct')" class="badge low"> Code of Conduct </span>
-              <span v-if="item.includes('Security file')" class="badge medium"> SecurityFile </span>
+              <span v-if="item.includes('Code of conduct')" class="badge low"> CodeOfConduct </span>
+              <span v-if="item.includes('Security file')" class="badge medium"> Security </span>
             </span>
           </td>
         </template>
