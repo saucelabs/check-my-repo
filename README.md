@@ -1,6 +1,11 @@
+
 # (Ͼ˳Ͽ)...check-my-repo!!!
 
-Aiming to help Open Source Software OSS maintainers we, at the [Sauce Labs Open Source Program Office](https://opensource.saucelabs.com/), created Check-My-Repo.
+
+https://user-images.githubusercontent.com/7980624/118667671-7fdc9d80-b7f4-11eb-8d67-e7e0094780af.mov
+
+
+Aiming to help Open Source Software OSS maintainers we, at the [Sauce Labs Open Source Program Office](https://opensource.saucelabs.com/), created [Check-My-Repo](https://opensource.saucelabs.com/check-my-repo/).
 An automated tool built upon  [Repolinter](https://todogroup.github.io/repolinter/), that verifies if the main necessary parameters to comply with [open source best practices](https://opensource.guide/building-community/): from Readme to License, are present in the organizations or users repositories.
 By automating this verification open source projects maintenance is more effective and effortless, and can help you and your organization to have compliant software projects easier to service, test, upgrade, and maintain.
 Built with [Node.js](https://nodejs.org/en/), [Repolinter](https://www.npmjs.com/package/repolinter) and [Vue.js](https://v3.vuejs.org/), it is designed to run locally and automated, displaying results on your organization’s or user’s GitHub Page.
