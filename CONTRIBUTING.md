@@ -1,12 +1,15 @@
-# Contributing to _projectname_
+# Contributing to Check-My-Repo
 
-**Thank you for your interest in Automated OSS Quality Check. Your contributions are highly welcome.**
+**Thank you for your interest in Check-My-Repo. Your contributions are highly welcome.**
 
 There are multiple ways of getting involved:
 
-- [Report a bug](#report-a-bug)
-- [Suggest a feature](#suggest-a-feature)
-- [Contribute code](#contribute-code)
+- [Contributing to Check-My-Repo](#contributing-to-check-my-repo)
+  - [Report a bug](#report-a-bug)
+  - [Suggest a feature](#suggest-a-feature)
+  - [Contribute code](#contribute-code)
+    - [Commit messages](#commit-messages)
+    - [Sign your work / Developer certificate of origin](#sign-your-work--developer-certificate-of-origin)
 
 Below are a few guidelines we would like you to follow.
 If you need help, please reach out to us by opening an issue.
