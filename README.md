@@ -19,9 +19,9 @@ Using GitHub Actions and default environment variables, it will automatically ge
 
 **Please note** that, as Actions are planned to run once a day on cron: '0 0 * * *' time, or when a push is made to the main branch, you need to wait until your organization/ user information is updated in the page.
 
-It is designed to be as neutral as possible and comply with A11y accessibility guidelines. But, of course, you can modify all you want, it is open sourced under MIT license. Check  [How to Configure]() file to know how to do it.
+It is designed to be as neutral as possible and comply with A11y accessibility guidelines. But, of course, you can modify all you want, it is open sourced under MIT license. Check  [How to Configure](#HOW-TO-CONFIGURE) file to know how to do it.
 
-## Command Line Step By Step & Running Locally
+## Command Line Step By Step & Running It Locally
 
 1. [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) [this project](https://github.com/saucelabs/check-my-repo)
 
@@ -32,10 +32,10 @@ cd Documents
 
 ```
 
-3. Clone your fork (remember to change <your organization>)
+3. Clone your fork (remember to change "YOUR ORGANIZATION")
 
 ```
-git clone https://github.com/<your organization>/check-my-repo.git
+git clone https://github.com/<YOUR ORGANIZATION>/check-my-repo.git
 
 ```
 
@@ -46,11 +46,7 @@ cd check-my-repo
 
 ```
 
-5. Open the repository on your favorite code editor. If you are using VSC you can use .code to open your code editor
-
-```
-code .
-```
+5. Open the repository on your favorite code editor. If you are using VSC you can use `.code` to open your code editor
 
 6. Install dependencies
 
@@ -66,14 +62,6 @@ node src/index.js
 
 It enables you to verify all of your organization’s or user’s public repositories.
 You need to do this process at least once, as this generates a frontend.json file on the frontend/public folder, which will be used to display the information in Browser.
-
-Note: make sure you provide GITHUB_TOKEN to avoid rate limiting. To know more about it, visit:  [GitHub documentation](https://docs.github.com/en/rest/overview/resources-in-the-rest-api#:~:text=When%20using%20the%20built%2Din,to%2060%20requests%20per%20hour.)
-
-This will not happen when running through CI/CD as it is set up as authenticated user using GutHub’s default secret: GITHUB_TOKEN. You can change this at: src/index.js line 2:
-
-```
-const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN })
-```
 
 8. Now let’s install your frontend application:
 
