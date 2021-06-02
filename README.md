@@ -26,6 +26,14 @@ Using GitHub Actions and default environment variables, it will automatically ge
 
 It is designed to be as neutral as possible and comply with A11y accessibility guidelines. But, of course, you can modify all you want, it is open sourced under MIT license. Check  [How to Configure](#HOW-TO-CONFIGURE) file to know how to do it.
 
+### Trouble-shooting
+
+Even if you enable GitHub Actions, you may need to enable it in 2 other places on the Actions tab. After clicking on the enable button, go back to Settings / Pages and you will see a note saying  your page is published.
+
+
+https://user-images.githubusercontent.com/7980624/120554885-99880280-c3fa-11eb-8981-1a36d058cead.mov
+
+
 ## Command Line Step By Step & Running It Locally
 
 1. [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) [this project](https://github.com/saucelabs/check-my-repo)
