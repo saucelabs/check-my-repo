@@ -20,7 +20,7 @@
               <span v-if="item.includes('Do not have binaries')" class="badge high"> Binaries </span>
               <span v-if="item.includes('Test directory')" class="badge medium"> TestDir </span>
               <span v-if="item.includes('Contributing')" class="badge medium"> Contributing </span>
-              <span v-if="item.includes('Code of Conduct')" class="badge low"> CodeOfConduct </span>
+              <span v-if="item.includes('Code of Conduct')" class="badge high"> CodeOfConduct </span>
               <span v-if="item.includes('Security')" class="badge low"> Security </span>
               <span v-if="item.includes('Support')" class="badge low"> Support </span>
               <span v-if="item.includes('Issue template')" class="badge low"> IssueTemplate </span>
