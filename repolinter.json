@@ -77,6 +77,29 @@
       "policyInfo": "A repository must contain a permissive or weak copy-left license",
       "policyUrl": "https://opensource.saucelabs.com/docs/license-guide/"
     },
+    "License on headers": {
+      "level": "warning",
+      "rule": {
+        "type": "file-starts-with",
+        "options": {
+          "globsAll": ["**/*.js", "!node_modules/**"],
+          "lineCount": 5,
+          "patterns": ["Copyright", "License"],
+          "flags": "i"
+        }
+      }
+    },
+    "License on readme": {
+      "level": "error",
+      "rule": {
+        "type": "file-contents",
+        "options": {
+          "globsAll": ["README*"],
+          "content": "license",
+          "flags": "i"
+        }
+      }
+    },
     "Do not have binaries": {
       "level": "error",
       "rule": {
@@ -92,13 +115,13 @@
       "rule": {
         "type": "directory-existence",
         "options": {
-          "globsAny": ["**/test*","**/tests*", "**/specs", "**/__test__*", "**/__tests__*"],
+          "globsAny": ["**/test*", "**/tests*", "**/specs", "**/__test__*", "**/__tests__*"],
           "nocase": true
         }
       },
       "policyInfo": "Tests creates a reliable repository"
     },
-     "Contributing": {
+    "Contributing": {
       "level": "error",
       "rule": {
         "type": "file-existence",
@@ -141,14 +164,23 @@
         }
       }
     },
-     "Mention": {
+    "Issue template": {
       "level": "error",
       "rule": {
-        "type": "file-contents",
+        "type": "file-existence",
         "options": {
-          "globsAll": ["README*"],
-          "content": "license",
-          "flags": "i"
+          "dirs": true,
+          "globsAny": ["ISSUE_TEMPLATE*", ".github/ISSUE_TEMPLATE*"]
+        }
+      }
+    },
+    "Pull request template": {
+      "level": "error",
+      "rule": {
+        "type": "file-existence",
+        "options": {
+          "dirs": true,
+          "globsAny": ["PULL_REQUEST_TEMPLATE*", ".github/PULL_REQUEST_TEMPLATE*"]
         }
       }
     }

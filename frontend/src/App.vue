@@ -88,7 +88,7 @@ a:hover{
 }
 
 .medium {
-  background-color: var(--primary-color);
+  background-color: var(--warning);
   color: var(--square-background-color);
 }
 
@@ -103,6 +103,7 @@ a:hover{
   --passed-color-accent: #8CFF4D;
   --failed-color: #e12726;
   --primary-color: #6ED6FF;
+  --warning: #e8900e;
   --grey-accent: lightgrey;
   --shadow: rgb(34, 33, 33);
 }

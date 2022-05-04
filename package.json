@@ -32,8 +32,9 @@
   "homepage": "https://github.com/saucelabs/check-my-repo",
   "dependencies": {
     "@octokit/rest": "18.5.2",
-    "chalk": "^4.1.0",
+    "chalk": "4.1.2",
     "linguist": "^0.1.7",
+    "npm-check-updates": "12.5.11",
     "rainbow-penguin": "^1.0.3",
     "repolinter": "0.11.1",
     "rimraf": "^3.0.2",
