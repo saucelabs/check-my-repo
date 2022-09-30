@@ -100,3 +100,11 @@ Cmd + click
 ```
 
 That’s it!
+
+## Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+Want a fast, setup dev environment?  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/saucelabs/check-my-repo).
+
+### Hacktoberfest
+Here for [Hacktoberfest?](https://hacktoberfest.com/).  Check out [Our Hacktoberfest Issues](https://github.com/saucelabs/check-my-repo/issues?q=is%3Aissue+is%3Aopen+label%3Ahacktoberfest), or visit [https://opensource.saucelabs.com/hacktoberfest/](https://opensource.saucelabs.com/hacktoberfest/) to see all our Hacktoberfest projects!
