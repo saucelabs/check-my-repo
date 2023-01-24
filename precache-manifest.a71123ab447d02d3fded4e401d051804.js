@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eb6af3b619d3ab4eb898",
-    "url": "/check-my-repo/css/app.3d9bf0af.css"
+    "revision": "d85ca00316be263b14a8",
+    "url": "/check-my-repo/css/app.699db25f.css"
   },
   {
     "revision": "dfd8b5db86b6d5dc4c957098f0bd198b",
@@ -20,20 +20,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/check-my-repo/img/external-link.f729e99d.svg"
   },
   {
-    "revision": "d16ebdb9c003e86a269fa348c6445094",
-    "url": "/check-my-repo/img/logo.d16ebdb9.svg"
-  },
-  {
     "revision": "6d2ee7efd2f34768d46f9161321ab479",
     "url": "/check-my-repo/img/x-circle.6d2ee7ef.svg"
   },
   {
-    "revision": "1b039b01fdeedd56644553117ce29d0b",
+    "revision": "4be1d9471c9f2c973bacccb6f303f69c",
     "url": "/check-my-repo/index.html"
   },
   {
-    "revision": "eb6af3b619d3ab4eb898",
-    "url": "/check-my-repo/js/app.f62fdc1e.js"
+    "revision": "d85ca00316be263b14a8",
+    "url": "/check-my-repo/js/app.5e048fa2.js"
   },
   {
     "revision": "2fe2d448d7245813c94c",
