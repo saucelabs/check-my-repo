@@ -1,6 +1,6 @@
 <template>
   <div>
-    /*<img class="bot" :src="require(`../../public/logo.svg`)" alt="Logo image"/>*/
+    <!-- img class="bot" :src="require(`../../public/logo.svg`)" alt="Logo image"/> -->
     <a href="https://github.com/saucelabs/check-my-repo" target="_blank" rel="noopener">GitHub</a>
     <p class="break-line">Open source automated tool daily checking our public</p>
     <p class="break-line p-bottom">repositories health and quality</p>
