@@ -24,7 +24,7 @@ const {
   createJsonDashboardFile,
 } = require('./utils')
 
-/* This variable stores the sum of all analised repositories which results are all positives */
+/* This variable stores the sum of all analysed repositories which results are all positives */
 let passingRepositories = 0
 
 async function main() {
@@ -44,7 +44,7 @@ async function main() {
       per_page: 100,
   }
 
-  /* This function allows to iterate over all paginations, as explained in documentaton */
+  /* This function allows to iterate over all pagination, as explained in documentation */
   for await (const response of octokit.paginate.iterator(fetchRepos, parameters))
     {
       results.push(...response.data)
@@ -53,41 +53,45 @@ async function main() {
   /* Output is an array of objects to be sent to frontend through frontend.json */
   const output = []
 
-  for (const d of results) {
-    const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${d.name}-`))
-    await git.clone(d.clone_url, tmpDir)
-    const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
+  console.log(chalk`About to analyze {cyanBright.bold ${results.length}} repositories from {cyanBright.bold ${owner}}`)
+  for (const repository of results) {
+    // Avoiding analysis of archived repositories
+    if (!repository.archived) {
+      const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${repository.name}-`))
+      await git.clone(repository.clone_url, tmpDir)
+      const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
 
-    /* Validates if Changelog rule passed, of not, search for releases */
-    await validateChangeLog(repolinterConnect.results, owner, d.name)
+      /* Validates if Changelog rule passed, of not, search for releases */
+      await validateChangeLog(repolinterConnect.results, owner, repository.name)
 
-    /* Print in all the results in terminal */
-    printResults(d, repolinterConnect.results)
+      /* Print in all the results in terminal */
+      printResults(repository, repolinterConnect.results)
 
     /* Creates an array to check its length and sum all passing results without a loop */
     const hasFailures =
       repolinterConnect.results /* filter messages for what didn't passed */
-        .filter(r => !r.lintResult.passed).length > 0
+        .filter(result => !result.lintResult.passed).length > 0
     if (!hasFailures) {
       passingRepositories++
     }
 
-    /* Push individual repos results to the array which will contain all the results */
-    output.push({
-      repo: d.owner.html_url,
-      name: d.name,
-      url: d.clone_url,
-      failed: negativeResults(repolinterConnect.results),
-      passed: positiveResults(repolinterConnect.results),
-    })
+      /* Push individual repos results to the array which will contain all the results */
+      output.push({
+        repo: repository.owner.html_url,
+        name: repository.name,
+        url: repository.clone_url,
+        failed: negativeResults(repolinterConnect.results),
+        passed: positiveResults(repolinterConnect.results),
+      })
+    }
   }
   /* Creates one .json file in frontend public folder to make this results available */
   await createJsonDashboardFile(output)
 
   console.log(chalk(`
-    😨 Total repositories with fails = {redBright.bold ${results.length - passingRepositories}}
+    😨 Total repositories with fails = {redBright.bold ${output.length - passingRepositories}}
     😌 Total healthy repositories = {greenBright.bold ${passingRepositories}}
-    Number of repositories analysed: {cyanBright.bold ${results.length}}
+    Number of repositories analysed: {cyanBright.bold ${output.length}}
   `))
 }
 
