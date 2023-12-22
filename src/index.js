@@ -53,7 +53,6 @@ async function main() {
   /* Output is an array of objects to be sent to frontend through frontend.json */
   const output = []
 
-  console.log(chalk`About to analyze {cyanBright.bold ${results.length}} repositories from {cyanBright.bold ${owner}}`)
   for (const repository of results) {
     // Avoiding analysis of archived repositories
     if (!repository.archived) {
