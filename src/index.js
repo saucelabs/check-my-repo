@@ -6,7 +6,7 @@ const chalk = require('chalk')
 
 const repository = process.env.GITHUB_REPOSITORY
 
-if (repository === null) {
+if (repository == null) {
   throw 'This GitHub user apparently does not exist';
 }
 
