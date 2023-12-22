@@ -1,7 +1,7 @@
 {
   "name": "check-my-repo",
   "version": "1.0.0",
-  "description": "An automated tool built upon Repolinter, that verifies the main necessary parameters to comply with OS best practices",
+  "description": "An automated tool that verifies repositories to comply with OSS best practices",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
