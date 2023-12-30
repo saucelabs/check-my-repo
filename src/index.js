@@ -15,6 +15,7 @@ const [owner] = repository.split('/')
 const path = require('path')
 const fs = require('fs')
 const os = require('os')
+const ruleSet = require('./ruleset.json')
 
 const {
   printResults,
@@ -58,7 +59,7 @@ async function main() {
     if (!repository.archived) {
       const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${repository.name}-`))
       await git.clone(repository.clone_url, tmpDir)
-      const repolinterConnect = await repolinter.lint(tmpDir) /*execute repolinter default ruleset*/
+      const repolinterConnect = await repolinter.lint(tmpDir, [], ruleSet)
 
       /* Validates if Changelog rule passed, of not, search for releases */
       await validateChangeLog(repolinterConnect.results, owner, repository.name)
@@ -69,7 +70,7 @@ async function main() {
     /* Creates an array to check its length and sum all passing results without a loop */
     const hasFailures =
       repolinterConnect.results /* filter messages for what didn't passed */
-        .filter(result => !result.lintResult.passed).length > 0
+        .filter(result => !(result?.lintResult?.passed ?? false)).length > 0
     if (!hasFailures) {
       passingRepositories++
     }
