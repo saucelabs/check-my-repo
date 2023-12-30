@@ -10,7 +10,7 @@ const repolinter = require('repolinter') /*project which this is build upon */
 
 const chalk = require('chalk')
 
-const formatedDate = new Date().toISOString().substring(0, 13) /*transforms Date() into shorter string*/
+const formattedDate = new Date().toISOString().substring(0, 13) /*transforms Date() into shorter string*/
 
 /* Separate negative and positive results and prints nicely in terminal */
 const printResults = function (data, results, log = console.log) {
@@ -41,20 +41,16 @@ const printResults = function (data, results, log = console.log) {
 
 /* Filter positive results and make it available to filter data */
 const positiveResults = function (results) {
-  const posResults = results /* filter messages for what didn't passed */
+  return results /* filter messages for what didn't passed */
     .filter(r => r.lintResult && r.lintResult.passed)
     .map(r => repolinter.runRuleset && r.ruleInfo.name)
-
-  return posResults
 }
 
 /* Filter negative results and make it available to filter data */
 const negativeResults = function (results) {
-  const negResults = results
+  return results
     .filter(r => r.lintResult && !r.lintResult.passed)
     .map(r => repolinter.runRuleset && r.ruleInfo.name)
-
-  return negResults
 
   /* In case someone needs an output with ratio */
   /*
@@ -98,7 +94,7 @@ const createJsonFile = async function (repository, input, results) {
   }
 
   await fs.promises.writeFile(
-    path.resolve(directory, `${formatedDate}-${repository}.json`),
+    path.resolve(directory, `${formattedDate}-${repository}.json`),
     JSON.stringify(JSON.parse(print), null, 2)
   )
 }
@@ -111,7 +107,7 @@ const createJsonDashboardFile = async function (output) {
 }
 
 module.exports = {
-  formatedDate,
+  formattedDate,
   printResults,
   positiveResults,
   negativeResults,
