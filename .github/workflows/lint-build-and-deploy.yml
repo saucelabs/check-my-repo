@@ -1,21 +1,24 @@
-name: Verify Repo Health Daily
+name: Lint, Build and Deploy
 
 on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   Lint-Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Gives access to repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Node version
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: '12'
+          node-version: '18'
 
       - name: Install dependencies
         run: npm install
@@ -24,6 +27,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node src/index.js
+
+      - name: Generate Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: frontend/public/frontend.json
 
       - name: Install Frontend
         run: cd frontend && npm install
