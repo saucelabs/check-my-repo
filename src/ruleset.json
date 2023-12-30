@@ -82,7 +82,7 @@
       }
     },
     "support-file-exists": {
-      "level": "error",
+      "level": "off",
       "rule": {
         "type": "file-existence",
         "options": {
@@ -90,6 +90,19 @@
             "{docs/,.github/,}SUPPORT*"
           ],
           "nocase": true
+        }
+      }
+    },
+    "readme-references-license": {
+      "level": "off",
+      "rule": {
+        "type": "file-contents",
+        "options": {
+          "globsAll": [
+            "README*"
+          ],
+          "content": "license",
+          "flags": "i"
         }
       }
     },
