@@ -10,13 +10,13 @@ jobs:
     steps:
       # Add node
       - name: Setup Node version
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
       # Add a project to work on
       - name: Clone Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Install dependencies
       - name: Install dependencies
