@@ -6,12 +6,10 @@ Array [
     "{bgBlue Repository: ,} repository",
   ],
   Array [
-    "
-        {hex('#FF8800') 🚨 ,} failing-repo",
+    "{hex('#FF8800') 🚨 ,} failing-repo",
   ],
   Array [
-    "
-        {greenBright ✅ ,} passed-repo",
+    "{greenBright ✅ ,} passed-repo",
   ],
   Array [
     "
@@ -23,10 +21,11 @@ Array [
 exports[`should return global all passed when there is no fail 1`] = `
 Array [
   Array [
-    "{bgBlue Repository: ,
-}
-      {greenBright Passed all checks 🥳 
-} repository",
+    "{bgBlue Repository: ,} repository",
+  ],
+  Array [
+    "{greenBright Passed all checks 🥳 
+}",
   ],
 ]
 `;
