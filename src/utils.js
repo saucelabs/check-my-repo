@@ -107,7 +107,6 @@ const createJsonDashboardFile = async function (output) {
 }
 
 module.exports = {
-  formattedDate,
   printResults,
   positiveResults,
   negativeResults,
