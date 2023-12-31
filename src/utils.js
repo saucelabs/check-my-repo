@@ -22,18 +22,15 @@ const printResults = function (data, results, log = console.log) {
     .filter(r => r.lintResult && !r.lintResult.passed)
     .map(r => repolinter.runRuleset && r.ruleInfo.name)
 
+  log(chalk`{bgBlue Repository: ${data.name}}`)
   if (results.every(r => r.lintResult && r.lintResult.passed)) {
-    log(chalk`{bgBlue Repository: ${data.name}\n}
-      {greenBright Passed all checks 🥳 \n}`)
+    log(chalk`{greenBright Passed all checks 🥳 \n}`)
   } else {
-    log(chalk`{bgBlue Repository: ${data.name}}`)
     for (let i = 0; i < negResults.length; i++) {
-      log(chalk`
-        {hex('#FF8800') 🚨 ${negResults[i]}}`)
+      log(chalk`{hex('#FF8800') 🚨 ${negResults[i]}}`)
     }
     for (let i = 0; i < posResults.length; i++) {
-      log(chalk`
-        {greenBright ✅ ${posResults[i]}}`)
+      log(chalk`{greenBright ✅ ${posResults[i]}}`)
     }
     log('\n')
   }
