@@ -26,12 +26,12 @@ const printResults = function (data, results, log = console.log) {
   if (results.every(r => r.lintResult && r.lintResult.passed)) {
     log(chalk`{greenBright Passed all checks 🥳 \n}`)
   } else {
-    for (let i = 0; i < negResults.length; i++) {
-      log(chalk`{hex('#FF8800') 🚨 ${negResults[i]}}`)
-    }
-    for (let i = 0; i < posResults.length; i++) {
-      log(chalk`{greenBright ✅ ${posResults[i]}}`)
-    }
+    negResults.forEach(r => {
+      log(chalk`{hex('#FF8800') 🚨 ${r}}`)
+    })
+    posResults.forEach(r => {
+      log(chalk`{greenBright ✅ ${r}}`)
+    })
     log('\n')
   }
 }
