@@ -47,5 +47,5 @@ jobs:
           publish_dir: ./frontend/dist
           publish_branch: gh-pages
           user_name: 'OSS Check My Repo'
-          user_email: 'oss-check-my-repo-bot@users.noreply.github.com'
+          user_email: 'oss-sauce-bot@users.noreply.github.com'
           commit_message: ${{ github.event.head_commit.message }}
