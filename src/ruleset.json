@@ -172,7 +172,7 @@
       }
     },
     "source-license-headers-exist": {
-      "level": "warning",
+      "level": "off",
       "rule": {
         "type": "file-starts-with",
         "options": {
