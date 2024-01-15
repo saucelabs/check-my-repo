@@ -37,36 +37,14 @@ Check-My-Repo is built upon [Repolinter](https://todogroup.github.io/repolinter/
 
 To add [see all Repolinter rules](https://github.com/todogroup/repolinter/blob/master/rulesets/default.json) please refer directly to their documentation. Check-My-Repo rules can be modified at `./repolinter.json` file in the project root.
 
-### Changing Badges With Modified Rules
-
-If ou do change a rule, make sure to change your badges.
-
-This is the default ruleset badges, found at: `./frontend/src/components/Details.vue`
-
-```
-<span v-if="item.includes('Do not have binaries')" class="badge high"> Binaries </span>
-<span v-if="item.includes('License')" class="badge high"> License </span>
-<span v-if="item.includes('README.md')" class="badge hight"> Readme </span>
-<span v-if="item.includes('Changelog')" class="badge medium"> Changelog </span>
-<span v-if="item.includes('Contributing')" class="badge medium"> Contributing </span>
-<span v-if="item.includes('Maintainers email')" class="badge medium"> Ownership </span>
-<span v-if="item.includes('Test directory')" class="badge medium"> TestDir </span>
-<span v-if="item.includes('Code of Conduct')" class="badge low"> CodeOfConduct </span>
-<span v-if="item.includes('Mention')" class="badge low"> LicenseOnReadme </span>
-<span v-if="item.includes('Security')" class="badge low"> Security </span>
-<span v-if="item.includes('Support')" class="badge low"> Support </span>
-```
-Where:
-- [] `item.includes` searches for the rule name specified in `repolinter.json`
-- [] `high`, `medium` or `low` changes the css style of the badges
-
 ## Changing Logo
 
-Application uses now Sauce Labs Bot as a default logo. You can change it to yout own logo just switching the `logo.svg` file at `./frontend/public` folder.
+Application uses now Sauce Labs Bot as a default logo. You can change it to your own logo just switching the `logo.svg`
+file at `./frontend/public` folder.
 
 ## Checking for accessibility after modifying the application
 
-Check-My-Repo uses [vue-axe](https://www.npmjs.com/package/vue-axe) in development mode to acessibility verification.
+Check-My-Repo uses [vue-axe](https://www.npmjs.com/package/vue-axe) in development mode to accessibility verification.
 
 You can check if something is missing on your Browsers console, or disable it in `./frontend/main.js` file, by turning to `auto: false`
 
