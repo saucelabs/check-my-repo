@@ -126,7 +126,7 @@
         "options": {
           "globsAny": [
             "**/test*",
-            "**/specs"
+            "**/spec*"
           ],
           "nocase": true
         }
