@@ -46,10 +46,19 @@ async function main() {
   }
 
   /* This function allows to iterate over all pagination, as explained in documentation */
-  for await (const response of octokit.paginate.iterator(fetchRepos, parameters))
-    {
+  for await (const response of octokit.paginate.iterator(fetchRepos, parameters)) {
       results.push(...response.data)
-    }
+  }
+
+  // If a repository with the name '.github' exists, clone it.
+  const githubRepo = results.find(repo => repo.name === '.github')
+  let tmpGitHubRepoDir
+  if (githubRepo != null) {
+    tmpGitHubRepoDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${githubRepo.name}-`))
+    await git.clone(githubRepo.clone_url, tmpGitHubRepoDir)
+  }
+
+
 
   /* Output is an array of objects to be sent to frontend through frontend.json */
   const output = []
@@ -59,6 +68,17 @@ async function main() {
     if (!repository.archived && repository.name !== '.github') {
       const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${repository.name}-`))
       await git.clone(repository.clone_url, tmpDir)
+
+      // If the org has a .github repo, copy all the files from it to the repo being analyzed
+      // Copy all *.md files from the .github directory to the directory being analyzed
+      if (githubRepo != null) {
+        const githubFiles = await fs.promises.readdir(tmpGitHubRepoDir)
+        githubFiles
+          .filter(githubFile => githubFile.toLowerCase().endsWith('.md'))
+          .flatMap(githubFile =>
+            fs.promises.copyFile(path.join(tmpGitHubRepoDir, githubFile), path.join(tmpDir, githubFile)))
+      }
+
       const repolinterConnect = await repolinter.lint(tmpDir, [], ruleSet)
 
       /* Validates if Changelog rule passed, of not, search for releases */
