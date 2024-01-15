@@ -81,7 +81,13 @@ async function main() {
         // If a .github directory exists in tmpGitHubRepoDir, copy all *.md files from it to the directory being analyzed
         const githubDir = path.join(tmpGitHubRepoDir, '.github')
         const githubDestDir = path.join(tmpDir, '.github')
-        if (fs.existsSync(githubDir) && fs.existsSync(githubDestDir)) {
+
+        // Create the .github directory if it doesn't exist
+        if (!fs.existsSync(githubDestDir)) {
+          fs.mkdirSync(githubDestDir)
+        }
+
+        if (fs.existsSync(githubDir)) {
           const githubFiles = await fs.promises.readdir(githubDir)
           githubFiles
             .filter(githubFile => githubFile.toLowerCase().endsWith('.md'))
