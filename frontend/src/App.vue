@@ -30,7 +30,7 @@ body {
   background: var(--app-background);
   margin: 0%;
   padding: 0%;
-  border: 0vh;
+  border: 0;
   color: white;
 }
 
