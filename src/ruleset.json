@@ -59,7 +59,7 @@
       }
     },
     "changelog-file-exists": {
-      "level": "error",
+      "level": "off",
       "rule": {
         "type": "file-existence",
         "options": {
