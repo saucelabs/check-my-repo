@@ -77,6 +77,17 @@ async function main() {
           .filter(githubFile => githubFile.toLowerCase().endsWith('.md'))
           .flatMap(githubFile =>
             fs.promises.copyFile(path.join(tmpGitHubRepoDir, githubFile), path.join(tmpDir, githubFile)))
+
+        // If a .github directory exists in tmpGitHubRepoDir, copy all *.md files from it to the directory being analyzed
+        const githubDir = path.join(tmpGitHubRepoDir, '.github')
+        const githubDestDir = path.join(tmpDir, '.github')
+        if (fs.existsSync(githubDir) && fs.existsSync(githubDestDir)) {
+          const githubFiles = await fs.promises.readdir(githubDir)
+          githubFiles
+            .filter(githubFile => githubFile.toLowerCase().endsWith('.md'))
+            .flatMap(githubFile =>
+              fs.promises.copyFile(path.join(githubDir, githubFile), path.join(githubDestDir, githubFile)))
+        }
       }
 
       const repolinterConnect = await repolinter.lint(tmpDir, [], ruleSet)
