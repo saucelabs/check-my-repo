@@ -55,8 +55,8 @@ async function main() {
   const output = []
 
   for (const repository of results) {
-    // Avoiding analysis of archived repositories
-    if (!repository.archived) {
+    // Avoiding analysis of archived repositories, and avoid the .github repo
+    if (!repository.archived && repository.name !== '.github') {
       const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `repolinter-${repository.name}-`))
       await git.clone(repository.clone_url, tmpDir)
       const repolinterConnect = await repolinter.lint(tmpDir, [], ruleSet)
